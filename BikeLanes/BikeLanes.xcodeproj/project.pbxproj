@@ -31,6 +31,7 @@
 		60EC0767F26389AF70684300 /* GeocodeServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829CEA62FED53C9191F08150 /* GeocodeServiceTests.swift */; };
 		685D5A6047B7906079BBE3BA /* VehicleDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B2647E77E06DBD5E4A4A24 /* VehicleDetector.swift */; };
 		69649F41D440CB93FE121881 /* PlateOCRService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF79F889E18D7C0F4E8F9D3A /* PlateOCRService.swift */; };
+		6A757DBADFCCC6F807866354 /* ReportViewSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBFBF34164FFBBD1A718147 /* ReportViewSnapshotTests.swift */; };
 		6D5B4376A30A9C90A14A6A2A /* HistoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAA3B9B2EB83E1274C5DEE5 /* HistoryRow.swift */; };
 		74D0421ECAD240320E04371B /* DenverEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0179735DE1E80F82434B4602 /* DenverEndpoints.swift */; };
 		78D21CDE32DC71309B95F83D /* FieldRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E31983BFFE82BFE8A0048F /* FieldRow.swift */; };
@@ -85,6 +86,7 @@
 		0179735DE1E80F82434B4602 /* DenverEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DenverEndpoints.swift; sourceTree = "<group>"; };
 		0AFC78EB262FF8BACBD4F28E /* CaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseRepository.swift; sourceTree = "<group>"; };
 		0CFE76492BB1B86867E7B95D /* GeocodeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodeService.swift; sourceTree = "<group>"; };
+		1DBFBF34164FFBBD1A718147 /* ReportViewSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewSnapshotTests.swift; sourceTree = "<group>"; };
 		213F814BEF6163A43D0EEE20 /* SubmissionResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmissionResultView.swift; sourceTree = "<group>"; };
 		221927E0F3698AF42FD56436 /* BikeLanesUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = BikeLanesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F93AAA295AACCA0D7D70904 /* BikeLanes.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = BikeLanes.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -319,6 +321,7 @@
 				84EBD707D6DEDEE5421668B1 /* MultipartTests.swift */,
 				528479C328B70CA11ADE38C4 /* PlateOCRServiceTests.swift */,
 				E7C35775453E2DB7B788519E /* ReportViewModelTests.swift */,
+				1DBFBF34164FFBBD1A718147 /* ReportViewSnapshotTests.swift */,
 				F4FC5AD994C48FC6CA3BD17D /* VehicleDetectorSmokeTests.swift */,
 				BD95F78A0171E31B56E3025A /* VehicleDetectorTests.swift */,
 				D5DB19731EE758B86F591704 /* Fixtures */,
@@ -471,6 +474,7 @@
 				B096F307A3D64E9C32DD6A2E /* MultipartTests.swift in Sources */,
 				59825075DA4AC24BC8BBD9F2 /* PlateOCRServiceTests.swift in Sources */,
 				E79B073CFC61B181161608F4 /* ReportViewModelTests.swift in Sources */,
+				6A757DBADFCCC6F807866354 /* ReportViewSnapshotTests.swift in Sources */,
 				805F165A822179BA313C8167 /* VehicleDetectorSmokeTests.swift in Sources */,
 				4F5B33CF1F02DC4A4C0E1C7D /* VehicleDetectorTests.swift in Sources */,
 			);
