@@ -9,9 +9,11 @@
 /* Begin PBXBuildFile section */
 		2B254B7AE01EDBDA2BFA88C7 /* BikeLanesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920CC557048BFE0057AE61C5 /* BikeLanesApp.swift */; };
 		3C1E268538256A547A2A07CC /* BikeLanesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9FEAAF1023FF6ED074F712 /* BikeLanesTests.swift */; };
+		3D841E42099DCB310EAAFB63 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EEBB039EB64EF8537C9187 /* Enums.swift */; };
 		805F165A822179BA313C8167 /* VehicleDetectorSmokeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC5AD994C48FC6CA3BD17D /* VehicleDetectorSmokeTests.swift */; };
 		AAE480938978FA6A577AB4EC /* IMG_3239.HEIC in Resources */ = {isa = PBXBuildFile; fileRef = 64CD891CA224757AA0BF6038 /* IMG_3239.HEIC */; };
 		BC86972CA78ECCD29DC5762A /* NoGPS.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C3EA987F1D6644BB273D5D57 /* NoGPS.jpg */; };
+		CFB4A3E0C4276F717D50F123 /* EnumsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D5DB350F54D44D856B5005 /* EnumsTests.swift */; };
 		EFECC5FD1FA6102B87CA9B99 /* BikeLanesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C5287D058BEB946D7A3E8A /* BikeLanesUITests.swift */; };
 		FBEB25E71D9950B2963D41EA /* YOLOv11nCar.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = C653C1DC180D08491DEF7CCC /* YOLOv11nCar.mlpackage */; };
 /* End PBXBuildFile section */
@@ -38,8 +40,10 @@
 		2F93AAA295AACCA0D7D70904 /* BikeLanes.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = BikeLanes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58C5287D058BEB946D7A3E8A /* BikeLanesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeLanesUITests.swift; sourceTree = "<group>"; };
 		64CD891CA224757AA0BF6038 /* IMG_3239.HEIC */ = {isa = PBXFileReference; path = IMG_3239.HEIC; sourceTree = "<group>"; };
+		88EEBB039EB64EF8537C9187 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		920CC557048BFE0057AE61C5 /* BikeLanesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeLanesApp.swift; sourceTree = "<group>"; };
 		9C69D46D38EA2E0858C25DC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		A3D5DB350F54D44D856B5005 /* EnumsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumsTests.swift; sourceTree = "<group>"; };
 		C3EA987F1D6644BB273D5D57 /* NoGPS.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = NoGPS.jpg; sourceTree = "<group>"; };
 		C653C1DC180D08491DEF7CCC /* YOLOv11nCar.mlpackage */ = {isa = PBXFileReference; path = YOLOv11nCar.mlpackage; sourceTree = "<group>"; };
 		CA9FEAAF1023FF6ED074F712 /* BikeLanesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeLanesTests.swift; sourceTree = "<group>"; };
@@ -93,6 +97,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		C014F7EF30463CA1D5B98138 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				88EEBB039EB64EF8537C9187 /* Enums.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		C0497B7BFE0C6E567D1C62B6 /* MLModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				1A61B580F74C3F09563C7D13 /* App */,
+				C014F7EF30463CA1D5B98138 /* Models */,
 				6B873526F8F5CF7DBE4794D6 /* Resources */,
 				D93AAAF7A1F0E06B5BAE4A15 /* Services */,
 				D6D1719BB93F39E04CA51567 /* Views */,
@@ -139,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				CA9FEAAF1023FF6ED074F712 /* BikeLanesTests.swift */,
+				A3D5DB350F54D44D856B5005 /* EnumsTests.swift */,
 				F4FC5AD994C48FC6CA3BD17D /* VehicleDetectorSmokeTests.swift */,
 				D5DB19731EE758B86F591704 /* Fixtures */,
 			);
@@ -265,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C1E268538256A547A2A07CC /* BikeLanesTests.swift in Sources */,
+				CFB4A3E0C4276F717D50F123 /* EnumsTests.swift in Sources */,
 				805F165A822179BA313C8167 /* VehicleDetectorSmokeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B254B7AE01EDBDA2BFA88C7 /* BikeLanesApp.swift in Sources */,
+				3D841E42099DCB310EAAFB63 /* Enums.swift in Sources */,
 				FBEB25E71D9950B2963D41EA /* YOLOv11nCar.mlpackage in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
