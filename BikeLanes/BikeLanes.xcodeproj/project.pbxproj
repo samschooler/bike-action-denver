@@ -31,6 +31,7 @@
 		805F165A822179BA313C8167 /* VehicleDetectorSmokeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC5AD994C48FC6CA3BD17D /* VehicleDetectorSmokeTests.swift */; };
 		80D331F83758E3F62A6DFCA7 /* ExifServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372AC6D55D6D2F10D7256A1C /* ExifServiceTests.swift */; };
 		87D432893FC685AE2551E113 /* ImageCropper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E0BE2D53956757A9804BDB /* ImageCropper.swift */; };
+		9DC710898C28F568E9453281 /* PhotoCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDB8EF9E782F0B105105A63 /* PhotoCard.swift */; };
 		AAE480938978FA6A577AB4EC /* IMG_3239.HEIC in Resources */ = {isa = PBXBuildFile; fileRef = 64CD891CA224757AA0BF6038 /* IMG_3239.HEIC */; };
 		AD9FF671C76154D53B5B1E91 /* DenverAPIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5453164CF19C9675497614FE /* DenverAPIClientTests.swift */; };
 		B096F307A3D64E9C32DD6A2E /* MultipartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EBD707D6DEDEE5421668B1 /* MultipartTests.swift */; };
@@ -83,6 +84,7 @@
 		64CD891CA224757AA0BF6038 /* IMG_3239.HEIC */ = {isa = PBXFileReference; path = IMG_3239.HEIC; sourceTree = "<group>"; };
 		7165AB387F3447E6C6D25E32 /* DenverAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DenverAPIClient.swift; sourceTree = "<group>"; };
 		7490EA148B766AAE39BCA1D9 /* StoredCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredCase.swift; sourceTree = "<group>"; };
+		7EDB8EF9E782F0B105105A63 /* PhotoCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCard.swift; sourceTree = "<group>"; };
 		829CEA62FED53C9191F08150 /* GeocodeServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodeServiceTests.swift; sourceTree = "<group>"; };
 		84EBD707D6DEDEE5421668B1 /* MultipartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipartTests.swift; sourceTree = "<group>"; };
 		88EEBB039EB64EF8537C9187 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				E7E31983BFFE82BFE8A0048F /* FieldRow.swift */,
+				7EDB8EF9E782F0B105105A63 /* PhotoCard.swift */,
 			);
 			path = Report;
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 				47162AF3E1A4BD573A6F9B21 /* GeocodeService.swift in Sources */,
 				87D432893FC685AE2551E113 /* ImageCropper.swift in Sources */,
 				5B5E0B3A610C1EBEF1D57070 /* Multipart.swift in Sources */,
+				9DC710898C28F568E9453281 /* PhotoCard.swift in Sources */,
 				69649F41D440CB93FE121881 /* PlateOCRService.swift in Sources */,
 				CE2F6130D24052B69479A2D8 /* ReportDraft.swift in Sources */,
 				B34DE05E7BD6926B5720D6C7 /* ReportViewModel.swift in Sources */,
