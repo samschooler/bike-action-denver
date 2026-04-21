@@ -8,6 +8,13 @@ protocol DenverAddressSearching: Sendable {
 
 extension DenverAPIClient: DenverAddressSearching {}
 
+/// Protocol seam for reverse geocoding, lets view-models use fakes in tests.
+protocol GeocodeResolving: Sendable {
+    func resolve(coordinate: CLLocationCoordinate2D) async throws -> DenverAddress?
+}
+
+extension GeocodeService: GeocodeResolving {}
+
 struct GeocodeService {
     typealias ReverseGeocoder = @Sendable (CLLocationCoordinate2D) async throws -> String?
 

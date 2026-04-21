@@ -1,6 +1,14 @@
 // BikeLanes/Services/DenverAPI/DenverAPIClient.swift
 import Foundation
 
+/// Protocol seam for case submission; lets view-models be tested with fakes.
+protocol CaseSubmitting: Sendable {
+    func uploadAttachment(id: UUID, filename: String, mimeType: String, data: Data) async throws -> AttachmentResponse
+    func createCase(_ r: CreateCaseRequest) async throws -> CreateCaseResponse
+}
+
+extension DenverAPIClient: CaseSubmitting {}
+
 struct DenverAPIClient: Sendable {
     let session: URLSession
 

@@ -2,6 +2,18 @@
 import Foundation
 @preconcurrency import SwiftData
 
+/// Protocol seam for persisting cases, lets view-models be tested with in-memory fakes.
+protocol CasePersisting {
+    @discardableResult
+    func save(denverInputRecordId: Int, denverCaseId: String?, denverCaseNumber: String?,
+              internalStatus: String, thumbnailFilename: String,
+              snapshot: ReportDraftSnapshot) throws -> StoredCase
+    func fetchAll() throws -> [StoredCase]
+    func deleteAll() throws
+}
+
+extension CaseRepository: CasePersisting {}
+
 struct CaseRepository {
     let container: ModelContainer
 

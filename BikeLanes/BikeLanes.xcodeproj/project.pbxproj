@@ -29,15 +29,18 @@
 		7B7723517BBDBC70B6D49433 /* LiveAPIIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4178B79218D6A4B7E410428B /* LiveAPIIntegrationTests.swift */; };
 		805F165A822179BA313C8167 /* VehicleDetectorSmokeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC5AD994C48FC6CA3BD17D /* VehicleDetectorSmokeTests.swift */; };
 		80D331F83758E3F62A6DFCA7 /* ExifServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372AC6D55D6D2F10D7256A1C /* ExifServiceTests.swift */; };
+		87D432893FC685AE2551E113 /* ImageCropper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E0BE2D53956757A9804BDB /* ImageCropper.swift */; };
 		AAE480938978FA6A577AB4EC /* IMG_3239.HEIC in Resources */ = {isa = PBXBuildFile; fileRef = 64CD891CA224757AA0BF6038 /* IMG_3239.HEIC */; };
 		AD9FF671C76154D53B5B1E91 /* DenverAPIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5453164CF19C9675497614FE /* DenverAPIClientTests.swift */; };
 		B096F307A3D64E9C32DD6A2E /* MultipartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EBD707D6DEDEE5421668B1 /* MultipartTests.swift */; };
+		B34DE05E7BD6926B5720D6C7 /* ReportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A763C6F28BCEA83567473783 /* ReportViewModel.swift */; };
 		B5D60BE663106F917F140215 /* DenverEndpointsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99103EEFD3BD6E7721B94614 /* DenverEndpointsTests.swift */; };
 		BC86972CA78ECCD29DC5762A /* NoGPS.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C3EA987F1D6644BB273D5D57 /* NoGPS.jpg */; };
 		CE2F6130D24052B69479A2D8 /* ReportDraft.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3F0EA9E26D8EC678F5CDCD /* ReportDraft.swift */; };
 		CFB4A3E0C4276F717D50F123 /* EnumsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D5DB350F54D44D856B5005 /* EnumsTests.swift */; };
 		D236AC6D4501C8B75CB76910 /* ColorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B33349A17D0351C4FE3803 /* ColorService.swift */; };
 		DC452A7C60883F57A098DA0A /* IMG_3239_car.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CEB0E3A586EC1D061EC5EF0C /* IMG_3239_car.jpg */; };
+		E79B073CFC61B181161608F4 /* ReportViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C35775453E2DB7B788519E /* ReportViewModelTests.swift */; };
 		EA3350D6C81D211DB3C59781 /* StoredCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7490EA148B766AAE39BCA1D9 /* StoredCase.swift */; };
 		EFECC5FD1FA6102B87CA9B99 /* BikeLanesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C5287D058BEB946D7A3E8A /* BikeLanesUITests.swift */; };
 		F4726BCAB4B8D2046145E2EF /* CaseRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1798B5B71628F90DA91C795 /* CaseRepositoryTests.swift */; };
@@ -86,6 +89,8 @@
 		99103EEFD3BD6E7721B94614 /* DenverEndpointsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DenverEndpointsTests.swift; sourceTree = "<group>"; };
 		9C69D46D38EA2E0858C25DC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A3D5DB350F54D44D856B5005 /* EnumsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumsTests.swift; sourceTree = "<group>"; };
+		A6E0BE2D53956757A9804BDB /* ImageCropper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCropper.swift; sourceTree = "<group>"; };
+		A763C6F28BCEA83567473783 /* ReportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewModel.swift; sourceTree = "<group>"; };
 		ABBF0680664CB0F00F423219 /* DenverDTOsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DenverDTOsTests.swift; sourceTree = "<group>"; };
 		B1798B5B71628F90DA91C795 /* CaseRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseRepositoryTests.swift; sourceTree = "<group>"; };
 		BD95F78A0171E31B56E3025A /* VehicleDetectorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetectorTests.swift; sourceTree = "<group>"; };
@@ -98,6 +103,7 @@
 		CEB0E3A586EC1D061EC5EF0C /* IMG_3239_car.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_3239_car.jpg; sourceTree = "<group>"; };
 		DB5DDB44E39405EA89B9249D /* BikeLanesTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = BikeLanesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E35FEAFC973ECCDCC38025A5 /* Multipart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Multipart.swift; sourceTree = "<group>"; };
+		E7C35775453E2DB7B788519E /* ReportViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewModelTests.swift; sourceTree = "<group>"; };
 		E7D0E5C442C5F7FB0A27799A /* ExifService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExifService.swift; sourceTree = "<group>"; };
 		F4FC5AD994C48FC6CA3BD17D /* VehicleDetectorSmokeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetectorSmokeTests.swift; sourceTree = "<group>"; };
 		FCC9300C2575B21C33829EEE /* DenverDTOs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DenverDTOs.swift; sourceTree = "<group>"; };
@@ -141,6 +147,14 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		A3EDAB9155E63DBCA1484089 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A763C6F28BCEA83567473783 /* ReportViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		B22A408135FA4F7B2747209A /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +191,7 @@
 				C014F7EF30463CA1D5B98138 /* Models */,
 				6B873526F8F5CF7DBE4794D6 /* Resources */,
 				D93AAAF7A1F0E06B5BAE4A15 /* Services */,
+				A3EDAB9155E63DBCA1484089 /* ViewModels */,
 				D6D1719BB93F39E04CA51567 /* Views */,
 			);
 			path = BikeLanes;
@@ -207,6 +222,7 @@
 				60B33349A17D0351C4FE3803 /* ColorService.swift */,
 				E7D0E5C442C5F7FB0A27799A /* ExifService.swift */,
 				0CFE76492BB1B86867E7B95D /* GeocodeService.swift */,
+				A6E0BE2D53956757A9804BDB /* ImageCropper.swift */,
 				FF79F889E18D7C0F4E8F9D3A /* PlateOCRService.swift */,
 				C1B2647E77E06DBD5E4A4A24 /* VehicleDetector.swift */,
 				E84FF1CB3880A2FB1BCC0571 /* DenverAPI */,
@@ -230,6 +246,7 @@
 				4178B79218D6A4B7E410428B /* LiveAPIIntegrationTests.swift */,
 				84EBD707D6DEDEE5421668B1 /* MultipartTests.swift */,
 				528479C328B70CA11ADE38C4 /* PlateOCRServiceTests.swift */,
+				E7C35775453E2DB7B788519E /* ReportViewModelTests.swift */,
 				F4FC5AD994C48FC6CA3BD17D /* VehicleDetectorSmokeTests.swift */,
 				BD95F78A0171E31B56E3025A /* VehicleDetectorTests.swift */,
 				D5DB19731EE758B86F591704 /* Fixtures */,
@@ -381,6 +398,7 @@
 				7B7723517BBDBC70B6D49433 /* LiveAPIIntegrationTests.swift in Sources */,
 				B096F307A3D64E9C32DD6A2E /* MultipartTests.swift in Sources */,
 				59825075DA4AC24BC8BBD9F2 /* PlateOCRServiceTests.swift in Sources */,
+				E79B073CFC61B181161608F4 /* ReportViewModelTests.swift in Sources */,
 				805F165A822179BA313C8167 /* VehicleDetectorSmokeTests.swift in Sources */,
 				4F5B33CF1F02DC4A4C0E1C7D /* VehicleDetectorTests.swift in Sources */,
 			);
@@ -409,9 +427,11 @@
 				3D841E42099DCB310EAAFB63 /* Enums.swift in Sources */,
 				1D6C2E2CFC738A1962BDF7CE /* ExifService.swift in Sources */,
 				47162AF3E1A4BD573A6F9B21 /* GeocodeService.swift in Sources */,
+				87D432893FC685AE2551E113 /* ImageCropper.swift in Sources */,
 				5B5E0B3A610C1EBEF1D57070 /* Multipart.swift in Sources */,
 				69649F41D440CB93FE121881 /* PlateOCRService.swift in Sources */,
 				CE2F6130D24052B69479A2D8 /* ReportDraft.swift in Sources */,
+				B34DE05E7BD6926B5720D6C7 /* ReportViewModel.swift in Sources */,
 				EA3350D6C81D211DB3C59781 /* StoredCase.swift in Sources */,
 				685D5A6047B7906079BBE3BA /* VehicleDetector.swift in Sources */,
 				FBEB25E71D9950B2963D41EA /* YOLOv11nCar.mlpackage in Sources */,
