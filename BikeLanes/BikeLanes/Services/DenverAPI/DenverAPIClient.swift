@@ -1,7 +1,7 @@
 // BikeLanes/Services/DenverAPI/DenverAPIClient.swift
 import Foundation
 
-struct DenverAPIClient {
+struct DenverAPIClient: Sendable {
     let session: URLSession
 
     init(session: URLSession = .shared) {
