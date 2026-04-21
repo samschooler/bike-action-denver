@@ -12,10 +12,12 @@
 		3C1E268538256A547A2A07CC /* BikeLanesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9FEAAF1023FF6ED074F712 /* BikeLanesTests.swift */; };
 		3D841E42099DCB310EAAFB63 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EEBB039EB64EF8537C9187 /* Enums.swift */; };
 		52BEF65225C7614EBB679F99 /* DenverAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D970997DCC2E57329DBE23 /* DenverAddress.swift */; };
+		5B5E0B3A610C1EBEF1D57070 /* Multipart.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35FEAFC973ECCDCC38025A5 /* Multipart.swift */; };
 		74D0421ECAD240320E04371B /* DenverEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0179735DE1E80F82434B4602 /* DenverEndpoints.swift */; };
 		7B17CDDC9FDDFE086D5FEBDC /* DenverDTOsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBF0680664CB0F00F423219 /* DenverDTOsTests.swift */; };
 		805F165A822179BA313C8167 /* VehicleDetectorSmokeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC5AD994C48FC6CA3BD17D /* VehicleDetectorSmokeTests.swift */; };
 		AAE480938978FA6A577AB4EC /* IMG_3239.HEIC in Resources */ = {isa = PBXBuildFile; fileRef = 64CD891CA224757AA0BF6038 /* IMG_3239.HEIC */; };
+		B096F307A3D64E9C32DD6A2E /* MultipartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EBD707D6DEDEE5421668B1 /* MultipartTests.swift */; };
 		B5D60BE663106F917F140215 /* DenverEndpointsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99103EEFD3BD6E7721B94614 /* DenverEndpointsTests.swift */; };
 		BC86972CA78ECCD29DC5762A /* NoGPS.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C3EA987F1D6644BB273D5D57 /* NoGPS.jpg */; };
 		CE2F6130D24052B69479A2D8 /* ReportDraft.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3F0EA9E26D8EC678F5CDCD /* ReportDraft.swift */; };
@@ -50,6 +52,7 @@
 		58C5287D058BEB946D7A3E8A /* BikeLanesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeLanesUITests.swift; sourceTree = "<group>"; };
 		64CD891CA224757AA0BF6038 /* IMG_3239.HEIC */ = {isa = PBXFileReference; path = IMG_3239.HEIC; sourceTree = "<group>"; };
 		7490EA148B766AAE39BCA1D9 /* StoredCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredCase.swift; sourceTree = "<group>"; };
+		84EBD707D6DEDEE5421668B1 /* MultipartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipartTests.swift; sourceTree = "<group>"; };
 		88EEBB039EB64EF8537C9187 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		920CC557048BFE0057AE61C5 /* BikeLanesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeLanesApp.swift; sourceTree = "<group>"; };
 		99103EEFD3BD6E7721B94614 /* DenverEndpointsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DenverEndpointsTests.swift; sourceTree = "<group>"; };
@@ -61,6 +64,7 @@
 		CA9FEAAF1023FF6ED074F712 /* BikeLanesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeLanesTests.swift; sourceTree = "<group>"; };
 		CC3F0EA9E26D8EC678F5CDCD /* ReportDraft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDraft.swift; sourceTree = "<group>"; };
 		DB5DDB44E39405EA89B9249D /* BikeLanesTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = BikeLanesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E35FEAFC973ECCDCC38025A5 /* Multipart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Multipart.swift; sourceTree = "<group>"; };
 		F4FC5AD994C48FC6CA3BD17D /* VehicleDetectorSmokeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetectorSmokeTests.swift; sourceTree = "<group>"; };
 		FCC9300C2575B21C33829EEE /* DenverDTOs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DenverDTOs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -173,6 +177,7 @@
 				ABBF0680664CB0F00F423219 /* DenverDTOsTests.swift */,
 				99103EEFD3BD6E7721B94614 /* DenverEndpointsTests.swift */,
 				A3D5DB350F54D44D856B5005 /* EnumsTests.swift */,
+				84EBD707D6DEDEE5421668B1 /* MultipartTests.swift */,
 				F4FC5AD994C48FC6CA3BD17D /* VehicleDetectorSmokeTests.swift */,
 				D5DB19731EE758B86F591704 /* Fixtures */,
 			);
@@ -184,6 +189,7 @@
 			children = (
 				FCC9300C2575B21C33829EEE /* DenverDTOs.swift */,
 				0179735DE1E80F82434B4602 /* DenverEndpoints.swift */,
+				E35FEAFC973ECCDCC38025A5 /* Multipart.swift */,
 			);
 			path = DenverAPI;
 			sourceTree = "<group>";
@@ -311,6 +317,7 @@
 				7B17CDDC9FDDFE086D5FEBDC /* DenverDTOsTests.swift in Sources */,
 				B5D60BE663106F917F140215 /* DenverEndpointsTests.swift in Sources */,
 				CFB4A3E0C4276F717D50F123 /* EnumsTests.swift in Sources */,
+				B096F307A3D64E9C32DD6A2E /* MultipartTests.swift in Sources */,
 				805F165A822179BA313C8167 /* VehicleDetectorSmokeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,6 +339,7 @@
 				02F44A9F65938520083CC58E /* DenverDTOs.swift in Sources */,
 				74D0421ECAD240320E04371B /* DenverEndpoints.swift in Sources */,
 				3D841E42099DCB310EAAFB63 /* Enums.swift in Sources */,
+				5B5E0B3A610C1EBEF1D57070 /* Multipart.swift in Sources */,
 				CE2F6130D24052B69479A2D8 /* ReportDraft.swift in Sources */,
 				EA3350D6C81D211DB3C59781 /* StoredCase.swift in Sources */,
 				FBEB25E71D9950B2963D41EA /* YOLOv11nCar.mlpackage in Sources */,
