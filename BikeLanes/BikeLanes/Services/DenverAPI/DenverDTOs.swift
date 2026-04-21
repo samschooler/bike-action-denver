@@ -131,3 +131,15 @@ struct CreateCaseResponse: Decodable {
     let sentStatus: String
     let attempts: Int
 }
+
+// MARK: Anonymous contact helper
+
+extension CreateCaseRequest.Contact {
+    /// Default anonymous contact shape. Empty strings for name/email; phone nil.
+    /// ⚠️ Unverified — will be finalized by LiveAPIIntegrationTests.testAnonymousContactShape_probe.
+    /// If Denver rejects this shape, update here after the probe identifies the accepted variant.
+    static var anonymous: CreateCaseRequest.Contact {
+        .init(anonymous: true, languagePreference: "en",
+              firstName: "", lastName: "", email: "", phone: nil)
+    }
+}
