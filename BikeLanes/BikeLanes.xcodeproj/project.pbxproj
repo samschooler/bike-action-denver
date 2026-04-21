@@ -10,9 +10,11 @@
 		02F44A9F65938520083CC58E /* DenverDTOs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC9300C2575B21C33829EEE /* DenverDTOs.swift */; };
 		1968757C66AA9F51EC19429C /* DenverAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7165AB387F3447E6C6D25E32 /* DenverAPIClient.swift */; };
 		1D6C2E2CFC738A1962BDF7CE /* ExifService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D0E5C442C5F7FB0A27799A /* ExifService.swift */; };
+		1F27D3117D6A36D5E2F7E374 /* AddressNormalizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4D17644029DF1E2491E29A /* AddressNormalizer.swift */; };
 		2B254B7AE01EDBDA2BFA88C7 /* BikeLanesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920CC557048BFE0057AE61C5 /* BikeLanesApp.swift */; };
 		3C1E268538256A547A2A07CC /* BikeLanesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9FEAAF1023FF6ED074F712 /* BikeLanesTests.swift */; };
 		3D841E42099DCB310EAAFB63 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EEBB039EB64EF8537C9187 /* Enums.swift */; };
+		4D883DCC87AB7388635D9E37 /* AddressNormalizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E39AB08C337CFB023B23A6 /* AddressNormalizerTests.swift */; };
 		52BEF65225C7614EBB679F99 /* DenverAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D970997DCC2E57329DBE23 /* DenverAddress.swift */; };
 		5B5E0B3A610C1EBEF1D57070 /* Multipart.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35FEAFC973ECCDCC38025A5 /* Multipart.swift */; };
 		74D0421ECAD240320E04371B /* DenverEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0179735DE1E80F82434B4602 /* DenverEndpoints.swift */; };
@@ -56,6 +58,7 @@
 		372AC6D55D6D2F10D7256A1C /* ExifServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExifServiceTests.swift; sourceTree = "<group>"; };
 		4178B79218D6A4B7E410428B /* LiveAPIIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveAPIIntegrationTests.swift; sourceTree = "<group>"; };
 		42D970997DCC2E57329DBE23 /* DenverAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DenverAddress.swift; sourceTree = "<group>"; };
+		4E4D17644029DF1E2491E29A /* AddressNormalizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressNormalizer.swift; sourceTree = "<group>"; };
 		5453164CF19C9675497614FE /* DenverAPIClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DenverAPIClientTests.swift; sourceTree = "<group>"; };
 		58C5287D058BEB946D7A3E8A /* BikeLanesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeLanesUITests.swift; sourceTree = "<group>"; };
 		64CD891CA224757AA0BF6038 /* IMG_3239.HEIC */ = {isa = PBXFileReference; path = IMG_3239.HEIC; sourceTree = "<group>"; };
@@ -70,6 +73,7 @@
 		ABBF0680664CB0F00F423219 /* DenverDTOsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DenverDTOsTests.swift; sourceTree = "<group>"; };
 		C3EA987F1D6644BB273D5D57 /* NoGPS.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = NoGPS.jpg; sourceTree = "<group>"; };
 		C653C1DC180D08491DEF7CCC /* YOLOv11nCar.mlpackage */ = {isa = PBXFileReference; path = YOLOv11nCar.mlpackage; sourceTree = "<group>"; };
+		C6E39AB08C337CFB023B23A6 /* AddressNormalizerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressNormalizerTests.swift; sourceTree = "<group>"; };
 		CA9FEAAF1023FF6ED074F712 /* BikeLanesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeLanesTests.swift; sourceTree = "<group>"; };
 		CC3F0EA9E26D8EC678F5CDCD /* ReportDraft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDraft.swift; sourceTree = "<group>"; };
 		DB5DDB44E39405EA89B9249D /* BikeLanesTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = BikeLanesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -175,6 +179,7 @@
 		D93AAAF7A1F0E06B5BAE4A15 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				4E4D17644029DF1E2491E29A /* AddressNormalizer.swift */,
 				E7D0E5C442C5F7FB0A27799A /* ExifService.swift */,
 				E84FF1CB3880A2FB1BCC0571 /* DenverAPI */,
 			);
@@ -184,6 +189,7 @@
 		E2AF0BCFB35BDB6B729DFA5A /* BikeLanesTests */ = {
 			isa = PBXGroup;
 			children = (
+				C6E39AB08C337CFB023B23A6 /* AddressNormalizerTests.swift */,
 				CA9FEAAF1023FF6ED074F712 /* BikeLanesTests.swift */,
 				5453164CF19C9675497614FE /* DenverAPIClientTests.swift */,
 				ABBF0680664CB0F00F423219 /* DenverDTOsTests.swift */,
@@ -328,6 +334,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D883DCC87AB7388635D9E37 /* AddressNormalizerTests.swift in Sources */,
 				3C1E268538256A547A2A07CC /* BikeLanesTests.swift in Sources */,
 				AD9FF671C76154D53B5B1E91 /* DenverAPIClientTests.swift in Sources */,
 				7B17CDDC9FDDFE086D5FEBDC /* DenverDTOsTests.swift in Sources */,
@@ -352,6 +359,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F27D3117D6A36D5E2F7E374 /* AddressNormalizer.swift in Sources */,
 				2B254B7AE01EDBDA2BFA88C7 /* BikeLanesApp.swift in Sources */,
 				1968757C66AA9F51EC19429C /* DenverAPIClient.swift in Sources */,
 				52BEF65225C7614EBB679F99 /* DenverAddress.swift in Sources */,
