@@ -5,8 +5,23 @@ struct FieldRow<Leading: View>: View {
     let label: String
     let value: String?
     let caption: String?
+    let missing: Bool
     let onEdit: () -> Void
     let leading: () -> Leading
+
+    init(label: String,
+         value: String?,
+         caption: String?,
+         missing: Bool = false,
+         onEdit: @escaping () -> Void,
+         @ViewBuilder leading: @escaping () -> Leading) {
+        self.label = label
+        self.value = value
+        self.caption = caption
+        self.missing = missing
+        self.onEdit = onEdit
+        self.leading = leading
+    }
 
     var body: some View {
         HStack(spacing: 14) {
@@ -21,9 +36,7 @@ struct FieldRow<Leading: View>: View {
                     .kerning(0.88)
                     .foregroundStyle(Color(red: 138/255, green: 135/255, blue: 118/255))
 
-                Text(value ?? "Tap to add")
-                    .font(.system(size: 15, weight: .medium))
-                    .foregroundStyle(value == nil ? .secondary : .primary)
+                valueText
 
                 if let caption {
                     Text(caption)
@@ -42,5 +55,18 @@ struct FieldRow<Leading: View>: View {
         .padding(.vertical, 14)
         .contentShape(Rectangle())
         .onTapGesture(perform: onEdit)
+    }
+
+    @ViewBuilder
+    private var valueText: some View {
+        if missing {
+            Text(value ?? "Tap to add")
+                .font(.system(size: 15, weight: .medium).italic())
+                .foregroundStyle(Color(red: 179/255, green: 58/255, blue: 58/255))
+        } else {
+            Text(value ?? "Tap to add")
+                .font(.system(size: 15, weight: .medium))
+                .foregroundStyle(value == nil ? .secondary : .primary)
+        }
     }
 }

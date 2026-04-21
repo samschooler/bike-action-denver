@@ -36,10 +36,31 @@ struct ReportView: View {
                     onRetake: { showingPicker = true })
                 .padding(.horizontal, 20)
 
+                if vm.draft.photoURL != nil && vm.draft.coordinates == nil {
+                    Button(action: { editing = .address }) {
+                        HStack(spacing: 10) {
+                            Image(systemName: "exclamationmark.triangle.fill")
+                                .foregroundStyle(Color(red: 179/255, green: 58/255, blue: 58/255))
+                            VStack(alignment: .leading, spacing: 2) {
+                                Text("No location in photo").font(.system(size: 13, weight: .semibold))
+                                Text("Tap to add an address")
+                                    .font(.system(size: 12)).foregroundStyle(.secondary)
+                            }
+                            Spacer()
+                        }
+                        .padding(.horizontal, 14).padding(.vertical, 12)
+                        .background(Color(red: 253/255, green: 237/255, blue: 233/255))
+                        .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+                    }
+                    .buttonStyle(.plain)
+                    .padding(.horizontal, 20)
+                }
+
                 VStack(spacing: 0) {
                     FieldRow(label: "Where",
                              value: vm.draft.resolvedAddress?.line1,
                              caption: locationCaption,
+                             missing: vm.draft.resolvedAddress == nil,
                              onEdit: { editing = .address }) {
                         Text("📍").font(.system(size: 16))
                     }
@@ -47,6 +68,7 @@ struct ReportView: View {
                     FieldRow(label: "Plate",
                              value: plateValue,
                              caption: vm.draft.plate.map { _ in "Read from photo" },
+                             missing: vm.draft.plate?.isEmpty != false,
                              onEdit: { editing = .plate }) {
                         Text(vm.draft.plateState?.code ?? "??")
                             .font(.system(size: 11, weight: .bold))
@@ -55,6 +77,10 @@ struct ReportView: View {
                     FieldRow(label: "Vehicle",
                              value: vehicleValue,
                              caption: vehicleCaption,
+                             missing: vm.draft.vehicleType == nil
+                                   || vm.draft.vehicleColor == nil
+                                   || vm.draft.locationOfVehicle == nil
+                                   || vm.draft.blockingDriveway == nil,
                              onEdit: { editing = .vehicle }) {
                         Circle().fill(colorCategory(vm.draft.vehicleColor))
                             .frame(width: 22, height: 22)
@@ -63,6 +89,7 @@ struct ReportView: View {
                     FieldRow(label: "Observed",
                              value: vm.draft.observedAt.map { relativeDate($0) },
                              caption: vm.draft.observedAt.map { _ in "From photo timestamp" },
+                             missing: vm.draft.observedAt == nil,
                              onEdit: { editing = .dateTime }) {
                         Text("🕒").font(.system(size: 16))
                     }
@@ -70,6 +97,7 @@ struct ReportView: View {
                     FieldRow(label: "Notes · optional",
                              value: vm.draft.notes,
                              caption: nil,
+                             missing: false,
                              onEdit: { editing = .notes }) {
                         Text("＋").font(.system(size: 18)).foregroundStyle(.secondary)
                     }
