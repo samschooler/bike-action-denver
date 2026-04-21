@@ -10,6 +10,7 @@
 		2B254B7AE01EDBDA2BFA88C7 /* BikeLanesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920CC557048BFE0057AE61C5 /* BikeLanesApp.swift */; };
 		3C1E268538256A547A2A07CC /* BikeLanesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9FEAAF1023FF6ED074F712 /* BikeLanesTests.swift */; };
 		3D841E42099DCB310EAAFB63 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EEBB039EB64EF8537C9187 /* Enums.swift */; };
+		52BEF65225C7614EBB679F99 /* DenverAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D970997DCC2E57329DBE23 /* DenverAddress.swift */; };
 		805F165A822179BA313C8167 /* VehicleDetectorSmokeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC5AD994C48FC6CA3BD17D /* VehicleDetectorSmokeTests.swift */; };
 		AAE480938978FA6A577AB4EC /* IMG_3239.HEIC in Resources */ = {isa = PBXBuildFile; fileRef = 64CD891CA224757AA0BF6038 /* IMG_3239.HEIC */; };
 		BC86972CA78ECCD29DC5762A /* NoGPS.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C3EA987F1D6644BB273D5D57 /* NoGPS.jpg */; };
@@ -38,6 +39,7 @@
 /* Begin PBXFileReference section */
 		221927E0F3698AF42FD56436 /* BikeLanesUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = BikeLanesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F93AAA295AACCA0D7D70904 /* BikeLanes.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = BikeLanes.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		42D970997DCC2E57329DBE23 /* DenverAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DenverAddress.swift; sourceTree = "<group>"; };
 		58C5287D058BEB946D7A3E8A /* BikeLanesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeLanesUITests.swift; sourceTree = "<group>"; };
 		64CD891CA224757AA0BF6038 /* IMG_3239.HEIC */ = {isa = PBXFileReference; path = IMG_3239.HEIC; sourceTree = "<group>"; };
 		88EEBB039EB64EF8537C9187 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 		C014F7EF30463CA1D5B98138 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				42D970997DCC2E57329DBE23 /* DenverAddress.swift */,
 				88EEBB039EB64EF8537C9187 /* Enums.swift */,
 			);
 			path = Models;
@@ -297,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B254B7AE01EDBDA2BFA88C7 /* BikeLanesApp.swift in Sources */,
+				52BEF65225C7614EBB679F99 /* DenverAddress.swift in Sources */,
 				3D841E42099DCB310EAAFB63 /* Enums.swift in Sources */,
 				FBEB25E71D9950B2963D41EA /* YOLOv11nCar.mlpackage in Sources */,
 			);
