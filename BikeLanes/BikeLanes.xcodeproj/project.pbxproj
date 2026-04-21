@@ -16,6 +16,7 @@
 		BC86972CA78ECCD29DC5762A /* NoGPS.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C3EA987F1D6644BB273D5D57 /* NoGPS.jpg */; };
 		CE2F6130D24052B69479A2D8 /* ReportDraft.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3F0EA9E26D8EC678F5CDCD /* ReportDraft.swift */; };
 		CFB4A3E0C4276F717D50F123 /* EnumsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D5DB350F54D44D856B5005 /* EnumsTests.swift */; };
+		EA3350D6C81D211DB3C59781 /* StoredCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7490EA148B766AAE39BCA1D9 /* StoredCase.swift */; };
 		EFECC5FD1FA6102B87CA9B99 /* BikeLanesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C5287D058BEB946D7A3E8A /* BikeLanesUITests.swift */; };
 		FBEB25E71D9950B2963D41EA /* YOLOv11nCar.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = C653C1DC180D08491DEF7CCC /* YOLOv11nCar.mlpackage */; };
 /* End PBXBuildFile section */
@@ -43,6 +44,7 @@
 		42D970997DCC2E57329DBE23 /* DenverAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DenverAddress.swift; sourceTree = "<group>"; };
 		58C5287D058BEB946D7A3E8A /* BikeLanesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeLanesUITests.swift; sourceTree = "<group>"; };
 		64CD891CA224757AA0BF6038 /* IMG_3239.HEIC */ = {isa = PBXFileReference; path = IMG_3239.HEIC; sourceTree = "<group>"; };
+		7490EA148B766AAE39BCA1D9 /* StoredCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredCase.swift; sourceTree = "<group>"; };
 		88EEBB039EB64EF8537C9187 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		920CC557048BFE0057AE61C5 /* BikeLanesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeLanesApp.swift; sourceTree = "<group>"; };
 		9C69D46D38EA2E0858C25DC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				42D970997DCC2E57329DBE23 /* DenverAddress.swift */,
 				88EEBB039EB64EF8537C9187 /* Enums.swift */,
 				CC3F0EA9E26D8EC678F5CDCD /* ReportDraft.swift */,
+				7490EA148B766AAE39BCA1D9 /* StoredCase.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 				52BEF65225C7614EBB679F99 /* DenverAddress.swift in Sources */,
 				3D841E42099DCB310EAAFB63 /* Enums.swift in Sources */,
 				CE2F6130D24052B69479A2D8 /* ReportDraft.swift in Sources */,
+				EA3350D6C81D211DB3C59781 /* StoredCase.swift in Sources */,
 				FBEB25E71D9950B2963D41EA /* YOLOv11nCar.mlpackage in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
