@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0117799DE835548B99248664 /* EditDateTimeSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35E72F4CEACA026904625C9 /* EditDateTimeSheet.swift */; };
+		028161EF040C607BDDCC2F24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A931505D9D69FF612727491E /* Assets.xcassets */; };
 		02F44A9F65938520083CC58E /* DenverDTOs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC9300C2575B21C33829EEE /* DenverDTOs.swift */; };
 		084F45ED75AFE1872FB9924F /* EditNotesSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7440DC6392F1F9F4A17BBB64 /* EditNotesSheet.swift */; };
 		1968757C66AA9F51EC19429C /* DenverAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7165AB387F3447E6C6D25E32 /* DenverAPIClient.swift */; };
@@ -120,6 +121,7 @@
 		A3D5DB350F54D44D856B5005 /* EnumsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumsTests.swift; sourceTree = "<group>"; };
 		A6E0BE2D53956757A9804BDB /* ImageCropper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCropper.swift; sourceTree = "<group>"; };
 		A763C6F28BCEA83567473783 /* ReportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewModel.swift; sourceTree = "<group>"; };
+		A931505D9D69FF612727491E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ABBF0680664CB0F00F423219 /* DenverDTOsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DenverDTOsTests.swift; sourceTree = "<group>"; };
 		B1798B5B71628F90DA91C795 /* CaseRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseRepositoryTests.swift; sourceTree = "<group>"; };
 		BBBDA819981425504D786900 /* EditAddressSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAddressSheet.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 		6B873526F8F5CF7DBE4794D6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A931505D9D69FF612727491E /* Assets.xcassets */,
 				C0497B7BFE0C6E567D1C62B6 /* MLModels */,
 			);
 			path = Resources;
@@ -385,6 +388,7 @@
 			buildConfigurationList = 496767054A98BA6EEF2C30D6 /* Build configuration list for PBXNativeTarget "BikeLanes" */;
 			buildPhases = (
 				93283FF25F3372D9E06A14FF /* Sources */,
+				ABD4BB11451D3364C2981D7F /* Resources */,
 			);
 			buildRules = (
 			);
@@ -443,6 +447,14 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		ABD4BB11451D3364C2981D7F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				028161EF040C607BDDCC2F24 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D5097C2B707CB0A1606948A6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
