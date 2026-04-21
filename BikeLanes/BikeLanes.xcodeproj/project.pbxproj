@@ -16,9 +16,11 @@
 		3D841E42099DCB310EAAFB63 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EEBB039EB64EF8537C9187 /* Enums.swift */; };
 		47162AF3E1A4BD573A6F9B21 /* GeocodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFE76492BB1B86867E7B95D /* GeocodeService.swift */; };
 		4D883DCC87AB7388635D9E37 /* AddressNormalizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E39AB08C337CFB023B23A6 /* AddressNormalizerTests.swift */; };
+		4F5B33CF1F02DC4A4C0E1C7D /* VehicleDetectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD95F78A0171E31B56E3025A /* VehicleDetectorTests.swift */; };
 		52BEF65225C7614EBB679F99 /* DenverAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D970997DCC2E57329DBE23 /* DenverAddress.swift */; };
 		5B5E0B3A610C1EBEF1D57070 /* Multipart.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35FEAFC973ECCDCC38025A5 /* Multipart.swift */; };
 		60EC0767F26389AF70684300 /* GeocodeServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829CEA62FED53C9191F08150 /* GeocodeServiceTests.swift */; };
+		685D5A6047B7906079BBE3BA /* VehicleDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B2647E77E06DBD5E4A4A24 /* VehicleDetector.swift */; };
 		74D0421ECAD240320E04371B /* DenverEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0179735DE1E80F82434B4602 /* DenverEndpoints.swift */; };
 		7B17CDDC9FDDFE086D5FEBDC /* DenverDTOsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBF0680664CB0F00F423219 /* DenverDTOsTests.swift */; };
 		7B7723517BBDBC70B6D49433 /* LiveAPIIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4178B79218D6A4B7E410428B /* LiveAPIIntegrationTests.swift */; };
@@ -31,6 +33,7 @@
 		BC86972CA78ECCD29DC5762A /* NoGPS.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C3EA987F1D6644BB273D5D57 /* NoGPS.jpg */; };
 		CE2F6130D24052B69479A2D8 /* ReportDraft.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3F0EA9E26D8EC678F5CDCD /* ReportDraft.swift */; };
 		CFB4A3E0C4276F717D50F123 /* EnumsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D5DB350F54D44D856B5005 /* EnumsTests.swift */; };
+		DC452A7C60883F57A098DA0A /* IMG_3239_car.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CEB0E3A586EC1D061EC5EF0C /* IMG_3239_car.jpg */; };
 		EA3350D6C81D211DB3C59781 /* StoredCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7490EA148B766AAE39BCA1D9 /* StoredCase.swift */; };
 		EFECC5FD1FA6102B87CA9B99 /* BikeLanesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C5287D058BEB946D7A3E8A /* BikeLanesUITests.swift */; };
 		FBEB25E71D9950B2963D41EA /* YOLOv11nCar.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = C653C1DC180D08491DEF7CCC /* YOLOv11nCar.mlpackage */; };
@@ -75,11 +78,14 @@
 		9C69D46D38EA2E0858C25DC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A3D5DB350F54D44D856B5005 /* EnumsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumsTests.swift; sourceTree = "<group>"; };
 		ABBF0680664CB0F00F423219 /* DenverDTOsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DenverDTOsTests.swift; sourceTree = "<group>"; };
+		BD95F78A0171E31B56E3025A /* VehicleDetectorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetectorTests.swift; sourceTree = "<group>"; };
+		C1B2647E77E06DBD5E4A4A24 /* VehicleDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetector.swift; sourceTree = "<group>"; };
 		C3EA987F1D6644BB273D5D57 /* NoGPS.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = NoGPS.jpg; sourceTree = "<group>"; };
 		C653C1DC180D08491DEF7CCC /* YOLOv11nCar.mlpackage */ = {isa = PBXFileReference; path = YOLOv11nCar.mlpackage; sourceTree = "<group>"; };
 		C6E39AB08C337CFB023B23A6 /* AddressNormalizerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressNormalizerTests.swift; sourceTree = "<group>"; };
 		CA9FEAAF1023FF6ED074F712 /* BikeLanesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeLanesTests.swift; sourceTree = "<group>"; };
 		CC3F0EA9E26D8EC678F5CDCD /* ReportDraft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDraft.swift; sourceTree = "<group>"; };
+		CEB0E3A586EC1D061EC5EF0C /* IMG_3239_car.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_3239_car.jpg; sourceTree = "<group>"; };
 		DB5DDB44E39405EA89B9249D /* BikeLanesTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = BikeLanesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E35FEAFC973ECCDCC38025A5 /* Multipart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Multipart.swift; sourceTree = "<group>"; };
 		E7D0E5C442C5F7FB0A27799A /* ExifService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExifService.swift; sourceTree = "<group>"; };
@@ -167,6 +173,7 @@
 		D5DB19731EE758B86F591704 /* Fixtures */ = {
 			isa = PBXGroup;
 			children = (
+				CEB0E3A586EC1D061EC5EF0C /* IMG_3239_car.jpg */,
 				64CD891CA224757AA0BF6038 /* IMG_3239.HEIC */,
 				C3EA987F1D6644BB273D5D57 /* NoGPS.jpg */,
 			);
@@ -186,6 +193,7 @@
 				4E4D17644029DF1E2491E29A /* AddressNormalizer.swift */,
 				E7D0E5C442C5F7FB0A27799A /* ExifService.swift */,
 				0CFE76492BB1B86867E7B95D /* GeocodeService.swift */,
+				C1B2647E77E06DBD5E4A4A24 /* VehicleDetector.swift */,
 				E84FF1CB3880A2FB1BCC0571 /* DenverAPI */,
 			);
 			path = Services;
@@ -205,6 +213,7 @@
 				4178B79218D6A4B7E410428B /* LiveAPIIntegrationTests.swift */,
 				84EBD707D6DEDEE5421668B1 /* MultipartTests.swift */,
 				F4FC5AD994C48FC6CA3BD17D /* VehicleDetectorSmokeTests.swift */,
+				BD95F78A0171E31B56E3025A /* VehicleDetectorTests.swift */,
 				D5DB19731EE758B86F591704 /* Fixtures */,
 			);
 			path = BikeLanesTests;
@@ -329,6 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAE480938978FA6A577AB4EC /* IMG_3239.HEIC in Resources */,
+				DC452A7C60883F57A098DA0A /* IMG_3239_car.jpg in Resources */,
 				BC86972CA78ECCD29DC5762A /* NoGPS.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -351,6 +361,7 @@
 				7B7723517BBDBC70B6D49433 /* LiveAPIIntegrationTests.swift in Sources */,
 				B096F307A3D64E9C32DD6A2E /* MultipartTests.swift in Sources */,
 				805F165A822179BA313C8167 /* VehicleDetectorSmokeTests.swift in Sources */,
+				4F5B33CF1F02DC4A4C0E1C7D /* VehicleDetectorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,6 +389,7 @@
 				5B5E0B3A610C1EBEF1D57070 /* Multipart.swift in Sources */,
 				CE2F6130D24052B69479A2D8 /* ReportDraft.swift in Sources */,
 				EA3350D6C81D211DB3C59781 /* StoredCase.swift in Sources */,
+				685D5A6047B7906079BBE3BA /* VehicleDetector.swift in Sources */,
 				FBEB25E71D9950B2963D41EA /* YOLOv11nCar.mlpackage in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
