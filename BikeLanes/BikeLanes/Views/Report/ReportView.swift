@@ -21,7 +21,7 @@ struct ReportView: View {
                     Text("Report")
                         .font(.custom("Fraunces", size: 28).weight(.medium))
                     Spacer()
-                    NavigationLink(destination: Text("Settings (wiring in Task 27)")) {
+                    NavigationLink(destination: SettingsView(repo: CaseRepository(container: AppContainers.shared.container))) {
                         Circle().fill(Color(red: 240/255, green: 237/255, blue: 226/255))
                             .frame(width: 36, height: 36)
                             .overlay(Image(systemName: "gearshape").foregroundStyle(.secondary))

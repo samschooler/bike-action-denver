@@ -43,6 +43,7 @@
 		AAE480938978FA6A577AB4EC /* IMG_3239.HEIC in Resources */ = {isa = PBXBuildFile; fileRef = 64CD891CA224757AA0BF6038 /* IMG_3239.HEIC */; };
 		AD9FF671C76154D53B5B1E91 /* DenverAPIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5453164CF19C9675497614FE /* DenverAPIClientTests.swift */; };
 		B096F307A3D64E9C32DD6A2E /* MultipartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EBD707D6DEDEE5421668B1 /* MultipartTests.swift */; };
+		B26A4D40469F15C4B27B1A1B /* AppContainers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4232091B444C209D0513499D /* AppContainers.swift */; };
 		B34DE05E7BD6926B5720D6C7 /* ReportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A763C6F28BCEA83567473783 /* ReportViewModel.swift */; };
 		B5D60BE663106F917F140215 /* DenverEndpointsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99103EEFD3BD6E7721B94614 /* DenverEndpointsTests.swift */; };
 		BC86972CA78ECCD29DC5762A /* NoGPS.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C3EA987F1D6644BB273D5D57 /* NoGPS.jpg */; };
@@ -89,6 +90,7 @@
 		34F2CA5EE8167E5E86036AC0 /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
 		372AC6D55D6D2F10D7256A1C /* ExifServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExifServiceTests.swift; sourceTree = "<group>"; };
 		4178B79218D6A4B7E410428B /* LiveAPIIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveAPIIntegrationTests.swift; sourceTree = "<group>"; };
+		4232091B444C209D0513499D /* AppContainers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainers.swift; sourceTree = "<group>"; };
 		42D970997DCC2E57329DBE23 /* DenverAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DenverAddress.swift; sourceTree = "<group>"; };
 		4E4D17644029DF1E2491E29A /* AddressNormalizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressNormalizer.swift; sourceTree = "<group>"; };
 		528479C328B70CA11ADE38C4 /* PlateOCRServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateOCRServiceTests.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 		1A61B580F74C3F09563C7D13 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				4232091B444C209D0513499D /* AppContainers.swift */,
 				920CC557048BFE0057AE61C5 /* BikeLanesApp.swift */,
 				9C69D46D38EA2E0858C25DC7 /* Info.plist */,
 			);
@@ -483,6 +486,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F27D3117D6A36D5E2F7E374 /* AddressNormalizer.swift in Sources */,
+				B26A4D40469F15C4B27B1A1B /* AppContainers.swift in Sources */,
 				2B254B7AE01EDBDA2BFA88C7 /* BikeLanesApp.swift in Sources */,
 				546E81BD4E40425808551B7C /* CaseDetailView.swift in Sources */,
 				427CE50E7EB4031650B91CCF /* CaseRepository.swift in Sources */,
