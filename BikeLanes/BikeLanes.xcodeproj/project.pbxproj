@@ -30,6 +30,7 @@
 		7B7723517BBDBC70B6D49433 /* LiveAPIIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4178B79218D6A4B7E410428B /* LiveAPIIntegrationTests.swift */; };
 		805F165A822179BA313C8167 /* VehicleDetectorSmokeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC5AD994C48FC6CA3BD17D /* VehicleDetectorSmokeTests.swift */; };
 		80D331F83758E3F62A6DFCA7 /* ExifServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372AC6D55D6D2F10D7256A1C /* ExifServiceTests.swift */; };
+		80ECF7E6BCF16A007EF40B59 /* SubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD648D161B7FFB9C377EA3BE /* SubmitButton.swift */; };
 		87D432893FC685AE2551E113 /* ImageCropper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E0BE2D53956757A9804BDB /* ImageCropper.swift */; };
 		9DC710898C28F568E9453281 /* PhotoCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDB8EF9E782F0B105105A63 /* PhotoCard.swift */; };
 		AAE480938978FA6A577AB4EC /* IMG_3239.HEIC in Resources */ = {isa = PBXBuildFile; fileRef = 64CD891CA224757AA0BF6038 /* IMG_3239.HEIC */; };
@@ -105,6 +106,7 @@
 		CC3F0EA9E26D8EC678F5CDCD /* ReportDraft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDraft.swift; sourceTree = "<group>"; };
 		CEB0E3A586EC1D061EC5EF0C /* IMG_3239_car.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_3239_car.jpg; sourceTree = "<group>"; };
 		DB5DDB44E39405EA89B9249D /* BikeLanesTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = BikeLanesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD648D161B7FFB9C377EA3BE /* SubmitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitButton.swift; sourceTree = "<group>"; };
 		E35FEAFC973ECCDCC38025A5 /* Multipart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Multipart.swift; sourceTree = "<group>"; };
 		E7C35775453E2DB7B788519E /* ReportViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewModelTests.swift; sourceTree = "<group>"; };
 		E7D0E5C442C5F7FB0A27799A /* ExifService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExifService.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 			children = (
 				E7E31983BFFE82BFE8A0048F /* FieldRow.swift */,
 				7EDB8EF9E782F0B105105A63 /* PhotoCard.swift */,
+				DD648D161B7FFB9C377EA3BE /* SubmitButton.swift */,
 			);
 			path = Report;
 			sourceTree = "<group>";
@@ -449,6 +452,7 @@
 				CE2F6130D24052B69479A2D8 /* ReportDraft.swift in Sources */,
 				B34DE05E7BD6926B5720D6C7 /* ReportViewModel.swift in Sources */,
 				EA3350D6C81D211DB3C59781 /* StoredCase.swift in Sources */,
+				80ECF7E6BCF16A007EF40B59 /* SubmitButton.swift in Sources */,
 				685D5A6047B7906079BBE3BA /* VehicleDetector.swift in Sources */,
 				FBEB25E71D9950B2963D41EA /* YOLOv11nCar.mlpackage in Sources */,
 			);
