@@ -7,6 +7,7 @@ struct ReportView: View {
     @State private var pickerItem: PhotosPickerItem?
     @State private var showingPicker = false
     @State private var editing: EditTarget?
+    @State private var showingSuccess = false
     private let backgroundColor = Color(red: 250/255, green: 250/255, blue: 247/255)
 
     enum EditTarget: Identifiable {
@@ -106,8 +107,18 @@ struct ReportView: View {
                 .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
                 .padding(.horizontal, 20)
 
-                SubmitButton(enabled: vm.draft.isSubmittable && !vm.isSubmitting) {
-                    Task { try? await vm.submit() }
+                SubmitButton(enabled: vm.draft.isSubmittable && !vm.isSubmitting,
+                             isLoading: vm.isSubmitting) {
+                    Task {
+                        do {
+                            try await vm.submit()
+                            if vm.lastSavedCase != nil {
+                                showingSuccess = true
+                            }
+                        } catch {
+                            // surfaced via vm.lastError
+                        }
+                    }
                 }
                 .padding(.horizontal, 20)
                 .padding(.top, 8)
@@ -127,6 +138,14 @@ struct ReportView: View {
             case .address: EditAddressSheet(draft: $vm.draft)
             case .dateTime: EditDateTimeSheet(draft: $vm.draft)
             case .notes:   EditNotesSheet(draft: $vm.draft)
+            }
+        }
+        .fullScreenCover(isPresented: $showingSuccess) {
+            if let saved = vm.lastSavedCase {
+                SubmissionResultView(storedCase: saved, onDone: {
+                    showingSuccess = false
+                    vm.draft = .init()
+                })
             }
         }
         .task {

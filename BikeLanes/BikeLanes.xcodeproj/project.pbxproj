@@ -19,6 +19,7 @@
 		3C1E268538256A547A2A07CC /* BikeLanesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9FEAAF1023FF6ED074F712 /* BikeLanesTests.swift */; };
 		3D841E42099DCB310EAAFB63 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EEBB039EB64EF8537C9187 /* Enums.swift */; };
 		427CE50E7EB4031650B91CCF /* CaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFC78EB262FF8BACBD4F28E /* CaseRepository.swift */; };
+		42D08F9872F4023D44A687FC /* SubmissionResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213F814BEF6163A43D0EEE20 /* SubmissionResultView.swift */; };
 		47162AF3E1A4BD573A6F9B21 /* GeocodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFE76492BB1B86867E7B95D /* GeocodeService.swift */; };
 		4D883DCC87AB7388635D9E37 /* AddressNormalizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E39AB08C337CFB023B23A6 /* AddressNormalizerTests.swift */; };
 		4F5B33CF1F02DC4A4C0E1C7D /* VehicleDetectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD95F78A0171E31B56E3025A /* VehicleDetectorTests.swift */; };
@@ -84,6 +85,7 @@
 		0179735DE1E80F82434B4602 /* DenverEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DenverEndpoints.swift; sourceTree = "<group>"; };
 		0AFC78EB262FF8BACBD4F28E /* CaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseRepository.swift; sourceTree = "<group>"; };
 		0CFE76492BB1B86867E7B95D /* GeocodeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodeService.swift; sourceTree = "<group>"; };
+		213F814BEF6163A43D0EEE20 /* SubmissionResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmissionResultView.swift; sourceTree = "<group>"; };
 		221927E0F3698AF42FD56436 /* BikeLanesUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = BikeLanesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F93AAA295AACCA0D7D70904 /* BikeLanes.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = BikeLanes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FAA3B9B2EB83E1274C5DEE5 /* HistoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRow.swift; sourceTree = "<group>"; };
@@ -276,6 +278,7 @@
 			children = (
 				916988F530A9478DAE329550 /* CaseDetailView.swift */,
 				7D3CC9E8CF0768BD75B7B5CC /* SettingsView.swift */,
+				213F814BEF6163A43D0EEE20 /* SubmissionResultView.swift */,
 				9F6943E5C16E538EC4177ABB /* Edit */,
 				3038C33F46F8C88D4B50CB1B /* History */,
 				A73C7435E2CC8DA4F06A9205 /* Report */,
@@ -516,6 +519,7 @@
 				B34DE05E7BD6926B5720D6C7 /* ReportViewModel.swift in Sources */,
 				22011AFB60C7C3668FD5CEAF /* SettingsView.swift in Sources */,
 				EA3350D6C81D211DB3C59781 /* StoredCase.swift in Sources */,
+				42D08F9872F4023D44A687FC /* SubmissionResultView.swift in Sources */,
 				80ECF7E6BCF16A007EF40B59 /* SubmitButton.swift in Sources */,
 				685D5A6047B7906079BBE3BA /* VehicleDetector.swift in Sources */,
 				FBEB25E71D9950B2963D41EA /* YOLOv11nCar.mlpackage in Sources */,

@@ -3,6 +3,7 @@ import SwiftUI
 
 struct SubmitButton: View {
     let enabled: Bool
+    let isLoading: Bool
     let action: () -> Void
 
     var body: some View {
@@ -11,7 +12,13 @@ struct SubmitButton: View {
                 HStack {
                     Text("Submit to Denver")
                         .font(.system(size: 16, weight: .semibold))
-                    Text("→").foregroundStyle(.white.opacity(0.75))
+                    if isLoading {
+                        ProgressView()
+                            .progressViewStyle(.circular)
+                            .tint(.white)
+                    } else {
+                        Text("→").foregroundStyle(.white.opacity(0.75))
+                    }
                 }
                 .padding(.vertical, 18)
                 .frame(maxWidth: .infinity)
@@ -22,7 +29,7 @@ struct SubmitButton: View {
                 .shadow(color: Color(red: 42/255, green: 111/255, blue: 63/255).opacity(0.25),
                         radius: 14, y: 4)
             }
-            .disabled(!enabled)
+            .disabled(!enabled || isLoading)
 
             Text("Files an anonymous case with Denver 311.\nNo account required.")
                 .multilineTextAlignment(.center)
