@@ -1,0 +1,14 @@
+# HAR captures — may contain plaintext credentials and tokens
+*.har
+
+# macOS
+.DS_Store
+
+# Swift / Xcode (pre-scaffolded)
+.build/
+*.xcuserdata
+DerivedData/
+xcuserdata/
+
+# Python venv used during research
+/tmp/exifvenv/
