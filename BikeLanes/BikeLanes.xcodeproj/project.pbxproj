@@ -18,9 +18,11 @@
 		4D883DCC87AB7388635D9E37 /* AddressNormalizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E39AB08C337CFB023B23A6 /* AddressNormalizerTests.swift */; };
 		4F5B33CF1F02DC4A4C0E1C7D /* VehicleDetectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD95F78A0171E31B56E3025A /* VehicleDetectorTests.swift */; };
 		52BEF65225C7614EBB679F99 /* DenverAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D970997DCC2E57329DBE23 /* DenverAddress.swift */; };
+		59825075DA4AC24BC8BBD9F2 /* PlateOCRServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528479C328B70CA11ADE38C4 /* PlateOCRServiceTests.swift */; };
 		5B5E0B3A610C1EBEF1D57070 /* Multipart.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35FEAFC973ECCDCC38025A5 /* Multipart.swift */; };
 		60EC0767F26389AF70684300 /* GeocodeServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829CEA62FED53C9191F08150 /* GeocodeServiceTests.swift */; };
 		685D5A6047B7906079BBE3BA /* VehicleDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B2647E77E06DBD5E4A4A24 /* VehicleDetector.swift */; };
+		69649F41D440CB93FE121881 /* PlateOCRService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF79F889E18D7C0F4E8F9D3A /* PlateOCRService.swift */; };
 		74D0421ECAD240320E04371B /* DenverEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0179735DE1E80F82434B4602 /* DenverEndpoints.swift */; };
 		7B17CDDC9FDDFE086D5FEBDC /* DenverDTOsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBF0680664CB0F00F423219 /* DenverDTOsTests.swift */; };
 		7B7723517BBDBC70B6D49433 /* LiveAPIIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4178B79218D6A4B7E410428B /* LiveAPIIntegrationTests.swift */; };
@@ -65,6 +67,7 @@
 		4178B79218D6A4B7E410428B /* LiveAPIIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveAPIIntegrationTests.swift; sourceTree = "<group>"; };
 		42D970997DCC2E57329DBE23 /* DenverAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DenverAddress.swift; sourceTree = "<group>"; };
 		4E4D17644029DF1E2491E29A /* AddressNormalizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressNormalizer.swift; sourceTree = "<group>"; };
+		528479C328B70CA11ADE38C4 /* PlateOCRServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateOCRServiceTests.swift; sourceTree = "<group>"; };
 		5453164CF19C9675497614FE /* DenverAPIClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DenverAPIClientTests.swift; sourceTree = "<group>"; };
 		58C5287D058BEB946D7A3E8A /* BikeLanesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeLanesUITests.swift; sourceTree = "<group>"; };
 		64CD891CA224757AA0BF6038 /* IMG_3239.HEIC */ = {isa = PBXFileReference; path = IMG_3239.HEIC; sourceTree = "<group>"; };
@@ -91,6 +94,7 @@
 		E7D0E5C442C5F7FB0A27799A /* ExifService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExifService.swift; sourceTree = "<group>"; };
 		F4FC5AD994C48FC6CA3BD17D /* VehicleDetectorSmokeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetectorSmokeTests.swift; sourceTree = "<group>"; };
 		FCC9300C2575B21C33829EEE /* DenverDTOs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DenverDTOs.swift; sourceTree = "<group>"; };
+		FF79F889E18D7C0F4E8F9D3A /* PlateOCRService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateOCRService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -193,6 +197,7 @@
 				4E4D17644029DF1E2491E29A /* AddressNormalizer.swift */,
 				E7D0E5C442C5F7FB0A27799A /* ExifService.swift */,
 				0CFE76492BB1B86867E7B95D /* GeocodeService.swift */,
+				FF79F889E18D7C0F4E8F9D3A /* PlateOCRService.swift */,
 				C1B2647E77E06DBD5E4A4A24 /* VehicleDetector.swift */,
 				E84FF1CB3880A2FB1BCC0571 /* DenverAPI */,
 			);
@@ -212,6 +217,7 @@
 				829CEA62FED53C9191F08150 /* GeocodeServiceTests.swift */,
 				4178B79218D6A4B7E410428B /* LiveAPIIntegrationTests.swift */,
 				84EBD707D6DEDEE5421668B1 /* MultipartTests.swift */,
+				528479C328B70CA11ADE38C4 /* PlateOCRServiceTests.swift */,
 				F4FC5AD994C48FC6CA3BD17D /* VehicleDetectorSmokeTests.swift */,
 				BD95F78A0171E31B56E3025A /* VehicleDetectorTests.swift */,
 				D5DB19731EE758B86F591704 /* Fixtures */,
@@ -360,6 +366,7 @@
 				60EC0767F26389AF70684300 /* GeocodeServiceTests.swift in Sources */,
 				7B7723517BBDBC70B6D49433 /* LiveAPIIntegrationTests.swift in Sources */,
 				B096F307A3D64E9C32DD6A2E /* MultipartTests.swift in Sources */,
+				59825075DA4AC24BC8BBD9F2 /* PlateOCRServiceTests.swift in Sources */,
 				805F165A822179BA313C8167 /* VehicleDetectorSmokeTests.swift in Sources */,
 				4F5B33CF1F02DC4A4C0E1C7D /* VehicleDetectorTests.swift in Sources */,
 			);
@@ -387,6 +394,7 @@
 				1D6C2E2CFC738A1962BDF7CE /* ExifService.swift in Sources */,
 				47162AF3E1A4BD573A6F9B21 /* GeocodeService.swift in Sources */,
 				5B5E0B3A610C1EBEF1D57070 /* Multipart.swift in Sources */,
+				69649F41D440CB93FE121881 /* PlateOCRService.swift in Sources */,
 				CE2F6130D24052B69479A2D8 /* ReportDraft.swift in Sources */,
 				EA3350D6C81D211DB3C59781 /* StoredCase.swift in Sources */,
 				685D5A6047B7906079BBE3BA /* VehicleDetector.swift in Sources */,
