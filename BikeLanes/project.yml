@@ -63,7 +63,10 @@ targets:
     sources:
       - path: BikeLanesTests
         excludes:
+          - "Fixtures/**"
           - "**/.gitkeep"
+      - path: BikeLanesTests/Fixtures
+        buildPhase: resources
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: ink.sam.bikelanes.tests

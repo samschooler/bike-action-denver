@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2B254B7AE01EDBDA2BFA88C7 /* BikeLanesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920CC557048BFE0057AE61C5 /* BikeLanesApp.swift */; };
 		3C1E268538256A547A2A07CC /* BikeLanesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9FEAAF1023FF6ED074F712 /* BikeLanesTests.swift */; };
+		AAE480938978FA6A577AB4EC /* IMG_3239.HEIC in Resources */ = {isa = PBXBuildFile; fileRef = 64CD891CA224757AA0BF6038 /* IMG_3239.HEIC */; };
+		BC86972CA78ECCD29DC5762A /* NoGPS.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C3EA987F1D6644BB273D5D57 /* NoGPS.jpg */; };
 		EFECC5FD1FA6102B87CA9B99 /* BikeLanesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C5287D058BEB946D7A3E8A /* BikeLanesUITests.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,8 +35,10 @@
 		221927E0F3698AF42FD56436 /* BikeLanesUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = BikeLanesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F93AAA295AACCA0D7D70904 /* BikeLanes.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = BikeLanes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58C5287D058BEB946D7A3E8A /* BikeLanesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeLanesUITests.swift; sourceTree = "<group>"; };
+		64CD891CA224757AA0BF6038 /* IMG_3239.HEIC */ = {isa = PBXFileReference; path = IMG_3239.HEIC; sourceTree = "<group>"; };
 		920CC557048BFE0057AE61C5 /* BikeLanesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeLanesApp.swift; sourceTree = "<group>"; };
 		9C69D46D38EA2E0858C25DC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		C3EA987F1D6644BB273D5D57 /* NoGPS.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = NoGPS.jpg; sourceTree = "<group>"; };
 		CA9FEAAF1023FF6ED074F712 /* BikeLanesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeLanesTests.swift; sourceTree = "<group>"; };
 		DB5DDB44E39405EA89B9249D /* BikeLanesTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = BikeLanesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -95,6 +99,15 @@
 			path = BikeLanes;
 			sourceTree = "<group>";
 		};
+		D5DB19731EE758B86F591704 /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				64CD891CA224757AA0BF6038 /* IMG_3239.HEIC */,
+				C3EA987F1D6644BB273D5D57 /* NoGPS.jpg */,
+			);
+			path = Fixtures;
+			sourceTree = "<group>";
+		};
 		D6D1719BB93F39E04CA51567 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				CA9FEAAF1023FF6ED074F712 /* BikeLanesTests.swift */,
+				D5DB19731EE758B86F591704 /* Fixtures */,
 			);
 			path = BikeLanesTests;
 			sourceTree = "<group>";
@@ -125,6 +139,7 @@
 			buildConfigurationList = B9CD87363B3C13BF5F23EC0A /* Build configuration list for PBXNativeTarget "BikeLanesTests" */;
 			buildPhases = (
 				482930B2C2D7209129A352AD /* Sources */,
+				D5097C2B707CB0A1606948A6 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -217,6 +232,18 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D5097C2B707CB0A1606948A6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAE480938978FA6A577AB4EC /* IMG_3239.HEIC in Resources */,
+				BC86972CA78ECCD29DC5762A /* NoGPS.jpg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		482930B2C2D7209129A352AD /* Sources */ = {
