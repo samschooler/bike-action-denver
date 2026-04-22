@@ -49,7 +49,7 @@ struct SettingsView: View {
                             .foregroundStyle(.secondary)
                     }
                 }
-                Link("Privacy policy", destination: URL(string: "https://sam.ink/bike-lanes/privacy")!)
+                Link("Privacy policy", destination: URL(string: "https://sam.ink/bike-action-denver/privacy/")!)
             }
             Section("What this does") {
                 Text("Submits illegal-parking reports to Denver's 311 system. All photo analysis happens on your device; the photo and address are uploaded to Denver.")
