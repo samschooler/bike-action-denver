@@ -19,15 +19,21 @@ struct BLUAPIClient: Sendable {
 
     let session: URLSession
 
-    /// Uses an ephemeral session with its own cookie store so BLU's cookies
-    /// (svSession, XSRF-TOKEN, bSession) don't bleed into — or get mixed
-    /// with — Denver's URLSession.shared cookies.
+    /// Uses an ephemeral session with its own in-memory cookie store so
+    /// BLU's cookies (svSession, XSRF-TOKEN, bSession) don't bleed into —
+    /// or get mixed with — Denver's URLSession.shared cookies.
+    ///
+    /// `.ephemeral` already gives us an isolated in-memory HTTPCookieStorage
+    /// that isn't shared with `.shared`. Crucially we do NOT try to replace
+    /// it with `HTTPCookieStorage()` — that initializer is not supported
+    /// (Apple docs say to only use `.shared` / group-container variants),
+    /// and doing so causes cookies to never be persisted or sent back on
+    /// subsequent requests, which breaks the Wix double-submit CSRF check.
     init(session: URLSession? = nil) {
         if let session {
             self.session = session
         } else {
             let cfg = URLSessionConfiguration.ephemeral
-            cfg.httpCookieStorage = HTTPCookieStorage()
             cfg.httpCookieAcceptPolicy = .always
             cfg.httpShouldSetCookies = true
             self.session = URLSession(configuration: cfg)
@@ -58,12 +64,14 @@ struct BLUAPIClient: Sendable {
               let pubToken = wcApp.instance, !pubToken.isEmpty
         else { throw BLUError.missingWixCodeAppInstance }
 
-        // Pull XSRF-TOKEN from the cookie jar the response populated.
-        let xsrf = session.configuration.httpCookieStorage?
-            .cookies?
-            .first(where: { $0.name == "XSRF-TOKEN" && $0.domain.contains("bikelaneuprising.com") })?
-            .value
-        guard let xsrfValue = xsrf, !xsrfValue.isEmpty
+        // Pull XSRF-TOKEN from the response's Set-Cookie headers directly.
+        // We used to read from `session.configuration.httpCookieStorage`,
+        // but that returns a snapshot from the configuration — not the
+        // session's live cookie store — so it was empty at read time.
+        // Parsing Set-Cookie off the HTTPURLResponse is reliable regardless
+        // of which cookie storage the URLSession ended up using.
+        let xsrfValue = Self.extractXSRF(from: response, requestURL: req.url!)
+        guard let xsrfValue, !xsrfValue.isEmpty
         else { throw BLUError.missingXsrfCookie }
 
         return BLU.SessionTokens(
@@ -211,6 +219,19 @@ struct BLUAPIClient: Sendable {
             case .uploadNoFileURL:               return "Wix upload succeeded but returned no file_url"
             }
         }
+    }
+
+    /// Parse the XSRF-TOKEN value out of the response's Set-Cookie headers.
+    /// Uses Foundation's RFC-6265 cookie parser rather than a regex on the
+    /// raw header, so quoted values / attributes don't trip us up.
+    private static func extractXSRF(from response: URLResponse, requestURL: URL) -> String? {
+        guard let http = response as? HTTPURLResponse else { return nil }
+        let fields = http.allHeaderFields
+            .reduce(into: [String: String]()) { acc, pair in
+                if let k = pair.key as? String { acc[k] = "\(pair.value)" }
+            }
+        let cookies = HTTPCookie.cookies(withResponseHeaderFields: fields, for: requestURL)
+        return cookies.first(where: { $0.name == "XSRF-TOKEN" })?.value
     }
 
     private static func requireHTTPSuccess(_ response: URLResponse, data: Data) throws {
