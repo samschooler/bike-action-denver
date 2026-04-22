@@ -3,7 +3,14 @@ import SwiftUI
 
 struct SubmissionResultView: View {
     let receipt: CaseReceipt
+    let vm: ReportViewModel?
     let onDone: () -> Void
+
+    init(receipt: CaseReceipt, vm: ReportViewModel? = nil, onDone: @escaping () -> Void) {
+        self.receipt = receipt
+        self.vm = vm
+        self.onDone = onDone
+    }
 
     var body: some View {
         VStack(spacing: 24) {
@@ -21,6 +28,14 @@ struct SubmissionResultView: View {
                     Text("Denver case #\(receipt.id)")
                         .font(.system(size: 14)).foregroundStyle(.secondary)
                 }
+            }
+            if let vm {
+                BLUStatusRow(
+                    mirror: vm.bluMirror,
+                    caseId: receipt.id,
+                    canRetry: vm.canRetryBLU(denverCaseId: receipt.id),
+                    onRetry: { Task { await vm.retryBLU(denverCaseId: receipt.id) } })
+                    .padding(.horizontal, 24)
             }
             Spacer()
             Button("Done", action: onDone)

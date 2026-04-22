@@ -3,10 +3,17 @@ import SwiftUI
 
 struct SettingsView: View {
     @State private var showingLogin = false
+    @State private var showingBLULogin = false
     let auth: AuthService?
+    let blu: BLUAuthService?
+    let bluSettings: BLUSettings?
 
-    init(auth: AuthService? = nil) {
+    init(auth: AuthService? = nil,
+         blu: BLUAuthService? = nil,
+         bluSettings: BLUSettings? = nil) {
         self.auth = auth
+        self.blu = blu
+        self.bluSettings = bluSettings
     }
 
     var body: some View {
@@ -48,6 +55,26 @@ struct SettingsView: View {
                         .font(.footnote).foregroundStyle(.secondary)
                 }
             }
+            if let blu, let bluSettings {
+                Section("Bike Lane Uprising") {
+                    if let email = blu.email {
+                        LabeledContent("Signed in as", value: email)
+                        Toggle("Also submit to Bike Lane Uprising",
+                               isOn: Binding(
+                                 get: { bluSettings.mirrorEnabled },
+                                 set: { bluSettings.mirrorEnabled = $0 }))
+                        Text("Mirrors successful Denver reports to the crowdsourced national dataset at bikelaneuprising.com. Denver submission runs first and is unaffected by BLU failures.")
+                            .font(.footnote).foregroundStyle(.secondary)
+                        Button("Sign out of Bike Lane Uprising", role: .destructive) {
+                            blu.signOut()
+                        }
+                    } else {
+                        Button("Sign in to Bike Lane Uprising") { showingBLULogin = true }
+                        Text("Optional. Bike Lane Uprising (bikelaneuprising.com) is a separate community-run dataset tracking bike-lane obstructions nationally. Signing in lets this app mirror your Denver reports there after they're filed.")
+                            .font(.footnote).foregroundStyle(.secondary)
+                    }
+                }
+            }
             Section("About") {
                 LabeledContent("Version", value: Bundle.main.shortVersion ?? "?")
                 Link(destination: URL(string: "https://github.com/samschooler/bike-action-denver")!) {
@@ -71,6 +98,9 @@ struct SettingsView: View {
         .navigationTitle("Settings")
         .sheet(isPresented: $showingLogin) {
             if let auth { LoginSheet(auth: auth) }
+        }
+        .sheet(isPresented: $showingBLULogin) {
+            if let blu { BLULoginSheet(blu: blu) }
         }
     }
 }

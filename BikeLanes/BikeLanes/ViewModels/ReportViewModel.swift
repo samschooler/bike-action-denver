@@ -29,6 +29,15 @@ final class ReportViewModel {
     private let color: ColorService
     private let api: CaseSubmitting
     private let auth: AuthService?
+    private let blu: BLUAuthService?
+    private let bluSettings: BLUSettings?
+    private let bluClient: BLUAPIClient
+    let bluMirror: BLUCaseMirror
+    /// In-memory retry context for BLU submissions, keyed by Denver case id.
+    /// Populated whenever we kick off a BLU fan-out; consulted by
+    /// `retryBLU(denverCaseId:)`. Lost on app relaunch — that's intentional
+    /// v1 scope; retry is only offered during the same session.
+    private(set) var pendingBLURetries: [Int: ReportDraft] = [:]
 
     /// Cached Denver menu/question metadata, fetched lazily once per session.
     private var menu: DenverMenu?
@@ -41,11 +50,18 @@ final class ReportViewModel {
          plateOCR: PlateOCRService,
          color: ColorService,
          api: CaseSubmitting,
-         auth: AuthService? = nil) {
+         auth: AuthService? = nil,
+         blu: BLUAuthService? = nil,
+         bluSettings: BLUSettings? = nil,
+         bluClient: BLUAPIClient = BLUAPIClient(),
+         bluMirror: BLUCaseMirror = BLUCaseMirror()) {
         self.exif = exif; self.geocode = geocode
         self.detector = detector; self.plateDetector = plateDetector
         self.plateOCR = plateOCR; self.color = color
         self.api = api; self.auth = auth
+        self.blu = blu; self.bluSettings = bluSettings
+        self.bluClient = bluClient
+        self.bluMirror = bluMirror
     }
 
     /// Kicks off all the pipelines for a newly-selected photo. Resets the draft —
@@ -216,6 +232,136 @@ final class ReportViewModel {
             id: resp.id,
             caseNumber: resp.caseNumber,
             internalCaseStatus: resp.internalCaseStatus)
+
+        // Fan out to Bike Lane Uprising if the user has enabled the mirror
+        // and is signed in. Runs detached — Denver has already succeeded
+        // and the UI should advance to the receipt screen immediately. BLU
+        // result lands in `bluMirror`, which the receipt / history views
+        // observe for status + retry affordances. Per user directive BLU
+        // must never block or roll back the Denver submit.
+        let caseId = resp.id
+        // Snapshot draft (value type) so a subsequent `load()` on a new
+        // photo doesn't race with the in-flight BLU submit.
+        let draftSnapshot = draft
+        Task { [weak self] in
+            await self?.fanOutToBLU(denverCaseId: caseId, draft: draftSnapshot)
+        }
+    }
+
+    // MARK: - BLU fan-out
+
+    /// Runs the full BLU submission chain for a just-filed Denver case. Any
+    /// failure is captured in `bluMirror` and surfaced via UI; nothing is
+    /// re-thrown because BLU is an optional secondary write.
+    func fanOutToBLU(denverCaseId: Int, draft: ReportDraft) async {
+        guard let blu, let bluSettings,
+              bluSettings.mirrorEnabled, blu.isSignedIn
+        else { return }
+
+        pendingBLURetries[denverCaseId] = draft
+        bluMirror.set(.init(status: .pending, updatedAt: .now), for: denverCaseId)
+        do {
+            try await submitToBLU(draft: draft, blu: blu)
+            bluMirror.set(.init(status: .sent, updatedAt: .now), for: denverCaseId)
+            pendingBLURetries[denverCaseId] = nil
+        } catch {
+            bluMirror.set(.init(status: .failed, updatedAt: .now,
+                                errorMessage: String(describing: error)),
+                          for: denverCaseId)
+        }
+    }
+
+    /// User-initiated retry for a failed BLU submission. Requires that we
+    /// still hold the retry context (photo URL + draft) for this case id —
+    /// returns silently if not (retry unavailable after app relaunch).
+    func retryBLU(denverCaseId: Int) async {
+        guard let draft = pendingBLURetries[denverCaseId] else { return }
+        await fanOutToBLU(denverCaseId: denverCaseId, draft: draft)
+    }
+
+    /// True when a retry can still be offered for a given case in this
+    /// session. UI uses this to enable/disable the Retry button.
+    func canRetryBLU(denverCaseId: Int) -> Bool {
+        pendingBLURetries[denverCaseId] != nil
+    }
+
+    private func submitToBLU(draft: ReportDraft, blu: BLUAuthService) async throws {
+        let (tokens, idToken) = try await blu.tokensForSubmit()
+
+        // Upload the photo to Wix first; BLU wants a public static.wixstatic.com URL.
+        guard let url = draft.photoURL, let data = try? Data(contentsOf: url)
+        else { throw BLUSubmitError.noPhoto }
+        let imageURL = try await bluClient.uploadPhoto(
+            tokens: tokens, data: data,
+            filename: url.lastPathComponent,
+            mimeType: mimeType(for: url))
+
+        let body = try buildBLUSubmitBody(draft: draft, cognitoToken: idToken, imageURL: imageURL)
+        try await bluClient.submit(tokens: tokens, body: body)
+    }
+
+    private func buildBLUSubmitBody(draft: ReportDraft, cognitoToken: String, imageURL: String) throws -> BLU.SubmitBody {
+        guard let addr = draft.resolvedAddress else { throw BLUSubmitError.noAddress }
+        let observedAt = draft.observedAt ?? .now
+        let tz = TimeZone.current
+
+        // Wix Data date-only field: midnight local expressed as a UTC instant
+        // wrapped in {$date: "…Z"}. HAR showed 2026-04-20T06:00:00.000Z for a
+        // Denver-local 2026-04-20 event (tz offset -06:00 at the time).
+        var cal = Calendar(identifier: .gregorian)
+        cal.timeZone = tz
+        let startOfDayLocal = cal.startOfDay(for: observedAt)
+        let dayUTCFormatter = ISO8601DateFormatter()
+        dayUTCFormatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+        dayUTCFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+        let dayISO = dayUTCFormatter.string(from: startOfDayLocal)
+
+        // Time: "HH:MM:SS.fff" local, no offset
+        let timeFormatter = DateFormatter()
+        timeFormatter.calendar = cal
+        timeFormatter.locale = .init(identifier: "en_US_POSIX")
+        timeFormatter.timeZone = tz
+        timeFormatter.dateFormat = "HH:mm:ss.SSS"
+        let timeStr = timeFormatter.string(from: observedAt)
+
+        // dateAndTime: ISO8601 local with offset, fractional seconds.
+        let combinedFormatter = DateFormatter()
+        combinedFormatter.calendar = cal
+        combinedFormatter.locale = .init(identifier: "en_US_POSIX")
+        combinedFormatter.timeZone = tz
+        combinedFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSxxx"
+        let dateAndTime = combinedFormatter.string(from: observedAt)
+
+        // BLU's address field is one-line free text. HAR showed
+        // "2708 West 13th Avenue, Denver, 80204" — line1 + city + zip.
+        let addressOneLine = [addr.line1, addr.city, addr.zip]
+            .filter { !$0.isEmpty }.joined(separator: ", ")
+
+        return BLU.SubmitBody(
+            category:           String(BLUPKMaps.defaultCategory.rawValue),
+            licensePlateState:  String(BLUPKMaps.plateStatePK(for: draft.plateState)),
+            licensePlateNumber: draft.plate ?? "",
+            notes:              draft.notes ?? "",
+            metroCity:          String(BLUPKMaps.metroCityPK(forLocality: addr.city)),
+            geoLocation2:       "",
+            address:            addressOneLine,
+            date:               .init(iso: dayISO),
+            time:               timeStr,
+            crashOccurred:      false,
+            images:             [.init(url: imageURL)],
+            cognitoToken:       cognitoToken,
+            dateAndTime:        dateAndTime)
+    }
+
+    enum BLUSubmitError: Error, CustomStringConvertible {
+        case noPhoto
+        case noAddress
+        var description: String {
+            switch self {
+            case .noPhoto:   return "Photo not available for BLU upload"
+            case .noAddress: return "No resolved address for BLU submission"
+            }
+        }
     }
 
     private func answer(for questionId: Int) -> String {

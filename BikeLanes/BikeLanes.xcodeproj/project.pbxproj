@@ -23,12 +23,14 @@
 		2B254B7AE01EDBDA2BFA88C7 /* BikeLanesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920CC557048BFE0057AE61C5 /* BikeLanesApp.swift */; };
 		37C48EF135204864D91A7818 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEAE72A35D0C1767190792B /* UserProfile.swift */; };
 		3C1E268538256A547A2A07CC /* BikeLanesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9FEAAF1023FF6ED074F712 /* BikeLanesTests.swift */; };
+		3D750D189607CE74FFDE93AC /* BLUCaseMirror.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50B4822FDB2A1D6543C128C /* BLUCaseMirror.swift */; };
 		3D841E42099DCB310EAAFB63 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EEBB039EB64EF8537C9187 /* Enums.swift */; };
 		42D08F9872F4023D44A687FC /* SubmissionResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213F814BEF6163A43D0EEE20 /* SubmissionResultView.swift */; };
 		47162AF3E1A4BD573A6F9B21 /* GeocodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFE76492BB1B86867E7B95D /* GeocodeService.swift */; };
 		4A1BD1383F2EA9401ECBB011 /* TokenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F11049294B728C0C160335 /* TokenStore.swift */; };
 		4D883DCC87AB7388635D9E37 /* AddressNormalizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E39AB08C337CFB023B23A6 /* AddressNormalizerTests.swift */; };
 		4F5B33CF1F02DC4A4C0E1C7D /* VehicleDetectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD95F78A0171E31B56E3025A /* VehicleDetectorTests.swift */; };
+		52AAB8FDFB3752589C6C5E89 /* BLUAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8B96ED40A73133B5FBBB79 /* BLUAuthService.swift */; };
 		52BEF65225C7614EBB679F99 /* DenverAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D970997DCC2E57329DBE23 /* DenverAddress.swift */; };
 		546E81BD4E40425808551B7C /* CaseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916988F530A9478DAE329550 /* CaseDetailView.swift */; };
 		583FC39961198C510105101C /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F2CA5EE8167E5E86036AC0 /* ReportView.swift */; };
@@ -51,7 +53,9 @@
 		80D331F83758E3F62A6DFCA7 /* ExifServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372AC6D55D6D2F10D7256A1C /* ExifServiceTests.swift */; };
 		80ECF7E6BCF16A007EF40B59 /* SubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD648D161B7FFB9C377EA3BE /* SubmitButton.swift */; };
 		813A75B7BBE7799A8975C2A4 /* CameraPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3817799FD408674E9BD29B /* CameraPicker.swift */; };
+		8344294FCC9B7A56EFC257FA /* BLUModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC729D7D8925DB134185CAB /* BLUModels.swift */; };
 		87D432893FC685AE2551E113 /* ImageCropper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E0BE2D53956757A9804BDB /* ImageCropper.swift */; };
+		891F0DA04909BA3A56D46726 /* BLUSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20D2145B8714958FE1D7AEF /* BLUSettings.swift */; };
 		92F67C3E7D4D872DF38BE015 /* PKCE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109AB37CDE82C1C94F6E4704 /* PKCE.swift */; };
 		9DC710898C28F568E9453281 /* PhotoCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDB8EF9E782F0B105105A63 /* PhotoCard.swift */; };
 		A38D3BDDE33F14AF25893559 /* LoginWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A5293017EB8C13C6285C47 /* LoginWebView.swift */; };
@@ -66,20 +70,25 @@
 		B88002CE930200C819AC4A9A /* RemoteCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D4D6F8F257E82DCF01506E /* RemoteCase.swift */; };
 		BC86972CA78ECCD29DC5762A /* NoGPS.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C3EA987F1D6644BB273D5D57 /* NoGPS.jpg */; };
 		BF8DDAF9D91DB84E0A8A8F85 /* EditAddressSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBDA819981425504D786900 /* EditAddressSheet.swift */; };
+		C21AC43F8F8266D9518D05AA /* BLUStatusRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8BF77196F7928D33689AEC /* BLUStatusRow.swift */; };
 		C8891254ECDE9C206117333A /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CE386279B25B9B31D3E479 /* HistoryView.swift */; };
 		CE2F6130D24052B69479A2D8 /* ReportDraft.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3F0EA9E26D8EC678F5CDCD /* ReportDraft.swift */; };
 		CFB4A3E0C4276F717D50F123 /* EnumsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D5DB350F54D44D856B5005 /* EnumsTests.swift */; };
 		D236AC6D4501C8B75CB76910 /* ColorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B33349A17D0351C4FE3803 /* ColorService.swift */; };
 		D2D911D1ED06AB000FB6D38A /* QuickPickRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210A1C44369FB3B0097C3740 /* QuickPickRow.swift */; };
 		D53DBDB73B875252CCB78E12 /* LoginSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E611DD3CDC60C014553130 /* LoginSheet.swift */; };
+		D9231CA502C9BAD8835EF9E1 /* BLUCredentialStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB900E4772963EC8C6681548 /* BLUCredentialStore.swift */; };
 		DB0B6EE12995493FD3A89D2C /* SilentAuthRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6B7C29AB89ECA9970C6E2A /* SilentAuthRunner.swift */; };
 		DBBAC70C55CB7E05431AA0B1 /* ColorSwatchRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6168CB0529D7EB585C9DC90 /* ColorSwatchRow.swift */; };
 		DC452A7C60883F57A098DA0A /* IMG_3239_car.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CEB0E3A586EC1D061EC5EF0C /* IMG_3239_car.jpg */; };
 		E0139ED4208E497B19CF30C8 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D883F6488FFE070EF84B9D8 /* HistoryViewModel.swift */; };
 		E39C41D80D8C966C5DE59FCA /* PlateDetectorModel.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 4D6358FFAEE60C53DBD94114 /* PlateDetectorModel.mlpackage */; };
+		E513922241D5E69CBC59B688 /* BLULoginSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4A46F2910D940840C0F0B9 /* BLULoginSheet.swift */; };
 		E6015E4A7C5AE6600CCC46D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1C86D96802572086AA597DB /* LaunchScreen.storyboard */; };
+		E70420385BC8A8BBD7AF5356 /* BLUPKMaps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F865DBDB04FD4C6F00894AB /* BLUPKMaps.swift */; };
 		E79B073CFC61B181161608F4 /* ReportViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C35775453E2DB7B788519E /* ReportViewModelTests.swift */; };
 		E96781253D06A09C7CFC3B59 /* PhotoSourcePanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E586894A0FB076704D5CFE42 /* PhotoSourcePanel.swift */; };
+		ED4D9221E8C7FDDBB495E767 /* BLUAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C40D6DE452AB2A226E55C7 /* BLUAPIClient.swift */; };
 		EFECC5FD1FA6102B87CA9B99 /* BikeLanesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C5287D058BEB946D7A3E8A /* BikeLanesUITests.swift */; };
 		F3CE2B76A65121D86CA3ECD5 /* SignInPrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C35CBC518143CAC79C9165 /* SignInPrompt.swift */; };
 		F4726BCAB4B8D2046145E2EF /* CaseRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1798B5B71628F90DA91C795 /* CaseRepositoryTests.swift */; };
@@ -132,6 +141,7 @@
 		528479C328B70CA11ADE38C4 /* PlateOCRServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateOCRServiceTests.swift; sourceTree = "<group>"; };
 		5453164CF19C9675497614FE /* DenverAPIClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DenverAPIClientTests.swift; sourceTree = "<group>"; };
 		58C5287D058BEB946D7A3E8A /* BikeLanesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeLanesUITests.swift; sourceTree = "<group>"; };
+		5F865DBDB04FD4C6F00894AB /* BLUPKMaps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLUPKMaps.swift; sourceTree = "<group>"; };
 		60B33349A17D0351C4FE3803 /* ColorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorService.swift; sourceTree = "<group>"; };
 		64CD891CA224757AA0BF6038 /* IMG_3239.HEIC */ = {isa = PBXFileReference; path = IMG_3239.HEIC; sourceTree = "<group>"; };
 		6B3817799FD408674E9BD29B /* CameraPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPicker.swift; sourceTree = "<group>"; };
@@ -150,17 +160,23 @@
 		8FD3061701997AADD1D8E38C /* EditVehicleSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditVehicleSheet.swift; sourceTree = "<group>"; };
 		916988F530A9478DAE329550 /* CaseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseDetailView.swift; sourceTree = "<group>"; };
 		920CC557048BFE0057AE61C5 /* BikeLanesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeLanesApp.swift; sourceTree = "<group>"; };
+		92C40D6DE452AB2A226E55C7 /* BLUAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLUAPIClient.swift; sourceTree = "<group>"; };
 		99103EEFD3BD6E7721B94614 /* DenverEndpointsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DenverEndpointsTests.swift; sourceTree = "<group>"; };
+		9A4A46F2910D940840C0F0B9 /* BLULoginSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLULoginSheet.swift; sourceTree = "<group>"; };
 		9C69D46D38EA2E0858C25DC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		9E8B96ED40A73133B5FBBB79 /* BLUAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLUAuthService.swift; sourceTree = "<group>"; };
 		A1C86D96802572086AA597DB /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A3D5DB350F54D44D856B5005 /* EnumsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumsTests.swift; sourceTree = "<group>"; };
 		A6E0BE2D53956757A9804BDB /* ImageCropper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCropper.swift; sourceTree = "<group>"; };
 		A763C6F28BCEA83567473783 /* ReportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewModel.swift; sourceTree = "<group>"; };
 		A931505D9D69FF612727491E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AAC729D7D8925DB134185CAB /* BLUModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLUModels.swift; sourceTree = "<group>"; };
 		ABBF0680664CB0F00F423219 /* DenverDTOsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DenverDTOsTests.swift; sourceTree = "<group>"; };
 		B1798B5B71628F90DA91C795 /* CaseRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseRepositoryTests.swift; sourceTree = "<group>"; };
 		B220E484455D775406323040 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		B4A5293017EB8C13C6285C47 /* LoginWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWebView.swift; sourceTree = "<group>"; };
+		BB8BF77196F7928D33689AEC /* BLUStatusRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLUStatusRow.swift; sourceTree = "<group>"; };
+		BB900E4772963EC8C6681548 /* BLUCredentialStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLUCredentialStore.swift; sourceTree = "<group>"; };
 		BBBDA819981425504D786900 /* EditAddressSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAddressSheet.swift; sourceTree = "<group>"; };
 		BD95F78A0171E31B56E3025A /* VehicleDetectorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetectorTests.swift; sourceTree = "<group>"; };
 		C1B2647E77E06DBD5E4A4A24 /* VehicleDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetector.swift; sourceTree = "<group>"; };
@@ -173,11 +189,13 @@
 		CC3F0EA9E26D8EC678F5CDCD /* ReportDraft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDraft.swift; sourceTree = "<group>"; };
 		CEB0E3A586EC1D061EC5EF0C /* IMG_3239_car.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_3239_car.jpg; sourceTree = "<group>"; };
 		D0CE386279B25B9B31D3E479 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		D20D2145B8714958FE1D7AEF /* BLUSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLUSettings.swift; sourceTree = "<group>"; };
 		DB5DDB44E39405EA89B9249D /* BikeLanesTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = BikeLanesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD648D161B7FFB9C377EA3BE /* SubmitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitButton.swift; sourceTree = "<group>"; };
 		DDA411BA4A3DFBB712CD17ED /* OnboardingBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingBanner.swift; sourceTree = "<group>"; };
 		E19DCB841674F4D228718329 /* DryRunSubmit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DryRunSubmit.swift; sourceTree = "<group>"; };
 		E35FEAFC973ECCDCC38025A5 /* Multipart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Multipart.swift; sourceTree = "<group>"; };
+		E50B4822FDB2A1D6543C128C /* BLUCaseMirror.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLUCaseMirror.swift; sourceTree = "<group>"; };
 		E586894A0FB076704D5CFE42 /* PhotoSourcePanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSourcePanel.swift; sourceTree = "<group>"; };
 		E6168CB0529D7EB585C9DC90 /* ColorSwatchRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSwatchRow.swift; sourceTree = "<group>"; };
 		E7C35775453E2DB7B788519E /* ReportViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewModelTests.swift; sourceTree = "<group>"; };
@@ -259,10 +277,25 @@
 		7164BCAA2804236BB5C274DD /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				9A4A46F2910D940840C0F0B9 /* BLULoginSheet.swift */,
 				20E611DD3CDC60C014553130 /* LoginSheet.swift */,
 				B4A5293017EB8C13C6285C47 /* LoginWebView.swift */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		989C632E8F7A06DCD9EAFEA3 /* BLU */ = {
+			isa = PBXGroup;
+			children = (
+				92C40D6DE452AB2A226E55C7 /* BLUAPIClient.swift */,
+				9E8B96ED40A73133B5FBBB79 /* BLUAuthService.swift */,
+				E50B4822FDB2A1D6543C128C /* BLUCaseMirror.swift */,
+				BB900E4772963EC8C6681548 /* BLUCredentialStore.swift */,
+				AAC729D7D8925DB134185CAB /* BLUModels.swift */,
+				5F865DBDB04FD4C6F00894AB /* BLUPKMaps.swift */,
+				D20D2145B8714958FE1D7AEF /* BLUSettings.swift */,
+			);
+			path = BLU;
 			sourceTree = "<group>";
 		};
 		9F6943E5C16E538EC4177ABB /* Edit */ = {
@@ -362,6 +395,7 @@
 		D6D1719BB93F39E04CA51567 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BB8BF77196F7928D33689AEC /* BLUStatusRow.swift */,
 				916988F530A9478DAE329550 /* CaseDetailView.swift */,
 				7D3CC9E8CF0768BD75B7B5CC /* SettingsView.swift */,
 				213F814BEF6163A43D0EEE20 /* SubmissionResultView.swift */,
@@ -386,6 +420,7 @@
 				FF79F889E18D7C0F4E8F9D3A /* PlateOCRService.swift */,
 				C1B2647E77E06DBD5E4A4A24 /* VehicleDetector.swift */,
 				4DD045A1DA2B3DD5B1B39D1A /* Auth */,
+				989C632E8F7A06DCD9EAFEA3 /* BLU */,
 				E84FF1CB3880A2FB1BCC0571 /* DenverAPI */,
 			);
 			path = Services;
@@ -595,6 +630,15 @@
 				703761B137F63208F5A94725 /* AuthConstants.swift in Sources */,
 				1A36CF05440E8063597F678A /* AuthService.swift in Sources */,
 				220F378F5481EB2F346F493E /* AuthedImage.swift in Sources */,
+				ED4D9221E8C7FDDBB495E767 /* BLUAPIClient.swift in Sources */,
+				52AAB8FDFB3752589C6C5E89 /* BLUAuthService.swift in Sources */,
+				3D750D189607CE74FFDE93AC /* BLUCaseMirror.swift in Sources */,
+				D9231CA502C9BAD8835EF9E1 /* BLUCredentialStore.swift in Sources */,
+				E513922241D5E69CBC59B688 /* BLULoginSheet.swift in Sources */,
+				8344294FCC9B7A56EFC257FA /* BLUModels.swift in Sources */,
+				E70420385BC8A8BBD7AF5356 /* BLUPKMaps.swift in Sources */,
+				891F0DA04909BA3A56D46726 /* BLUSettings.swift in Sources */,
+				C21AC43F8F8266D9518D05AA /* BLUStatusRow.swift in Sources */,
 				2B254B7AE01EDBDA2BFA88C7 /* BikeLanesApp.swift in Sources */,
 				7D0B31F7F474979BBB1616D6 /* CGImage+PixelBuffer.swift in Sources */,
 				813A75B7BBE7799A8975C2A4 /* CameraPicker.swift in Sources */,
