@@ -75,9 +75,26 @@ platform :ios do
       output_directory: BUILD_DIR,
       export_method:    "app-store",
       clean:            true,
-      # Override build number per-invocation; bypasses pbxproj mutation so
-      # xcodegen regenerates are safe.
-      xcargs: "CURRENT_PROJECT_VERSION=#{BUILD_NUMBER}",
+      # Manual signing with the App Store distribution profile created by
+      # `fastlane cert` + `fastlane sigh`. Without this, Xcode's automatic
+      # signing tries to resolve a profile at export time and fails.
+      export_options: {
+        method: "app-store",
+        signingStyle: "manual",
+        signingCertificate: "Apple Distribution",
+        provisioningProfiles: {
+          "ink.sam.bikelanes" => "ink.sam.bikelanes AppStore",
+        },
+      },
+      # Build-time overrides: match the signing style + inject the build
+      # number. xcargs survives xcodegen regens (unlike pbxproj mutation).
+      xcargs: [
+        "CURRENT_PROJECT_VERSION=#{BUILD_NUMBER}",
+        "CODE_SIGN_STYLE=Manual",
+        "CODE_SIGN_IDENTITY='Apple Distribution'",
+        "PROVISIONING_PROFILE_SPECIFIER='ink.sam.bikelanes AppStore'",
+        "DEVELOPMENT_TEAM=DH67WGS9QA",
+      ].join(" "),
     )
   end
 

@@ -48,6 +48,11 @@ targets:
         NSCameraUsageDescription: "Take a photo of the illegally parked vehicle to attach to your report."
         NSPhotoLibraryUsageDescription: "Pick a photo of the illegally parked vehicle from your library."
         NSLocationWhenInUseUsageDescription: "Used only when reverse-geocoding a photo's GPS to a street address."
+        # Export compliance: the app uses only Apple-provided exempt encryption
+        # (HTTPS/TLS via URLSession + WKWebView, OAuth2 to Azure B2C, iOS Keychain).
+        # No custom/proprietary encryption. Declare false so the App Store doesn't
+        # prompt for export-compliance paperwork on every submission.
+        ITSAppUsesNonExemptEncryption: false
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: ink.sam.bikelanes
