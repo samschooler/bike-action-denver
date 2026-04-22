@@ -68,3 +68,4 @@ AuthKey_*.json
 .env
 .env.local
 .appstoreconnect/
+/BikeLanes/build-sim/
