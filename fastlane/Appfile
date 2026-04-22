@@ -1,0 +1,11 @@
+# Apple Developer Team + bundle identity.
+# For App Store Connect API key auth (preferred, no 2FA), set these env vars:
+#   ASC_KEY_ID         — App Store Connect API Key ID (e.g. "ABC123XYZ")
+#   ASC_ISSUER_ID      — App Store Connect Issuer ID (UUID)
+#   ASC_KEY_FILEPATH   — path to the downloaded `.p8` key file
+# Or leave them unset and fastlane will fall back to `apple_id` + 2FA prompt.
+
+app_identifier "ink.sam.bikelanes"
+team_id        "DH67WGS9QA"
+
+# apple_id "you@example.com"   # only if not using App Store Connect API key auth

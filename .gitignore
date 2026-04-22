@@ -44,3 +44,17 @@ __pycache__/
 /splash-*.yml
 /splash-*.png
 /showcase-*.png
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+build/fastlane/
+
+# App Store Connect API keys — NEVER commit
+*.p8
+AuthKey_*.json
+.env
+.env.local
+.appstoreconnect/
