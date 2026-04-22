@@ -23,7 +23,9 @@ TEMPLATES = os.path.join(ROOT, "screenshots")
 APP_FRAMES = os.path.join(ROOT, "app-frames")
 FINAL = os.path.join(ROOT, "final")
 
-W, H = 1320, 2868
+# App Store Connect rejected 1320×2868 for this listing; the accepted sizes
+# are 1242×2688 (6.5") or 1284×2778 (6.5" @3x). Using 1284×2778.
+W, H = 1284, 2778
 PW = int(W * 0.66)
 PH = int(PW * 2.164)
 PX = (W - PW) // 2

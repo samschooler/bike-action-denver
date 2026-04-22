@@ -37,14 +37,11 @@ FILL = {
     # Block the date + case-number text block on each of the 7 history rows.
     # Rows span the full height of the list; each row ≈ 280 tall starting at
     # y≈615. We nuke the column x=280..760 (where date + case sit).
+    # One continuous strip covering all 7 case-number columns — avoids
+    # row-gap seams. Source is 1179×2556; the case list spans roughly
+    # y=600..2450, so we over-cover to guarantee nothing leaks.
     "05.png": [
-        (280, 615,  760, 785),    # row 1
-        (280, 795,  760, 965),    # row 2
-        (280, 975,  760, 1145),   # row 3
-        (280, 1155, 760, 1325),   # row 4
-        (280, 1335, 760, 1505),   # row 5
-        (280, 1515, 760, 1685),   # row 6
-        (280, 1695, 760, 1865),   # row 7
+        (280, 600, 780, 2480),
     ],
 }
 
