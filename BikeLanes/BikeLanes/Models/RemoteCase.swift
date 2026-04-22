@@ -37,6 +37,44 @@ struct RemoteCase: Decodable, Hashable, Sendable, Identifiable {
 
     // MARK: - Decoding
 
+    /// Factory for demo / preview instances (App Store reviewer mode).
+    static func demo(id: Int,
+                     title: String,
+                     caseStatus: String,
+                     internalCaseStatus: String,
+                     caseNumber: Int?,
+                     resolutionNotes: String?,
+                     created: Date?,
+                     closed: Date?) -> RemoteCase {
+        // Construct via JSON so the memberwise init doesn't need to exist.
+        let payload: [String: Any] = [
+            "id": id,
+            "inputRecordId": id - 10,
+            "attachmentId": NSNull(),
+            "menuId": 10,
+            "title": title,
+            "email": "apple@sam.ink",
+            "b2CId": "demo-apple-reviewer",
+            "created": iso8601(created),
+            "closed": closed.map(iso8601) ?? NSNull(),
+            "internalCaseStatus": internalCaseStatus,
+            "caseStatus": caseStatus,
+            "caseId": NSNull(),
+            "caseNumber": caseNumber ?? NSNull(),
+            "resolutionNotes": resolutionNotes ?? NSNull(),
+            "sentStatus": "sent",
+        ]
+        let data = try! JSONSerialization.data(withJSONObject: payload)
+        return try! decode(from: data)
+    }
+
+    private static func iso8601(_ d: Date?) -> Any {
+        guard let d else { return NSNull() }
+        let f = ISO8601DateFormatter()
+        f.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+        return f.string(from: d)
+    }
+
     static func decodeArray(from data: Data) throws -> [RemoteCase] {
         try decoder.decode([RemoteCase].self, from: data)
     }

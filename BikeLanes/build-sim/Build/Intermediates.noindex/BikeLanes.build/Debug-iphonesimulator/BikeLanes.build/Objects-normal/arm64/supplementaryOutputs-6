@@ -1,0 +1,37 @@
+{
+  "/Users/samschooler/repo/bike-lanes/BikeLanes/BikeLanes/Services/ImageCropper.swift" : {
+    "const-values" : "/Users/samschooler/repo/bike-lanes/BikeLanes/build-sim/Build/Intermediates.noindex/BikeLanes.build/Debug-iphonesimulator/BikeLanes.build/Objects-normal/arm64/ImageCropper.swiftconstvalues",
+    "dependencies" : "/Users/samschooler/repo/bike-lanes/BikeLanes/build-sim/Build/Intermediates.noindex/BikeLanes.build/Debug-iphonesimulator/BikeLanes.build/Objects-normal/arm64/ImageCropper.d",
+    "diagnostics" : "/Users/samschooler/repo/bike-lanes/BikeLanes/build-sim/Build/Intermediates.noindex/BikeLanes.build/Debug-iphonesimulator/BikeLanes.build/Objects-normal/arm64/ImageCropper.dia",
+    "object" : "/Users/samschooler/repo/bike-lanes/BikeLanes/build-sim/Build/Intermediates.noindex/BikeLanes.build/Debug-iphonesimulator/BikeLanes.build/Objects-normal/arm64/ImageCropper.o",
+    "swift-dependencies" : "/Users/samschooler/repo/bike-lanes/BikeLanes/build-sim/Build/Intermediates.noindex/BikeLanes.build/Debug-iphonesimulator/BikeLanes.build/Objects-normal/arm64/ImageCropper.swiftdeps"
+  },
+  "/Users/samschooler/repo/bike-lanes/BikeLanes/BikeLanes/ViewModels/HistoryViewModel.swift" : {
+    "const-values" : "/Users/samschooler/repo/bike-lanes/BikeLanes/build-sim/Build/Intermediates.noindex/BikeLanes.build/Debug-iphonesimulator/BikeLanes.build/Objects-normal/arm64/HistoryViewModel.swiftconstvalues",
+    "dependencies" : "/Users/samschooler/repo/bike-lanes/BikeLanes/build-sim/Build/Intermediates.noindex/BikeLanes.build/Debug-iphonesimulator/BikeLanes.build/Objects-normal/arm64/HistoryViewModel.d",
+    "diagnostics" : "/Users/samschooler/repo/bike-lanes/BikeLanes/build-sim/Build/Intermediates.noindex/BikeLanes.build/Debug-iphonesimulator/BikeLanes.build/Objects-normal/arm64/HistoryViewModel.dia",
+    "object" : "/Users/samschooler/repo/bike-lanes/BikeLanes/build-sim/Build/Intermediates.noindex/BikeLanes.build/Debug-iphonesimulator/BikeLanes.build/Objects-normal/arm64/HistoryViewModel.o",
+    "swift-dependencies" : "/Users/samschooler/repo/bike-lanes/BikeLanes/build-sim/Build/Intermediates.noindex/BikeLanes.build/Debug-iphonesimulator/BikeLanes.build/Objects-normal/arm64/HistoryViewModel.swiftdeps"
+  },
+  "/Users/samschooler/repo/bike-lanes/BikeLanes/BikeLanes/Views/Auth/LoginSheet.swift" : {
+    "const-values" : "/Users/samschooler/repo/bike-lanes/BikeLanes/build-sim/Build/Intermediates.noindex/BikeLanes.build/Debug-iphonesimulator/BikeLanes.build/Objects-normal/arm64/LoginSheet.swiftconstvalues",
+    "dependencies" : "/Users/samschooler/repo/bike-lanes/BikeLanes/build-sim/Build/Intermediates.noindex/BikeLanes.build/Debug-iphonesimulator/BikeLanes.build/Objects-normal/arm64/LoginSheet.d",
+    "diagnostics" : "/Users/samschooler/repo/bike-lanes/BikeLanes/build-sim/Build/Intermediates.noindex/BikeLanes.build/Debug-iphonesimulator/BikeLanes.build/Objects-normal/arm64/LoginSheet.dia",
+    "object" : "/Users/samschooler/repo/bike-lanes/BikeLanes/build-sim/Build/Intermediates.noindex/BikeLanes.build/Debug-iphonesimulator/BikeLanes.build/Objects-normal/arm64/LoginSheet.o",
+    "swift-dependencies" : "/Users/samschooler/repo/bike-lanes/BikeLanes/build-sim/Build/Intermediates.noindex/BikeLanes.build/Debug-iphonesimulator/BikeLanes.build/Objects-normal/arm64/LoginSheet.swiftdeps"
+  },
+  "/Users/samschooler/repo/bike-lanes/BikeLanes/BikeLanes/Views/Auth/LoginWebView.swift" : {
+    "const-values" : "/Users/samschooler/repo/bike-lanes/BikeLanes/build-sim/Build/Intermediates.noindex/BikeLanes.build/Debug-iphonesimulator/BikeLanes.build/Objects-normal/arm64/LoginWebView.swiftconstvalues",
+    "dependencies" : "/Users/samschooler/repo/bike-lanes/BikeLanes/build-sim/Build/Intermediates.noindex/BikeLanes.build/Debug-iphonesimulator/BikeLanes.build/Objects-normal/arm64/LoginWebView.d",
+    "diagnostics" : "/Users/samschooler/repo/bike-lanes/BikeLanes/build-sim/Build/Intermediates.noindex/BikeLanes.build/Debug-iphonesimulator/BikeLanes.build/Objects-normal/arm64/LoginWebView.dia",
+    "object" : "/Users/samschooler/repo/bike-lanes/BikeLanes/build-sim/Build/Intermediates.noindex/BikeLanes.build/Debug-iphonesimulator/BikeLanes.build/Objects-normal/arm64/LoginWebView.o",
+    "swift-dependencies" : "/Users/samschooler/repo/bike-lanes/BikeLanes/build-sim/Build/Intermediates.noindex/BikeLanes.build/Debug-iphonesimulator/BikeLanes.build/Objects-normal/arm64/LoginWebView.swiftdeps"
+  },
+  "/Users/samschooler/repo/bike-lanes/BikeLanes/BikeLanes/Views/History/HistoryView.swift" : {
+    "const-values" : "/Users/samschooler/repo/bike-lanes/BikeLanes/build-sim/Build/Intermediates.noindex/BikeLanes.build/Debug-iphonesimulator/BikeLanes.build/Objects-normal/arm64/HistoryView.swiftconstvalues",
+    "dependencies" : "/Users/samschooler/repo/bike-lanes/BikeLanes/build-sim/Build/Intermediates.noindex/BikeLanes.build/Debug-iphonesimulator/BikeLanes.build/Objects-normal/arm64/HistoryView.d",
+    "diagnostics" : "/Users/samschooler/repo/bike-lanes/BikeLanes/build-sim/Build/Intermediates.noindex/BikeLanes.build/Debug-iphonesimulator/BikeLanes.build/Objects-normal/arm64/HistoryView.dia",
+    "object" : "/Users/samschooler/repo/bike-lanes/BikeLanes/build-sim/Build/Intermediates.noindex/BikeLanes.build/Debug-iphonesimulator/BikeLanes.build/Objects-normal/arm64/HistoryView.o",
+    "swift-dependencies" : "/Users/samschooler/repo/bike-lanes/BikeLanes/build-sim/Build/Intermediates.noindex/BikeLanes.build/Debug-iphonesimulator/BikeLanes.build/Objects-normal/arm64/HistoryView.swiftdeps"
+  }
+}

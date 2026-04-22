@@ -1,0 +1,89 @@
+[
+  {
+    "shortDescription" : "Ultralytics YOLO11n model trained on \/content\/drive\/MyDrive\/Colab Notebooks\/Computer Vision Workshop\/LPR Detection\/License-Plate-Recognition-11\/data.yaml",
+    "metadataOutputVersion" : "3.0",
+    "outputSchema" : [
+      {
+        "hasShapeFlexibility" : "0",
+        "isOptional" : "0",
+        "dataType" : "Float32",
+        "formattedType" : "MultiArray (Float32 1 × 5 × 8400)",
+        "shortDescription" : "",
+        "shape" : "[1, 5, 8400]",
+        "name" : "var_1226",
+        "type" : "MultiArray"
+      }
+    ],
+    "version" : "8.3.253",
+    "modelParameters" : [
+
+    ],
+    "author" : "Ultralytics",
+    "specificationVersion" : 6,
+    "storagePrecision" : "Float16",
+    "license" : "AGPL-3.0 License (https:\/\/ultralytics.com\/license)",
+    "mlProgramOperationTypeHistogram" : {
+      "Concat" : 23,
+      "Silu" : 77,
+      "Sub" : 2,
+      "Transpose" : 1,
+      "Matmul" : 2,
+      "UpsampleNearestNeighbor" : 2,
+      "Softmax" : 2,
+      "Mul" : 4,
+      "Cast" : 2,
+      "Reshape" : 8,
+      "Add" : 16,
+      "MaxPool" : 3,
+      "Sigmoid" : 1,
+      "Split" : 12,
+      "Conv" : 88
+    },
+    "computePrecision" : "Mixed (Float16, Float32, Int32)",
+    "stateSchema" : [
+
+    ],
+    "isUpdatable" : "0",
+    "availability" : {
+      "macOS" : "12.0",
+      "tvOS" : "15.0",
+      "visionOS" : "1.0",
+      "watchOS" : "8.0",
+      "iOS" : "15.0",
+      "macCatalyst" : "15.0"
+    },
+    "modelType" : {
+      "name" : "MLModelType_mlProgram"
+    },
+    "inputSchema" : [
+      {
+        "height" : "640",
+        "colorspace" : "RGB",
+        "isOptional" : "0",
+        "width" : "640",
+        "isColor" : "1",
+        "formattedType" : "Image (Color 640 × 640)",
+        "hasSizeFlexibility" : "0",
+        "type" : "Image",
+        "shortDescription" : "",
+        "name" : "image"
+      }
+    ],
+    "userDefinedMetadata" : {
+      "batch" : "1",
+      "docs" : "https:\/\/docs.ultralytics.com",
+      "com.github.apple.coremltools.version" : "8.1",
+      "imgsz" : "[640, 640]",
+      "names" : "{0: 'License_Plate'}",
+      "channels" : "3",
+      "stride" : "32",
+      "date" : "2026-04-21T13:25:42.071682",
+      "args" : "{'batch': 1, 'half': False, 'int8': False, 'dynamic': False, 'nms': False}",
+      "com.github.apple.coremltools.source_dialect" : "TorchScript",
+      "com.github.apple.coremltools.source" : "torch==2.4.1",
+      "task" : "detect"
+    },
+    "generatedClassName" : "PlateDetectorModel",
+    "method" : "predict"
+  }
+]

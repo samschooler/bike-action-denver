@@ -1,0 +1,40 @@
+{
+  "source": "/Users/samschooler/repo/bike-lanes/BikeLanes/BikeLanes/Views/Report/SignInPrompt.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Reports file under your PocketGov account so Denver's Parking Enforcement can follow up with you and post status updates on the case. You'll only need to sign in once.",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 24
+        }
+      },
+      {
+        "comment": "",
+        "key": "Sign in to report",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 16
+        }
+      },
+      {
+        "comment": "",
+        "key": "Required by Denver PocketGov",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 18
+        }
+      },
+      {
+        "comment": "",
+        "key": "Sign in with Denver PocketGov",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 31
+        }
+      }
+    ]
+  },
+  "version": 1
+}

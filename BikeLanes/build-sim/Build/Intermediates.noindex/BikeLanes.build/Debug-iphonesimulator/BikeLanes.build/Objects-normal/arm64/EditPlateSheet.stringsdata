@@ -1,0 +1,56 @@
+{
+  "source": "/Users/samschooler/repo/bike-lanes/BikeLanes/BikeLanes/Views/Edit/EditPlateSheet.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Plate",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 41
+        }
+      },
+      {
+        "comment": "",
+        "key": "Plate",
+        "location": {
+          "startingColumn": 25,
+          "startingLine": 24
+        }
+      },
+      {
+        "comment": "",
+        "key": "State",
+        "location": {
+          "startingColumn": 25,
+          "startingLine": 31
+        }
+      },
+      {
+        "comment": "",
+        "key": "ABC123",
+        "location": {
+          "startingColumn": 31,
+          "startingLine": 25
+        }
+      },
+      {
+        "comment": "",
+        "key": "State",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 32
+        }
+      },
+      {
+        "comment": "",
+        "key": "Done",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 44
+        }
+      }
+    ]
+  },
+  "version": 1
+}
