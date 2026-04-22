@@ -7,12 +7,18 @@ struct BikeLanesApp: App {
     let reportVM: ReportViewModel
     let historyVM: HistoryViewModel
     let auth: AuthService
+    let blu: BLUAuthService
+    let bluSettings: BLUSettings
 
     init() {
         let isDryRun = ProcessInfo.processInfo.environment["BIKE_LANES_DRY_RUN"] == "1"
 
         let authService = AuthService()
         self.auth = authService
+        let bluService = BLUAuthService()
+        self.blu = bluService
+        let bluSettings = BLUSettings()
+        self.bluSettings = bluSettings
 
         let liveAPI = DenverAPIClient(tokenProvider: { [weak authService] in
             (try? await authService?.currentIdToken()) ?? nil
@@ -31,7 +37,9 @@ struct BikeLanesApp: App {
             plateOCR: PlateOCRService(),
             color: ColorService(),
             api: api,
-            auth: authService)
+            auth: authService,
+            blu: bluService,
+            bluSettings: bluSettings)
 
         let statusService = CaseStatusService(
             tokenProvider: { [weak authService] in try await authService?.currentIdToken() },
@@ -44,9 +52,9 @@ struct BikeLanesApp: App {
     var body: some Scene {
         WindowGroup {
             TabView {
-                NavigationStack { ReportView(vm: reportVM, auth: auth) }
+                NavigationStack { ReportView(vm: reportVM, auth: auth, blu: blu, bluSettings: bluSettings) }
                     .tabItem { Label("Report", systemImage: "camera.viewfinder") }
-                NavigationStack { HistoryView(vm: historyVM, auth: auth) }
+                NavigationStack { HistoryView(vm: historyVM, auth: auth, bluMirror: reportVM.bluMirror) }
                     .tabItem { Label("History", systemImage: "list.bullet") }
             }
             .task { await auth.restore() }

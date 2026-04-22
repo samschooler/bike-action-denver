@@ -5,6 +5,8 @@ import PhotosUI
 struct ReportView: View {
     @Bindable var vm: ReportViewModel
     let auth: AuthService?
+    let blu: BLUAuthService?
+    let bluSettings: BLUSettings?
     @State private var pickerItem: PhotosPickerItem?
     @State private var showingLibraryPicker = false
     @State private var showingCamera = false
@@ -14,9 +16,14 @@ struct ReportView: View {
     @State private var showingSuccess = false
     private let backgroundColor = Color(red: 250/255, green: 250/255, blue: 247/255)
 
-    init(vm: ReportViewModel, auth: AuthService? = nil) {
+    init(vm: ReportViewModel,
+         auth: AuthService? = nil,
+         blu: BLUAuthService? = nil,
+         bluSettings: BLUSettings? = nil) {
         self.vm = vm
         self.auth = auth
+        self.blu = blu
+        self.bluSettings = bluSettings
     }
 
     enum EditTarget: Identifiable {
@@ -58,7 +65,7 @@ struct ReportView: View {
         .navigationTitle("Report")
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
-                NavigationLink(destination: SettingsView(auth: auth)) {
+                NavigationLink(destination: SettingsView(auth: auth, blu: blu, bluSettings: bluSettings)) {
                     Image(systemName: "gearshape")
                 }
             }
@@ -85,7 +92,7 @@ struct ReportView: View {
         }
         .fullScreenCover(isPresented: $showingSuccess) {
             if let receipt = vm.lastSavedCase {
-                SubmissionResultView(receipt: receipt, onDone: {
+                SubmissionResultView(receipt: receipt, vm: vm, onDone: {
                     showingSuccess = false
                     vm.draft = .init()
                 })

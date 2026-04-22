@@ -4,14 +4,16 @@ import SwiftUI
 struct CaseDetailView: View {
     let initialItem: RemoteCase
     let auth: AuthService?
+    let bluMirror: BLUCaseMirror?
 
     @State private var fresh: RemoteCase?
     @State private var isRefreshing = false
     @State private var refreshError: String?
 
-    init(item: RemoteCase, auth: AuthService? = nil) {
+    init(item: RemoteCase, auth: AuthService? = nil, bluMirror: BLUCaseMirror? = nil) {
         self.initialItem = item
         self.auth = auth
+        self.bluMirror = bluMirror
     }
 
     private var current: RemoteCase { fresh ?? initialItem }
@@ -40,6 +42,11 @@ struct CaseDetailView: View {
 
                 metadataCard
                     .padding(.horizontal, 20)
+
+                if let bluMirror {
+                    BLUStatusRow(mirror: bluMirror, caseId: current.id)
+                        .padding(.horizontal, 20)
+                }
 
                 if let err = refreshError {
                     Text(err)

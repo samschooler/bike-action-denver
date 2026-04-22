@@ -4,10 +4,12 @@ import SwiftUI
 struct HistoryView: View {
     @Bindable var vm: HistoryViewModel
     let auth: AuthService?
+    let bluMirror: BLUCaseMirror?
 
-    init(vm: HistoryViewModel, auth: AuthService? = nil) {
+    init(vm: HistoryViewModel, auth: AuthService? = nil, bluMirror: BLUCaseMirror? = nil) {
         self.vm = vm
         self.auth = auth
+        self.bluMirror = bluMirror
     }
 
     var body: some View {
@@ -25,7 +27,7 @@ struct HistoryView: View {
         .listStyle(.plain)
         .navigationTitle("My Reports")
         .navigationDestination(for: RemoteCase.self) { item in
-            CaseDetailView(item: item, auth: auth)
+            CaseDetailView(item: item, auth: auth, bluMirror: bluMirror)
         }
         .refreshable { await vm.refresh() }
         .onAppear {
