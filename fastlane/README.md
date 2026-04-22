@@ -1,72 +1,72 @@
-# Fastlane
+fastlane documentation
+----
 
-Release automation for Bike Action Denver.
+# Installation
 
-## One-time setup
-
-1. **Install fastlane** (ships with its own Ruby — avoids wrestling rbenv):
-
-   ```sh
-   brew install fastlane
-   ```
-
-2. **App Store Connect API key** (avoids 2FA prompts; works in CI):
-
-   - Go to https://appstoreconnect.apple.com/access/api
-   - Generate a key with "Developer" or "Admin" access
-   - Download the `.p8` (you only get one chance — stash it at `~/.appstoreconnect/`)
-
-3. **Export env vars** (add to `~/.zshrc`):
-
-   ```sh
-   export ASC_KEY_ID="ABC123XYZ"                                   # Key ID
-   export ASC_ISSUER_ID="69a6de7f-xxxx-xxxx-xxxx-xxxxxxxxxxxx"     # Issuer ID (top of the Keys page)
-   export ASC_KEY_FILEPATH="$HOME/.appstoreconnect/AuthKey_ABC123XYZ.p8"
-   ```
-
-4. **App must exist in App Store Connect** before the first upload. Create it at https://appstoreconnect.apple.com/apps with:
-
-   - Bundle ID: `ink.sam.bikelanes`
-   - Platform: iOS
-   - SKU: anything unique (e.g. `bike-action-denver`)
-   - Primary language: English (U.S.)
-
-## Lanes
-
-| Lane | What it does |
-|------|--------------|
-| `gen` | Regenerates `BikeLanes.xcodeproj` from `project.yml` via XcodeGen. |
-| `test` | Runs unit + UI tests on iPhone 15 Pro simulator. |
-| `build` | Regens, then archives a Release `.ipa` into `build/fastlane/`. |
-| `beta` | Builds, uploads to TestFlight. |
-| `release` | Builds, uploads to App Store Connect (review trigger is manual). |
-
-Run any lane with:
+Make sure you have the latest version of the Xcode command line tools installed:
 
 ```sh
-fastlane ios <lane>
+xcode-select --install
 ```
 
-Most common workflow:
+For _fastlane_ installation instructions, see [Installing _fastlane_](https://docs.fastlane.tools/#installing-fastlane)
+
+# Available Actions
+
+## iOS
+
+### ios gen
 
 ```sh
-fastlane ios beta       # → TestFlight
-fastlane ios release    # → App Store (upload only; review triggered manually)
+[bundle exec] fastlane ios gen
 ```
 
-## Build numbers
+Regenerate Xcode project from project.yml via XcodeGen
 
-Each `build` uses a timestamp-based `CURRENT_PROJECT_VERSION` (e.g. `2604221805`)
-passed as an `xcargs` override rather than mutating `project.pbxproj`. This
-survives `xcodegen generate` (which resets `CURRENT_PROJECT_VERSION` back to
-whatever's in `project.yml`). Override by exporting `BUILD_NUMBER` before
-running a lane if you need reproducible builds.
+### ios register
 
-## Notes
+```sh
+[bundle exec] fastlane ios register
+```
 
-- The Fastfile runs `xcodegen generate` at the top of every lane so the Xcode
-  project always matches `project.yml`.
-- `submit_for_review` is off in the `release` lane — we upload the build, then
-  trigger review manually in App Store Connect once metadata/screenshots land.
-- Metadata and screenshots live in App Store Connect for now. To automate them
-  later, wire up `fastlane deliver` with a `metadata/` + `screenshots/` tree.
+Register the App ID in the Apple Developer portal + create the App Store Connect listing
+
+### ios test
+
+```sh
+[bundle exec] fastlane ios test
+```
+
+Run unit + UI tests
+
+### ios build
+
+```sh
+[bundle exec] fastlane ios build
+```
+
+Archive a release .ipa into build/fastlane/
+
+### ios beta
+
+```sh
+[bundle exec] fastlane ios beta
+```
+
+Upload the current build to TestFlight
+
+### ios release
+
+```sh
+[bundle exec] fastlane ios release
+```
+
+Submit current build to the App Store (manual review trigger)
+
+----
+
+This README.md is auto-generated and will be re-generated every time [_fastlane_](https://fastlane.tools) is run.
+
+More information about _fastlane_ can be found on [fastlane.tools](https://fastlane.tools).
+
+The documentation of _fastlane_ can be found on [docs.fastlane.tools](https://docs.fastlane.tools).
