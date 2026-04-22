@@ -69,6 +69,16 @@ The app reverse-engineers Denver's PocketGov SPA flow, which uses:
 
 Menu metadata (category ids, per-question field names, Salesforce mappings) comes from `GET /api/forms/Menus` + `/api/forms/MenuQuestions?$filter=MenuId eq 10`.
 
+## Machine learning models
+
+Two Core ML models ship in `BikeLanes/BikeLanes/Resources/MLModels/`; plate OCR uses Apple Vision built in to iOS.
+
+- **Car detector** — [YOLOv11n](https://github.com/ultralytics/ultralytics) (COCO class 2 "car") from Ultralytics.
+- **License plate detector** — [morsetechlab/Yolov11-License-Plate-Detection](https://github.com/morsetechlab/Yolov11-License-Plate-Detection) (also on [Hugging Face](https://huggingface.co/morsetechlab/yolov11-license-plate-detection)), a YOLOv11n variant fine-tuned on a [Roboflow Universe license-plate dataset](https://universe.roboflow.com/). Exported to Core ML with `nms=False` so the app picks the highest-confidence anchor itself.
+- **Plate OCR** — Apple Vision's `VNRecognizeTextRequest`.
+
+Attribution per the plate detector's license: thanks to [Ultralytics](https://github.com/ultralytics/ultralytics), [Roboflow](https://roboflow.com/), and [MorseTech Lab](https://github.com/morsetechlab).
+
 ## Contributing
 
 PRs welcome for bug fixes and non-commercial improvements. This is a community project, not a commercial product.
