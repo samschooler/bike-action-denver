@@ -1,10 +1,7 @@
 # Fastfile for Bike Action Denver.
 #
 # Setup (one-time):
-#   brew install rbenv && rbenv install 3.3.0 && rbenv global 3.3.0   # any Ruby 3.x works
-#   gem install bundler
-#   bundle install
-#   brew install xcodegen
+#   brew install fastlane xcodegen
 #
 # Before running any lane that touches App Store Connect:
 #   1. Create an API key at https://appstoreconnect.apple.com/access/api
@@ -16,10 +13,10 @@
 #        export ASC_KEY_FILEPATH="$HOME/.appstoreconnect/AuthKey_ABC123XYZ.p8"
 #
 # Usage:
-#   bundle exec fastlane ios test       — unit + UI tests
-#   bundle exec fastlane ios build      — archive an .ipa to build/fastlane
-#   bundle exec fastlane ios beta       — upload to TestFlight
-#   bundle exec fastlane ios release    — submit to App Store (manual review)
+#   fastlane ios test       — unit + UI tests
+#   fastlane ios build      — archive an .ipa to build/fastlane
+#   fastlane ios beta       — upload to TestFlight
+#   fastlane ios release    — submit to App Store (manual review)
 
 default_platform(:ios)
 

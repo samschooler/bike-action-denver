@@ -76,9 +76,9 @@ Full setup + lane reference in [`fastlane/README.md`](./fastlane/README.md).
 Short version:
 
 ```sh
-bundle install                          # one-time: installs fastlane
-bundle exec fastlane ios beta           # → TestFlight
-bundle exec fastlane ios release        # → App Store Connect (manual review trigger)
+brew install fastlane                   # one-time: ships with its own Ruby
+fastlane ios beta                       # → TestFlight
+fastlane ios release                    # → App Store Connect (manual review trigger)
 ```
 
 Requires App Store Connect API key env vars (`ASC_KEY_ID`, `ASC_ISSUER_ID`,
