@@ -37,13 +37,23 @@ BikeLanes/BikeLanes/Resources/DebugAssets/
 __pycache__/
 *.pyc
 
-# Playwright MCP debug output
+# Playwright MCP debug output (snapshots + screenshots from browser_* tools)
 /.playwright-mcp/
+/*-snap.yml
+/*-snap.png
+/*-page.yml
+/*-page.png
+/*-deep.yml
+/*-current.png
+/*-done.png
+/*-ready.png
+/*-result*.png
 /higgsfield-*.png
-/showcase-*.yml
-/splash-*.yml
-/splash-*.png
+/higgsfield-*.yml
 /showcase-*.png
+/showcase-*.yml
+/splash-*.png
+/splash-*.yml
 
 # Fastlane
 fastlane/report.xml
