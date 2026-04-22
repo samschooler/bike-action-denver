@@ -1,0 +1,103 @@
+# Fastfile for Bike Action Denver.
+#
+# Setup (one-time):
+#   brew install rbenv && rbenv install 3.3.0 && rbenv global 3.3.0   # any Ruby 3.x works
+#   gem install bundler
+#   bundle install
+#   brew install xcodegen
+#
+# Before running any lane that touches App Store Connect:
+#   1. Create an API key at https://appstoreconnect.apple.com/access/api
+#      - Access: "Developer" or "Admin"
+#      - Download the `.p8` file (you only get ONE chance)
+#   2. Set env vars (e.g. in `~/.zshrc` or CI secrets):
+#        export ASC_KEY_ID="ABC123XYZ"
+#        export ASC_ISSUER_ID="69a6de7f-…-d33f2d"
+#        export ASC_KEY_FILEPATH="$HOME/.appstoreconnect/AuthKey_ABC123XYZ.p8"
+#
+# Usage:
+#   bundle exec fastlane ios test       — unit + UI tests
+#   bundle exec fastlane ios build      — archive an .ipa to build/fastlane
+#   bundle exec fastlane ios beta       — upload to TestFlight
+#   bundle exec fastlane ios release    — submit to App Store (manual review)
+
+default_platform(:ios)
+
+# Paths are relative to the `fastlane/` directory (fastlane's default cwd).
+XCODE_PROJECT = "../BikeLanes/BikeLanes.xcodeproj"
+XCODE_SCHEME  = "BikeLanes"
+BUILD_DIR     = "../build/fastlane"
+
+# Monotonic build number driven by timestamp. Survives `xcodegen generate`
+# (which would otherwise reset CURRENT_PROJECT_VERSION back to 1 from project.yml).
+# Override via the BUILD_NUMBER env var if you need reproducible builds.
+BUILD_NUMBER = ENV["BUILD_NUMBER"] || Time.now.utc.strftime("%y%m%d%H%M")
+
+platform :ios do
+  desc "Regenerate Xcode project from project.yml via XcodeGen"
+  lane :gen do
+    sh("cd ../BikeLanes && xcodegen generate")
+  end
+
+  desc "Run unit + UI tests"
+  lane :test do
+    gen
+    run_tests(
+      project: XCODE_PROJECT,
+      scheme:  XCODE_SCHEME,
+      devices: ["iPhone 15 Pro"],
+    )
+  end
+
+  desc "Archive a release .ipa into build/fastlane/"
+  lane :build do
+    gen
+    UI.message("Building with CURRENT_PROJECT_VERSION=#{BUILD_NUMBER}")
+    build_app(
+      project:          XCODE_PROJECT,
+      scheme:           XCODE_SCHEME,
+      configuration:    "Release",
+      output_directory: BUILD_DIR,
+      export_method:    "app-store",
+      clean:            true,
+      # Override build number per-invocation; bypasses pbxproj mutation so
+      # xcodegen regenerates are safe.
+      xcargs: "CURRENT_PROJECT_VERSION=#{BUILD_NUMBER}",
+    )
+  end
+
+  desc "Upload the current build to TestFlight"
+  lane :beta do
+    build
+    api_key = app_store_connect_api_key(
+      key_id:       ENV.fetch("ASC_KEY_ID"),
+      issuer_id:    ENV.fetch("ASC_ISSUER_ID"),
+      key_filepath: ENV.fetch("ASC_KEY_FILEPATH"),
+    )
+    upload_to_testflight(
+      api_key:                           api_key,
+      skip_waiting_for_build_processing: true,
+      changelog: ENV["BETA_CHANGELOG"] ||
+                 "Build #{BUILD_NUMBER} — see repo commit history.",
+    )
+  end
+
+  desc "Submit current build to the App Store (manual review trigger)"
+  lane :release do
+    build
+    api_key = app_store_connect_api_key(
+      key_id:       ENV.fetch("ASC_KEY_ID"),
+      issuer_id:    ENV.fetch("ASC_ISSUER_ID"),
+      key_filepath: ENV.fetch("ASC_KEY_FILEPATH"),
+    )
+    upload_to_app_store(
+      api_key:                           api_key,
+      force:                             true,    # overwrite existing metadata
+      submit_for_review:                 false,   # flip on once metadata is stable
+      automatic_release:                 false,   # hold release after approval
+      skip_metadata:                     true,    # managed in App Store Connect UI for now
+      skip_screenshots:                  true,
+      precheck_include_in_app_purchases: false,
+    )
+  end
+end

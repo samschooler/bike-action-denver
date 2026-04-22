@@ -69,6 +69,21 @@ The app reverse-engineers Denver's PocketGov SPA flow, which uses:
 
 Menu metadata (category ids, per-question field names, Salesforce mappings) comes from `GET /api/forms/Menus` + `/api/forms/MenuQuestions?$filter=MenuId eq 10`.
 
+## Releasing
+
+App Store distribution is automated via [Fastlane](https://fastlane.tools/).
+Full setup + lane reference in [`fastlane/README.md`](./fastlane/README.md).
+Short version:
+
+```sh
+bundle install                          # one-time: installs fastlane
+bundle exec fastlane ios beta           # → TestFlight
+bundle exec fastlane ios release        # → App Store Connect (manual review trigger)
+```
+
+Requires App Store Connect API key env vars (`ASC_KEY_ID`, `ASC_ISSUER_ID`,
+`ASC_KEY_FILEPATH`) so no Apple-ID password or 2FA prompts are ever needed.
+
 ## Machine learning models
 
 Two Core ML models ship in `BikeLanes/BikeLanes/Resources/MLModels/`; plate OCR uses Apple Vision built in to iOS.
