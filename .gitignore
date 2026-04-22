@@ -1,0 +1,35 @@
+# Private research & working notes — never pushed to the public repo
+data/
+docs/
+
+# HAR captures — may contain plaintext credentials and tokens
+*.har
+
+# Xcode build artifacts
+build/
+.build/
+DerivedData/
+*.xcuserstate
+*.xcuserdata
+xcuserdata/
+*.moved-aside
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# macOS
+.DS_Store
+
+# Swift Package Manager
+.swiftpm/
+Package.resolved
+
+# Local debug assets (real photos with EXIF GPS — not for public repo)
+BikeLanes/BikeLanes/Resources/DebugAssets/
+
+# Python venvs used during research
+/tmp/exifvenv/
+.venv/
+__pycache__/
+*.pyc

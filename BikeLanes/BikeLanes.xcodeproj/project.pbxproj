@@ -1,0 +1,952 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0117799DE835548B99248664 /* EditDateTimeSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35E72F4CEACA026904625C9 /* EditDateTimeSheet.swift */; };
+		028161EF040C607BDDCC2F24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A931505D9D69FF612727491E /* Assets.xcassets */; };
+		02F44A9F65938520083CC58E /* DenverDTOs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC9300C2575B21C33829EEE /* DenverDTOs.swift */; };
+		084F45ED75AFE1872FB9924F /* EditNotesSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7440DC6392F1F9F4A17BBB64 /* EditNotesSheet.swift */; };
+		0D69C163E4BD199F892B3A21 /* PlateDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811AAE32024D28D2FC526C1F /* PlateDetector.swift */; };
+		1968757C66AA9F51EC19429C /* DenverAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7165AB387F3447E6C6D25E32 /* DenverAPIClient.swift */; };
+		1A36CF05440E8063597F678A /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B220E484455D775406323040 /* AuthService.swift */; };
+		1A9F106C6069359B45FC5A75 /* ExplainerCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07281FBA63AE7C1579A2D684 /* ExplainerCard.swift */; };
+		1D6C2E2CFC738A1962BDF7CE /* ExifService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D0E5C442C5F7FB0A27799A /* ExifService.swift */; };
+		1F27D3117D6A36D5E2F7E374 /* AddressNormalizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4D17644029DF1E2491E29A /* AddressNormalizer.swift */; };
+		22011AFB60C7C3668FD5CEAF /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3CC9E8CF0768BD75B7B5CC /* SettingsView.swift */; };
+		220F378F5481EB2F346F493E /* AuthedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFD949AF2234DD45E6CEA3A /* AuthedImage.swift */; };
+		233633FCD102D88C1DD0E951 /* EditPlateSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C38775D027DE2081FFD6936 /* EditPlateSheet.swift */; };
+		2B254B7AE01EDBDA2BFA88C7 /* BikeLanesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920CC557048BFE0057AE61C5 /* BikeLanesApp.swift */; };
+		37C48EF135204864D91A7818 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEAE72A35D0C1767190792B /* UserProfile.swift */; };
+		3C1E268538256A547A2A07CC /* BikeLanesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9FEAAF1023FF6ED074F712 /* BikeLanesTests.swift */; };
+		3D841E42099DCB310EAAFB63 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EEBB039EB64EF8537C9187 /* Enums.swift */; };
+		42D08F9872F4023D44A687FC /* SubmissionResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213F814BEF6163A43D0EEE20 /* SubmissionResultView.swift */; };
+		47162AF3E1A4BD573A6F9B21 /* GeocodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFE76492BB1B86867E7B95D /* GeocodeService.swift */; };
+		4A1BD1383F2EA9401ECBB011 /* TokenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F11049294B728C0C160335 /* TokenStore.swift */; };
+		4D883DCC87AB7388635D9E37 /* AddressNormalizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E39AB08C337CFB023B23A6 /* AddressNormalizerTests.swift */; };
+		4F5B33CF1F02DC4A4C0E1C7D /* VehicleDetectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD95F78A0171E31B56E3025A /* VehicleDetectorTests.swift */; };
+		52BEF65225C7614EBB679F99 /* DenverAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D970997DCC2E57329DBE23 /* DenverAddress.swift */; };
+		546E81BD4E40425808551B7C /* CaseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916988F530A9478DAE329550 /* CaseDetailView.swift */; };
+		583FC39961198C510105101C /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F2CA5EE8167E5E86036AC0 /* ReportView.swift */; };
+		59825075DA4AC24BC8BBD9F2 /* PlateOCRServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528479C328B70CA11ADE38C4 /* PlateOCRServiceTests.swift */; };
+		5A4F02182229E74EE0EF0FD7 /* DryRunSubmit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19DCB841674F4D228718329 /* DryRunSubmit.swift */; };
+		5B5E0B3A610C1EBEF1D57070 /* Multipart.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35FEAFC973ECCDCC38025A5 /* Multipart.swift */; };
+		60EC0767F26389AF70684300 /* GeocodeServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829CEA62FED53C9191F08150 /* GeocodeServiceTests.swift */; };
+		685D5A6047B7906079BBE3BA /* VehicleDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B2647E77E06DBD5E4A4A24 /* VehicleDetector.swift */; };
+		69649F41D440CB93FE121881 /* PlateOCRService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF79F889E18D7C0F4E8F9D3A /* PlateOCRService.swift */; };
+		6A757DBADFCCC6F807866354 /* ReportViewSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBFBF34164FFBBD1A718147 /* ReportViewSnapshotTests.swift */; };
+		6D5B4376A30A9C90A14A6A2A /* HistoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAA3B9B2EB83E1274C5DEE5 /* HistoryRow.swift */; };
+		703761B137F63208F5A94725 /* AuthConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFAC17AF0012BC593B60964 /* AuthConstants.swift */; };
+		74D0421ECAD240320E04371B /* DenverEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0179735DE1E80F82434B4602 /* DenverEndpoints.swift */; };
+		78D21CDE32DC71309B95F83D /* FieldRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E31983BFFE82BFE8A0048F /* FieldRow.swift */; };
+		7B17CDDC9FDDFE086D5FEBDC /* DenverDTOsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBF0680664CB0F00F423219 /* DenverDTOsTests.swift */; };
+		7B30BECE22810968777A8252 /* OnboardingBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA411BA4A3DFBB712CD17ED /* OnboardingBanner.swift */; };
+		7B7723517BBDBC70B6D49433 /* LiveAPIIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4178B79218D6A4B7E410428B /* LiveAPIIntegrationTests.swift */; };
+		7D0B31F7F474979BBB1616D6 /* CGImage+PixelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7085731261337FAEE68269A4 /* CGImage+PixelBuffer.swift */; };
+		805F165A822179BA313C8167 /* VehicleDetectorSmokeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC5AD994C48FC6CA3BD17D /* VehicleDetectorSmokeTests.swift */; };
+		80D331F83758E3F62A6DFCA7 /* ExifServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372AC6D55D6D2F10D7256A1C /* ExifServiceTests.swift */; };
+		80ECF7E6BCF16A007EF40B59 /* SubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD648D161B7FFB9C377EA3BE /* SubmitButton.swift */; };
+		813A75B7BBE7799A8975C2A4 /* CameraPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3817799FD408674E9BD29B /* CameraPicker.swift */; };
+		87D432893FC685AE2551E113 /* ImageCropper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E0BE2D53956757A9804BDB /* ImageCropper.swift */; };
+		92F67C3E7D4D872DF38BE015 /* PKCE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109AB37CDE82C1C94F6E4704 /* PKCE.swift */; };
+		9DC710898C28F568E9453281 /* PhotoCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDB8EF9E782F0B105105A63 /* PhotoCard.swift */; };
+		A38D3BDDE33F14AF25893559 /* LoginWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A5293017EB8C13C6285C47 /* LoginWebView.swift */; };
+		AAE480938978FA6A577AB4EC /* IMG_3239.HEIC in Resources */ = {isa = PBXBuildFile; fileRef = 64CD891CA224757AA0BF6038 /* IMG_3239.HEIC */; };
+		AD9FF671C76154D53B5B1E91 /* DenverAPIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5453164CF19C9675497614FE /* DenverAPIClientTests.swift */; };
+		B040F346ABEBE49A4D155EAB /* CaseStatusService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE962CE41284DF0A30CC475E /* CaseStatusService.swift */; };
+		B096F307A3D64E9C32DD6A2E /* MultipartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EBD707D6DEDEE5421668B1 /* MultipartTests.swift */; };
+		B26A4D40469F15C4B27B1A1B /* AppContainers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4232091B444C209D0513499D /* AppContainers.swift */; };
+		B34DE05E7BD6926B5720D6C7 /* ReportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A763C6F28BCEA83567473783 /* ReportViewModel.swift */; };
+		B5D60BE663106F917F140215 /* DenverEndpointsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99103EEFD3BD6E7721B94614 /* DenverEndpointsTests.swift */; };
+		B5DFE55A117B6B2211B93AED /* VehicleSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9548CE8505F1878B32FAFEB /* VehicleSection.swift */; };
+		B88002CE930200C819AC4A9A /* RemoteCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D4D6F8F257E82DCF01506E /* RemoteCase.swift */; };
+		BC86972CA78ECCD29DC5762A /* NoGPS.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C3EA987F1D6644BB273D5D57 /* NoGPS.jpg */; };
+		BF8DDAF9D91DB84E0A8A8F85 /* EditAddressSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBDA819981425504D786900 /* EditAddressSheet.swift */; };
+		C8891254ECDE9C206117333A /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CE386279B25B9B31D3E479 /* HistoryView.swift */; };
+		CE2F6130D24052B69479A2D8 /* ReportDraft.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3F0EA9E26D8EC678F5CDCD /* ReportDraft.swift */; };
+		CFB4A3E0C4276F717D50F123 /* EnumsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D5DB350F54D44D856B5005 /* EnumsTests.swift */; };
+		D236AC6D4501C8B75CB76910 /* ColorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B33349A17D0351C4FE3803 /* ColorService.swift */; };
+		D2D911D1ED06AB000FB6D38A /* QuickPickRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210A1C44369FB3B0097C3740 /* QuickPickRow.swift */; };
+		D53DBDB73B875252CCB78E12 /* LoginSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E611DD3CDC60C014553130 /* LoginSheet.swift */; };
+		DB0B6EE12995493FD3A89D2C /* SilentAuthRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6B7C29AB89ECA9970C6E2A /* SilentAuthRunner.swift */; };
+		DBBAC70C55CB7E05431AA0B1 /* ColorSwatchRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6168CB0529D7EB585C9DC90 /* ColorSwatchRow.swift */; };
+		DC452A7C60883F57A098DA0A /* IMG_3239_car.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CEB0E3A586EC1D061EC5EF0C /* IMG_3239_car.jpg */; };
+		E0139ED4208E497B19CF30C8 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D883F6488FFE070EF84B9D8 /* HistoryViewModel.swift */; };
+		E39C41D80D8C966C5DE59FCA /* PlateDetectorModel.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 4D6358FFAEE60C53DBD94114 /* PlateDetectorModel.mlpackage */; };
+		E79B073CFC61B181161608F4 /* ReportViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C35775453E2DB7B788519E /* ReportViewModelTests.swift */; };
+		E96781253D06A09C7CFC3B59 /* PhotoSourcePanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E586894A0FB076704D5CFE42 /* PhotoSourcePanel.swift */; };
+		EFECC5FD1FA6102B87CA9B99 /* BikeLanesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C5287D058BEB946D7A3E8A /* BikeLanesUITests.swift */; };
+		F3CE2B76A65121D86CA3ECD5 /* SignInPrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C35CBC518143CAC79C9165 /* SignInPrompt.swift */; };
+		F4726BCAB4B8D2046145E2EF /* CaseRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1798B5B71628F90DA91C795 /* CaseRepositoryTests.swift */; };
+		F6EA041B9ECD2FA3EE2A1C09 /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8D6DC40DA992ECAE0ECE5 /* ProfileService.swift */; };
+		F82AF16481FD4AB6CAEAD197 /* EditVehicleSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD3061701997AADD1D8E38C /* EditVehicleSheet.swift */; };
+		F990A5E66D4BE9007FEF689A /* ColorServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE96B0C4267E3E1E2A9FE6BA /* ColorServiceTests.swift */; };
+		FBEB25E71D9950B2963D41EA /* YOLOv11nCar.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = C653C1DC180D08491DEF7CCC /* YOLOv11nCar.mlpackage */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1C2CAAB0B190DFAFDF17ED88 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7AC87E9B14010A513A128901 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DFFE9A770BD3C05C54BD98FF;
+			remoteInfo = BikeLanes;
+		};
+		C642BF0A1D7C035EB190E1A7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7AC87E9B14010A513A128901 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DFFE9A770BD3C05C54BD98FF;
+			remoteInfo = BikeLanes;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0179735DE1E80F82434B4602 /* DenverEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DenverEndpoints.swift; sourceTree = "<group>"; };
+		06C35CBC518143CAC79C9165 /* SignInPrompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPrompt.swift; sourceTree = "<group>"; };
+		07281FBA63AE7C1579A2D684 /* ExplainerCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainerCard.swift; sourceTree = "<group>"; };
+		0A6B7C29AB89ECA9970C6E2A /* SilentAuthRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SilentAuthRunner.swift; sourceTree = "<group>"; };
+		0CFE76492BB1B86867E7B95D /* GeocodeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodeService.swift; sourceTree = "<group>"; };
+		109AB37CDE82C1C94F6E4704 /* PKCE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKCE.swift; sourceTree = "<group>"; };
+		1DBFBF34164FFBBD1A718147 /* ReportViewSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewSnapshotTests.swift; sourceTree = "<group>"; };
+		20E611DD3CDC60C014553130 /* LoginSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSheet.swift; sourceTree = "<group>"; };
+		210A1C44369FB3B0097C3740 /* QuickPickRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickPickRow.swift; sourceTree = "<group>"; };
+		213F814BEF6163A43D0EEE20 /* SubmissionResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmissionResultView.swift; sourceTree = "<group>"; };
+		221927E0F3698AF42FD56436 /* BikeLanesUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = BikeLanesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F93AAA295AACCA0D7D70904 /* BikeLanes.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = BikeLanes.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FAA3B9B2EB83E1274C5DEE5 /* HistoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRow.swift; sourceTree = "<group>"; };
+		31D4D6F8F257E82DCF01506E /* RemoteCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteCase.swift; sourceTree = "<group>"; };
+		34F2CA5EE8167E5E86036AC0 /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
+		372AC6D55D6D2F10D7256A1C /* ExifServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExifServiceTests.swift; sourceTree = "<group>"; };
+		4178B79218D6A4B7E410428B /* LiveAPIIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveAPIIntegrationTests.swift; sourceTree = "<group>"; };
+		4232091B444C209D0513499D /* AppContainers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainers.swift; sourceTree = "<group>"; };
+		42D970997DCC2E57329DBE23 /* DenverAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DenverAddress.swift; sourceTree = "<group>"; };
+		43F11049294B728C0C160335 /* TokenStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenStore.swift; sourceTree = "<group>"; };
+		4D6358FFAEE60C53DBD94114 /* PlateDetectorModel.mlpackage */ = {isa = PBXFileReference; path = PlateDetectorModel.mlpackage; sourceTree = "<group>"; };
+		4E4D17644029DF1E2491E29A /* AddressNormalizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressNormalizer.swift; sourceTree = "<group>"; };
+		528479C328B70CA11ADE38C4 /* PlateOCRServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateOCRServiceTests.swift; sourceTree = "<group>"; };
+		5453164CF19C9675497614FE /* DenverAPIClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DenverAPIClientTests.swift; sourceTree = "<group>"; };
+		58C5287D058BEB946D7A3E8A /* BikeLanesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeLanesUITests.swift; sourceTree = "<group>"; };
+		60B33349A17D0351C4FE3803 /* ColorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorService.swift; sourceTree = "<group>"; };
+		64CD891CA224757AA0BF6038 /* IMG_3239.HEIC */ = {isa = PBXFileReference; path = IMG_3239.HEIC; sourceTree = "<group>"; };
+		6B3817799FD408674E9BD29B /* CameraPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPicker.swift; sourceTree = "<group>"; };
+		6BFD949AF2234DD45E6CEA3A /* AuthedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthedImage.swift; sourceTree = "<group>"; };
+		6C38775D027DE2081FFD6936 /* EditPlateSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPlateSheet.swift; sourceTree = "<group>"; };
+		6D883F6488FFE070EF84B9D8 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
+		7085731261337FAEE68269A4 /* CGImage+PixelBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGImage+PixelBuffer.swift"; sourceTree = "<group>"; };
+		7165AB387F3447E6C6D25E32 /* DenverAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DenverAPIClient.swift; sourceTree = "<group>"; };
+		7440DC6392F1F9F4A17BBB64 /* EditNotesSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNotesSheet.swift; sourceTree = "<group>"; };
+		7D3CC9E8CF0768BD75B7B5CC /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		7EDB8EF9E782F0B105105A63 /* PhotoCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCard.swift; sourceTree = "<group>"; };
+		811AAE32024D28D2FC526C1F /* PlateDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateDetector.swift; sourceTree = "<group>"; };
+		829CEA62FED53C9191F08150 /* GeocodeServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodeServiceTests.swift; sourceTree = "<group>"; };
+		84EBD707D6DEDEE5421668B1 /* MultipartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipartTests.swift; sourceTree = "<group>"; };
+		88EEBB039EB64EF8537C9187 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		8FD3061701997AADD1D8E38C /* EditVehicleSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditVehicleSheet.swift; sourceTree = "<group>"; };
+		916988F530A9478DAE329550 /* CaseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseDetailView.swift; sourceTree = "<group>"; };
+		920CC557048BFE0057AE61C5 /* BikeLanesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeLanesApp.swift; sourceTree = "<group>"; };
+		99103EEFD3BD6E7721B94614 /* DenverEndpointsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DenverEndpointsTests.swift; sourceTree = "<group>"; };
+		9C69D46D38EA2E0858C25DC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		A3D5DB350F54D44D856B5005 /* EnumsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumsTests.swift; sourceTree = "<group>"; };
+		A6E0BE2D53956757A9804BDB /* ImageCropper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCropper.swift; sourceTree = "<group>"; };
+		A763C6F28BCEA83567473783 /* ReportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewModel.swift; sourceTree = "<group>"; };
+		A931505D9D69FF612727491E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ABBF0680664CB0F00F423219 /* DenverDTOsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DenverDTOsTests.swift; sourceTree = "<group>"; };
+		B1798B5B71628F90DA91C795 /* CaseRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseRepositoryTests.swift; sourceTree = "<group>"; };
+		B220E484455D775406323040 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		B4A5293017EB8C13C6285C47 /* LoginWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWebView.swift; sourceTree = "<group>"; };
+		BBBDA819981425504D786900 /* EditAddressSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAddressSheet.swift; sourceTree = "<group>"; };
+		BD95F78A0171E31B56E3025A /* VehicleDetectorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetectorTests.swift; sourceTree = "<group>"; };
+		C1B2647E77E06DBD5E4A4A24 /* VehicleDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetector.swift; sourceTree = "<group>"; };
+		C35E72F4CEACA026904625C9 /* EditDateTimeSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDateTimeSheet.swift; sourceTree = "<group>"; };
+		C3EA987F1D6644BB273D5D57 /* NoGPS.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = NoGPS.jpg; sourceTree = "<group>"; };
+		C653C1DC180D08491DEF7CCC /* YOLOv11nCar.mlpackage */ = {isa = PBXFileReference; path = YOLOv11nCar.mlpackage; sourceTree = "<group>"; };
+		C6E39AB08C337CFB023B23A6 /* AddressNormalizerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressNormalizerTests.swift; sourceTree = "<group>"; };
+		C9548CE8505F1878B32FAFEB /* VehicleSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleSection.swift; sourceTree = "<group>"; };
+		CA9FEAAF1023FF6ED074F712 /* BikeLanesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeLanesTests.swift; sourceTree = "<group>"; };
+		CC3F0EA9E26D8EC678F5CDCD /* ReportDraft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDraft.swift; sourceTree = "<group>"; };
+		CEB0E3A586EC1D061EC5EF0C /* IMG_3239_car.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_3239_car.jpg; sourceTree = "<group>"; };
+		D0CE386279B25B9B31D3E479 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		DB5DDB44E39405EA89B9249D /* BikeLanesTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = BikeLanesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD648D161B7FFB9C377EA3BE /* SubmitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitButton.swift; sourceTree = "<group>"; };
+		DDA411BA4A3DFBB712CD17ED /* OnboardingBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingBanner.swift; sourceTree = "<group>"; };
+		E19DCB841674F4D228718329 /* DryRunSubmit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DryRunSubmit.swift; sourceTree = "<group>"; };
+		E35FEAFC973ECCDCC38025A5 /* Multipart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Multipart.swift; sourceTree = "<group>"; };
+		E586894A0FB076704D5CFE42 /* PhotoSourcePanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSourcePanel.swift; sourceTree = "<group>"; };
+		E6168CB0529D7EB585C9DC90 /* ColorSwatchRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSwatchRow.swift; sourceTree = "<group>"; };
+		E7C35775453E2DB7B788519E /* ReportViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewModelTests.swift; sourceTree = "<group>"; };
+		E7D0E5C442C5F7FB0A27799A /* ExifService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExifService.swift; sourceTree = "<group>"; };
+		E7E31983BFFE82BFE8A0048F /* FieldRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldRow.swift; sourceTree = "<group>"; };
+		F0F8D6DC40DA992ECAE0ECE5 /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
+		F4FC5AD994C48FC6CA3BD17D /* VehicleDetectorSmokeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetectorSmokeTests.swift; sourceTree = "<group>"; };
+		FBEAE72A35D0C1767190792B /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		FCC9300C2575B21C33829EEE /* DenverDTOs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DenverDTOs.swift; sourceTree = "<group>"; };
+		FE962CE41284DF0A30CC475E /* CaseStatusService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseStatusService.swift; sourceTree = "<group>"; };
+		FE96B0C4267E3E1E2A9FE6BA /* ColorServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorServiceTests.swift; sourceTree = "<group>"; };
+		FEFAC17AF0012BC593B60964 /* AuthConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthConstants.swift; sourceTree = "<group>"; };
+		FF79F889E18D7C0F4E8F9D3A /* PlateOCRService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateOCRService.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		0934CCE00A7E60587AC94259 /* BikeLanesUITests */ = {
+			isa = PBXGroup;
+			children = (
+				58C5287D058BEB946D7A3E8A /* BikeLanesUITests.swift */,
+			);
+			path = BikeLanesUITests;
+			sourceTree = "<group>";
+		};
+		1A61B580F74C3F09563C7D13 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				4232091B444C209D0513499D /* AppContainers.swift */,
+				920CC557048BFE0057AE61C5 /* BikeLanesApp.swift */,
+				E19DCB841674F4D228718329 /* DryRunSubmit.swift */,
+				9C69D46D38EA2E0858C25DC7 /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		3038C33F46F8C88D4B50CB1B /* History */ = {
+			isa = PBXGroup;
+			children = (
+				6BFD949AF2234DD45E6CEA3A /* AuthedImage.swift */,
+				2FAA3B9B2EB83E1274C5DEE5 /* HistoryRow.swift */,
+				D0CE386279B25B9B31D3E479 /* HistoryView.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		4246F0E957D34C56A4223FE9 = {
+			isa = PBXGroup;
+			children = (
+				C36B860C99A3BDE7A971DDA4 /* BikeLanes */,
+				E2AF0BCFB35BDB6B729DFA5A /* BikeLanesTests */,
+				0934CCE00A7E60587AC94259 /* BikeLanesUITests */,
+				B22A408135FA4F7B2747209A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4DD045A1DA2B3DD5B1B39D1A /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				FEFAC17AF0012BC593B60964 /* AuthConstants.swift */,
+				B220E484455D775406323040 /* AuthService.swift */,
+				109AB37CDE82C1C94F6E4704 /* PKCE.swift */,
+				F0F8D6DC40DA992ECAE0ECE5 /* ProfileService.swift */,
+				0A6B7C29AB89ECA9970C6E2A /* SilentAuthRunner.swift */,
+				43F11049294B728C0C160335 /* TokenStore.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		6B873526F8F5CF7DBE4794D6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A931505D9D69FF612727491E /* Assets.xcassets */,
+				C0497B7BFE0C6E567D1C62B6 /* MLModels */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		7164BCAA2804236BB5C274DD /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				20E611DD3CDC60C014553130 /* LoginSheet.swift */,
+				B4A5293017EB8C13C6285C47 /* LoginWebView.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		9F6943E5C16E538EC4177ABB /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				BBBDA819981425504D786900 /* EditAddressSheet.swift */,
+				C35E72F4CEACA026904625C9 /* EditDateTimeSheet.swift */,
+				7440DC6392F1F9F4A17BBB64 /* EditNotesSheet.swift */,
+				6C38775D027DE2081FFD6936 /* EditPlateSheet.swift */,
+				8FD3061701997AADD1D8E38C /* EditVehicleSheet.swift */,
+			);
+			path = Edit;
+			sourceTree = "<group>";
+		};
+		A3EDAB9155E63DBCA1484089 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				6D883F6488FFE070EF84B9D8 /* HistoryViewModel.swift */,
+				A763C6F28BCEA83567473783 /* ReportViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A73C7435E2CC8DA4F06A9205 /* Report */ = {
+			isa = PBXGroup;
+			children = (
+				6B3817799FD408674E9BD29B /* CameraPicker.swift */,
+				E6168CB0529D7EB585C9DC90 /* ColorSwatchRow.swift */,
+				07281FBA63AE7C1579A2D684 /* ExplainerCard.swift */,
+				E7E31983BFFE82BFE8A0048F /* FieldRow.swift */,
+				DDA411BA4A3DFBB712CD17ED /* OnboardingBanner.swift */,
+				7EDB8EF9E782F0B105105A63 /* PhotoCard.swift */,
+				E586894A0FB076704D5CFE42 /* PhotoSourcePanel.swift */,
+				210A1C44369FB3B0097C3740 /* QuickPickRow.swift */,
+				34F2CA5EE8167E5E86036AC0 /* ReportView.swift */,
+				06C35CBC518143CAC79C9165 /* SignInPrompt.swift */,
+				DD648D161B7FFB9C377EA3BE /* SubmitButton.swift */,
+				C9548CE8505F1878B32FAFEB /* VehicleSection.swift */,
+			);
+			path = Report;
+			sourceTree = "<group>";
+		};
+		B22A408135FA4F7B2747209A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2F93AAA295AACCA0D7D70904 /* BikeLanes.app */,
+				DB5DDB44E39405EA89B9249D /* BikeLanesTests.xctest */,
+				221927E0F3698AF42FD56436 /* BikeLanesUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C014F7EF30463CA1D5B98138 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				42D970997DCC2E57329DBE23 /* DenverAddress.swift */,
+				88EEBB039EB64EF8537C9187 /* Enums.swift */,
+				31D4D6F8F257E82DCF01506E /* RemoteCase.swift */,
+				CC3F0EA9E26D8EC678F5CDCD /* ReportDraft.swift */,
+				FBEAE72A35D0C1767190792B /* UserProfile.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C0497B7BFE0C6E567D1C62B6 /* MLModels */ = {
+			isa = PBXGroup;
+			children = (
+				4D6358FFAEE60C53DBD94114 /* PlateDetectorModel.mlpackage */,
+				C653C1DC180D08491DEF7CCC /* YOLOv11nCar.mlpackage */,
+			);
+			path = MLModels;
+			sourceTree = "<group>";
+		};
+		C36B860C99A3BDE7A971DDA4 /* BikeLanes */ = {
+			isa = PBXGroup;
+			children = (
+				1A61B580F74C3F09563C7D13 /* App */,
+				C014F7EF30463CA1D5B98138 /* Models */,
+				6B873526F8F5CF7DBE4794D6 /* Resources */,
+				D93AAAF7A1F0E06B5BAE4A15 /* Services */,
+				A3EDAB9155E63DBCA1484089 /* ViewModels */,
+				D6D1719BB93F39E04CA51567 /* Views */,
+			);
+			path = BikeLanes;
+			sourceTree = "<group>";
+		};
+		D5DB19731EE758B86F591704 /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				CEB0E3A586EC1D061EC5EF0C /* IMG_3239_car.jpg */,
+				64CD891CA224757AA0BF6038 /* IMG_3239.HEIC */,
+				C3EA987F1D6644BB273D5D57 /* NoGPS.jpg */,
+			);
+			path = Fixtures;
+			sourceTree = "<group>";
+		};
+		D6D1719BB93F39E04CA51567 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				916988F530A9478DAE329550 /* CaseDetailView.swift */,
+				7D3CC9E8CF0768BD75B7B5CC /* SettingsView.swift */,
+				213F814BEF6163A43D0EEE20 /* SubmissionResultView.swift */,
+				7164BCAA2804236BB5C274DD /* Auth */,
+				9F6943E5C16E538EC4177ABB /* Edit */,
+				3038C33F46F8C88D4B50CB1B /* History */,
+				A73C7435E2CC8DA4F06A9205 /* Report */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D93AAAF7A1F0E06B5BAE4A15 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4E4D17644029DF1E2491E29A /* AddressNormalizer.swift */,
+				7085731261337FAEE68269A4 /* CGImage+PixelBuffer.swift */,
+				60B33349A17D0351C4FE3803 /* ColorService.swift */,
+				E7D0E5C442C5F7FB0A27799A /* ExifService.swift */,
+				0CFE76492BB1B86867E7B95D /* GeocodeService.swift */,
+				A6E0BE2D53956757A9804BDB /* ImageCropper.swift */,
+				811AAE32024D28D2FC526C1F /* PlateDetector.swift */,
+				FF79F889E18D7C0F4E8F9D3A /* PlateOCRService.swift */,
+				C1B2647E77E06DBD5E4A4A24 /* VehicleDetector.swift */,
+				4DD045A1DA2B3DD5B1B39D1A /* Auth */,
+				E84FF1CB3880A2FB1BCC0571 /* DenverAPI */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		E2AF0BCFB35BDB6B729DFA5A /* BikeLanesTests */ = {
+			isa = PBXGroup;
+			children = (
+				C6E39AB08C337CFB023B23A6 /* AddressNormalizerTests.swift */,
+				CA9FEAAF1023FF6ED074F712 /* BikeLanesTests.swift */,
+				B1798B5B71628F90DA91C795 /* CaseRepositoryTests.swift */,
+				FE96B0C4267E3E1E2A9FE6BA /* ColorServiceTests.swift */,
+				5453164CF19C9675497614FE /* DenverAPIClientTests.swift */,
+				ABBF0680664CB0F00F423219 /* DenverDTOsTests.swift */,
+				99103EEFD3BD6E7721B94614 /* DenverEndpointsTests.swift */,
+				A3D5DB350F54D44D856B5005 /* EnumsTests.swift */,
+				372AC6D55D6D2F10D7256A1C /* ExifServiceTests.swift */,
+				829CEA62FED53C9191F08150 /* GeocodeServiceTests.swift */,
+				4178B79218D6A4B7E410428B /* LiveAPIIntegrationTests.swift */,
+				84EBD707D6DEDEE5421668B1 /* MultipartTests.swift */,
+				528479C328B70CA11ADE38C4 /* PlateOCRServiceTests.swift */,
+				E7C35775453E2DB7B788519E /* ReportViewModelTests.swift */,
+				1DBFBF34164FFBBD1A718147 /* ReportViewSnapshotTests.swift */,
+				F4FC5AD994C48FC6CA3BD17D /* VehicleDetectorSmokeTests.swift */,
+				BD95F78A0171E31B56E3025A /* VehicleDetectorTests.swift */,
+				D5DB19731EE758B86F591704 /* Fixtures */,
+			);
+			path = BikeLanesTests;
+			sourceTree = "<group>";
+		};
+		E84FF1CB3880A2FB1BCC0571 /* DenverAPI */ = {
+			isa = PBXGroup;
+			children = (
+				FE962CE41284DF0A30CC475E /* CaseStatusService.swift */,
+				7165AB387F3447E6C6D25E32 /* DenverAPIClient.swift */,
+				FCC9300C2575B21C33829EEE /* DenverDTOs.swift */,
+				0179735DE1E80F82434B4602 /* DenverEndpoints.swift */,
+				E35FEAFC973ECCDCC38025A5 /* Multipart.swift */,
+			);
+			path = DenverAPI;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9F5B492408998F78C4579854 /* BikeLanesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B9CD87363B3C13BF5F23EC0A /* Build configuration list for PBXNativeTarget "BikeLanesTests" */;
+			buildPhases = (
+				482930B2C2D7209129A352AD /* Sources */,
+				D5097C2B707CB0A1606948A6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6F9B04DEAFB5B2FCDB74636F /* PBXTargetDependency */,
+			);
+			name = BikeLanesTests;
+			packageProductDependencies = (
+			);
+			productName = BikeLanesTests;
+			productReference = DB5DDB44E39405EA89B9249D /* BikeLanesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B487291837A2F31B6151C393 /* BikeLanesUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 05A1D4454CCF3621E39CC0F3 /* Build configuration list for PBXNativeTarget "BikeLanesUITests" */;
+			buildPhases = (
+				6D38F09E8328937397D7E23E /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A937A18A294C23BFC54A16A6 /* PBXTargetDependency */,
+			);
+			name = BikeLanesUITests;
+			packageProductDependencies = (
+			);
+			productName = BikeLanesUITests;
+			productReference = 221927E0F3698AF42FD56436 /* BikeLanesUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		DFFE9A770BD3C05C54BD98FF /* BikeLanes */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 496767054A98BA6EEF2C30D6 /* Build configuration list for PBXNativeTarget "BikeLanes" */;
+			buildPhases = (
+				93283FF25F3372D9E06A14FF /* Sources */,
+				ABD4BB11451D3364C2981D7F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BikeLanes;
+			packageProductDependencies = (
+			);
+			productName = BikeLanes;
+			productReference = 2F93AAA295AACCA0D7D70904 /* BikeLanes.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7AC87E9B14010A513A128901 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 2640;
+				TargetAttributes = {
+					9F5B492408998F78C4579854 = {
+						DevelopmentTeam = DH67WGS9QA;
+						ProvisioningStyle = Automatic;
+					};
+					B487291837A2F31B6151C393 = {
+						DevelopmentTeam = DH67WGS9QA;
+						ProvisioningStyle = Automatic;
+						TestTargetID = DFFE9A770BD3C05C54BD98FF;
+					};
+					DFFE9A770BD3C05C54BD98FF = {
+						DevelopmentTeam = DH67WGS9QA;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 0A1F85541DEB2614B768AB6C /* Build configuration list for PBXProject "BikeLanes" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 4246F0E957D34C56A4223FE9;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = B22A408135FA4F7B2747209A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DFFE9A770BD3C05C54BD98FF /* BikeLanes */,
+				9F5B492408998F78C4579854 /* BikeLanesTests */,
+				B487291837A2F31B6151C393 /* BikeLanesUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ABD4BB11451D3364C2981D7F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				028161EF040C607BDDCC2F24 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5097C2B707CB0A1606948A6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAE480938978FA6A577AB4EC /* IMG_3239.HEIC in Resources */,
+				DC452A7C60883F57A098DA0A /* IMG_3239_car.jpg in Resources */,
+				BC86972CA78ECCD29DC5762A /* NoGPS.jpg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		482930B2C2D7209129A352AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D883DCC87AB7388635D9E37 /* AddressNormalizerTests.swift in Sources */,
+				3C1E268538256A547A2A07CC /* BikeLanesTests.swift in Sources */,
+				F4726BCAB4B8D2046145E2EF /* CaseRepositoryTests.swift in Sources */,
+				F990A5E66D4BE9007FEF689A /* ColorServiceTests.swift in Sources */,
+				AD9FF671C76154D53B5B1E91 /* DenverAPIClientTests.swift in Sources */,
+				7B17CDDC9FDDFE086D5FEBDC /* DenverDTOsTests.swift in Sources */,
+				B5D60BE663106F917F140215 /* DenverEndpointsTests.swift in Sources */,
+				CFB4A3E0C4276F717D50F123 /* EnumsTests.swift in Sources */,
+				80D331F83758E3F62A6DFCA7 /* ExifServiceTests.swift in Sources */,
+				60EC0767F26389AF70684300 /* GeocodeServiceTests.swift in Sources */,
+				7B7723517BBDBC70B6D49433 /* LiveAPIIntegrationTests.swift in Sources */,
+				B096F307A3D64E9C32DD6A2E /* MultipartTests.swift in Sources */,
+				59825075DA4AC24BC8BBD9F2 /* PlateOCRServiceTests.swift in Sources */,
+				E79B073CFC61B181161608F4 /* ReportViewModelTests.swift in Sources */,
+				6A757DBADFCCC6F807866354 /* ReportViewSnapshotTests.swift in Sources */,
+				805F165A822179BA313C8167 /* VehicleDetectorSmokeTests.swift in Sources */,
+				4F5B33CF1F02DC4A4C0E1C7D /* VehicleDetectorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D38F09E8328937397D7E23E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFECC5FD1FA6102B87CA9B99 /* BikeLanesUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93283FF25F3372D9E06A14FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F27D3117D6A36D5E2F7E374 /* AddressNormalizer.swift in Sources */,
+				B26A4D40469F15C4B27B1A1B /* AppContainers.swift in Sources */,
+				703761B137F63208F5A94725 /* AuthConstants.swift in Sources */,
+				1A36CF05440E8063597F678A /* AuthService.swift in Sources */,
+				220F378F5481EB2F346F493E /* AuthedImage.swift in Sources */,
+				2B254B7AE01EDBDA2BFA88C7 /* BikeLanesApp.swift in Sources */,
+				7D0B31F7F474979BBB1616D6 /* CGImage+PixelBuffer.swift in Sources */,
+				813A75B7BBE7799A8975C2A4 /* CameraPicker.swift in Sources */,
+				546E81BD4E40425808551B7C /* CaseDetailView.swift in Sources */,
+				B040F346ABEBE49A4D155EAB /* CaseStatusService.swift in Sources */,
+				D236AC6D4501C8B75CB76910 /* ColorService.swift in Sources */,
+				DBBAC70C55CB7E05431AA0B1 /* ColorSwatchRow.swift in Sources */,
+				1968757C66AA9F51EC19429C /* DenverAPIClient.swift in Sources */,
+				52BEF65225C7614EBB679F99 /* DenverAddress.swift in Sources */,
+				02F44A9F65938520083CC58E /* DenverDTOs.swift in Sources */,
+				74D0421ECAD240320E04371B /* DenverEndpoints.swift in Sources */,
+				5A4F02182229E74EE0EF0FD7 /* DryRunSubmit.swift in Sources */,
+				BF8DDAF9D91DB84E0A8A8F85 /* EditAddressSheet.swift in Sources */,
+				0117799DE835548B99248664 /* EditDateTimeSheet.swift in Sources */,
+				084F45ED75AFE1872FB9924F /* EditNotesSheet.swift in Sources */,
+				233633FCD102D88C1DD0E951 /* EditPlateSheet.swift in Sources */,
+				F82AF16481FD4AB6CAEAD197 /* EditVehicleSheet.swift in Sources */,
+				3D841E42099DCB310EAAFB63 /* Enums.swift in Sources */,
+				1D6C2E2CFC738A1962BDF7CE /* ExifService.swift in Sources */,
+				1A9F106C6069359B45FC5A75 /* ExplainerCard.swift in Sources */,
+				78D21CDE32DC71309B95F83D /* FieldRow.swift in Sources */,
+				47162AF3E1A4BD573A6F9B21 /* GeocodeService.swift in Sources */,
+				6D5B4376A30A9C90A14A6A2A /* HistoryRow.swift in Sources */,
+				C8891254ECDE9C206117333A /* HistoryView.swift in Sources */,
+				E0139ED4208E497B19CF30C8 /* HistoryViewModel.swift in Sources */,
+				87D432893FC685AE2551E113 /* ImageCropper.swift in Sources */,
+				D53DBDB73B875252CCB78E12 /* LoginSheet.swift in Sources */,
+				A38D3BDDE33F14AF25893559 /* LoginWebView.swift in Sources */,
+				5B5E0B3A610C1EBEF1D57070 /* Multipart.swift in Sources */,
+				7B30BECE22810968777A8252 /* OnboardingBanner.swift in Sources */,
+				92F67C3E7D4D872DF38BE015 /* PKCE.swift in Sources */,
+				9DC710898C28F568E9453281 /* PhotoCard.swift in Sources */,
+				E96781253D06A09C7CFC3B59 /* PhotoSourcePanel.swift in Sources */,
+				0D69C163E4BD199F892B3A21 /* PlateDetector.swift in Sources */,
+				E39C41D80D8C966C5DE59FCA /* PlateDetectorModel.mlpackage in Sources */,
+				69649F41D440CB93FE121881 /* PlateOCRService.swift in Sources */,
+				F6EA041B9ECD2FA3EE2A1C09 /* ProfileService.swift in Sources */,
+				D2D911D1ED06AB000FB6D38A /* QuickPickRow.swift in Sources */,
+				B88002CE930200C819AC4A9A /* RemoteCase.swift in Sources */,
+				CE2F6130D24052B69479A2D8 /* ReportDraft.swift in Sources */,
+				583FC39961198C510105101C /* ReportView.swift in Sources */,
+				B34DE05E7BD6926B5720D6C7 /* ReportViewModel.swift in Sources */,
+				22011AFB60C7C3668FD5CEAF /* SettingsView.swift in Sources */,
+				F3CE2B76A65121D86CA3ECD5 /* SignInPrompt.swift in Sources */,
+				DB0B6EE12995493FD3A89D2C /* SilentAuthRunner.swift in Sources */,
+				42D08F9872F4023D44A687FC /* SubmissionResultView.swift in Sources */,
+				80ECF7E6BCF16A007EF40B59 /* SubmitButton.swift in Sources */,
+				4A1BD1383F2EA9401ECBB011 /* TokenStore.swift in Sources */,
+				37C48EF135204864D91A7818 /* UserProfile.swift in Sources */,
+				685D5A6047B7906079BBE3BA /* VehicleDetector.swift in Sources */,
+				B5DFE55A117B6B2211B93AED /* VehicleSection.swift in Sources */,
+				FBEB25E71D9950B2963D41EA /* YOLOv11nCar.mlpackage in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6F9B04DEAFB5B2FCDB74636F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DFFE9A770BD3C05C54BD98FF /* BikeLanes */;
+			targetProxy = 1C2CAAB0B190DFAFDF17ED88 /* PBXContainerItemProxy */;
+		};
+		A937A18A294C23BFC54A16A6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DFFE9A770BD3C05C54BD98FF /* BikeLanes */;
+			targetProxy = C642BF0A1D7C035EB190E1A7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		429C470FC0DA40E8C99F5D9D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ink.sam.bikelanes.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BikeLanes.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BikeLanes";
+			};
+			name = Release;
+		};
+		5174A2D6AE0A1710316B712D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ink.sam.bikelanes.uitests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BikeLanes;
+			};
+			name = Release;
+		};
+		913D01955290037967DEEC38 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = BikeLanes/App/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ink.sam.bikelanes;
+				PRODUCT_NAME = BikeLanes;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		9426660A2457583933650895 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = DH67WGS9QA;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 0.1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		9C28E77069D622EEF68D8874 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = DH67WGS9QA;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 0.1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		A26D7CB202C160AD774D085D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ink.sam.bikelanes.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BikeLanes.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BikeLanes";
+			};
+			name = Debug;
+		};
+		CFCB1960BE71F75871EE74AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ink.sam.bikelanes.uitests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BikeLanes;
+			};
+			name = Debug;
+		};
+		F4D2372E390C68769BF7197C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = BikeLanes/App/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ink.sam.bikelanes;
+				PRODUCT_NAME = BikeLanes;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		05A1D4454CCF3621E39CC0F3 /* Build configuration list for PBXNativeTarget "BikeLanesUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFCB1960BE71F75871EE74AD /* Debug */,
+				5174A2D6AE0A1710316B712D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		0A1F85541DEB2614B768AB6C /* Build configuration list for PBXProject "BikeLanes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C28E77069D622EEF68D8874 /* Debug */,
+				9426660A2457583933650895 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		496767054A98BA6EEF2C30D6 /* Build configuration list for PBXNativeTarget "BikeLanes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				913D01955290037967DEEC38 /* Debug */,
+				F4D2372E390C68769BF7197C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B9CD87363B3C13BF5F23EC0A /* Build configuration list for PBXNativeTarget "BikeLanesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A26D7CB202C160AD774D085D /* Debug */,
+				429C470FC0DA40E8C99F5D9D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7AC87E9B14010A513A128901 /* Project object */;
+}

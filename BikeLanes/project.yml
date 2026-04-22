@@ -1,0 +1,111 @@
+name: BikeLanes
+options:
+  bundleIdPrefix: ink.sam
+  deploymentTarget:
+    iOS: "17.0"
+  createIntermediateGroups: true
+  generateEmptyDirectories: true
+  xcodeVersion: "26.4"
+
+settings:
+  base:
+    MARKETING_VERSION: "0.1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    SWIFT_VERSION: "6.0"
+    DEVELOPMENT_TEAM: "DH67WGS9QA"
+    CODE_SIGN_STYLE: Automatic
+    CODE_SIGN_IDENTITY: "Apple Development"
+    ENABLE_USER_SCRIPT_SANDBOXING: "NO"
+
+targets:
+  BikeLanes:
+    type: application
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources:
+      - path: BikeLanes
+        excludes:
+          - "**/.gitkeep"
+          - "Resources/DebugAssets/**"
+    info:
+      path: BikeLanes/App/Info.plist
+      properties:
+        CFBundleDisplayName: Bike Action
+        CFBundleName: Bike Action
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        LSRequiresIPhoneOS: true
+        UILaunchScreen:
+          UIColorName: LaunchBackground
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+        UIRequiredDeviceCapabilities:
+          - arm64
+        NSCameraUsageDescription: "Take a photo of the illegally parked vehicle to attach to your report."
+        NSPhotoLibraryUsageDescription: "Pick a photo of the illegally parked vehicle from your library."
+        NSLocationWhenInUseUsageDescription: "Used only when reverse-geocoding a photo's GPS to a street address."
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: ink.sam.bikelanes
+        PRODUCT_NAME: BikeLanes
+        GENERATE_INFOPLIST_FILE: "NO"
+        TARGETED_DEVICE_FAMILY: "1"
+        SWIFT_EMIT_LOC_STRINGS: "YES"
+        ENABLE_PREVIEWS: "YES"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+    dependencies: []
+
+  BikeLanesTests:
+    type: bundle.unit-test
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources:
+      - path: BikeLanesTests
+        excludes:
+          - "Fixtures/**"
+          - "**/.gitkeep"
+      - path: BikeLanesTests/Fixtures
+        buildPhase: resources
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: ink.sam.bikelanes.tests
+        GENERATE_INFOPLIST_FILE: "YES"
+        BUNDLE_LOADER: "$(TEST_HOST)"
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/BikeLanes.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BikeLanes"
+    dependencies:
+      - target: BikeLanes
+
+  BikeLanesUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources:
+      - path: BikeLanesUITests
+        excludes:
+          - "**/.gitkeep"
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: ink.sam.bikelanes.uitests
+        GENERATE_INFOPLIST_FILE: "YES"
+        TEST_TARGET_NAME: BikeLanes
+    dependencies:
+      - target: BikeLanes
+
+schemes:
+  BikeLanes:
+    build:
+      targets:
+        BikeLanes: all
+        BikeLanesTests: [test]
+        BikeLanesUITests: [test]
+    test:
+      targets:
+        - BikeLanesTests
+        - BikeLanesUITests
+      gatherCoverageData: false
+    run:
+      config: Debug
+    archive:
+      config: Release
