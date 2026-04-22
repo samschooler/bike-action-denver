@@ -36,6 +36,24 @@ platform :ios do
     sh("cd ../BikeLanes && xcodegen generate")
   end
 
+  desc "Register the App ID in the Apple Developer portal + create the App Store Connect listing"
+  lane :register do
+    api_key = app_store_connect_api_key(
+      key_id:       ENV.fetch("ASC_KEY_ID"),
+      issuer_id:    ENV.fetch("ASC_ISSUER_ID"),
+      key_filepath: ENV.fetch("ASC_KEY_FILEPATH"),
+    )
+    produce(
+      api_key:        api_key,
+      app_identifier: "ink.sam.bikelanes",
+      app_name:       "Bike Action Denver",
+      language:       "English",
+      app_version:    "0.1.0",
+      sku:            "bike-action-denver",
+      platforms:      ["ios"],
+    )
+  end
+
   desc "Run unit + UI tests"
   lane :test do
     gen
