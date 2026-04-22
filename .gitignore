@@ -36,3 +36,11 @@ BikeLanes/BikeLanes/Resources/DebugAssets/
 .venv/
 __pycache__/
 *.pyc
+
+# Playwright MCP debug output
+/.playwright-mcp/
+/higgsfield-*.png
+/showcase-*.yml
+/splash-*.yml
+/splash-*.png
+/showcase-*.png
