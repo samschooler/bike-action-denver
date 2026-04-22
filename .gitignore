@@ -1,12 +1,15 @@
 # Private research & working notes — never pushed to the public repo
-data/
-docs/
+# Anchored to repo root with `/` so we don't match `Data/` folders inside
+# Core ML .mlpackage bundles on macOS's case-insensitive filesystem.
+/data/
+/docs/
 
 # HAR captures — may contain plaintext credentials and tokens
 *.har
 
 # Xcode build artifacts
-build/
+/BikeLanes/build/
+/build/
 .build/
 DerivedData/
 *.xcuserstate

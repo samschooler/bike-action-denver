@@ -38,6 +38,17 @@ struct SettingsView: View {
             }
             Section("About") {
                 LabeledContent("Version", value: Bundle.main.shortVersion ?? "?")
+                Link(destination: URL(string: "https://github.com/samschooler/bike-action-denver")!) {
+                    HStack {
+                        Image(systemName: "chevron.left.forwardslash.chevron.right")
+                            .foregroundStyle(.secondary)
+                            .frame(width: 22)
+                        Text("Source on GitHub")
+                        Spacer()
+                        Image(systemName: "arrow.up.right.square")
+                            .foregroundStyle(.secondary)
+                    }
+                }
                 Link("Privacy policy", destination: URL(string: "https://sam.ink/bike-lanes/privacy")!)
             }
             Section("What this does") {
