@@ -18,11 +18,12 @@ FRAMES = os.path.join(ROOT, "app-frames")
 # Pixelation boxes (real PII → blurred blocks).
 PIXELATE = {
     "03.png": [
-        (470, 430, 720, 520),     # car plate in photo
+        # Car's yellow Colorado plate on the back of the vehicle in the photo.
+        (640, 540, 780, 640),
         (140, 1310, 780, 1380),   # "2728 W 13th Ave"
         (140, 1410, 740, 1490),   # "Denver, CO 80204-2316 ±4m"
         (80,  1540, 400, 1800),   # plate thumbnail in Plate row
-        (380, 1620, 1050, 1720),  # "8415329 · Colorado" (widened to catch "8")
+        (380, 1620, 1050, 1720),  # "8415329 · Colorado"
     ],
     "05.png": [],
 }
