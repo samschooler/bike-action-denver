@@ -35,10 +35,10 @@ targets:
         CFBundleShortVersionString: $(MARKETING_VERSION)
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)
         LSRequiresIPhoneOS: true
-        UILaunchScreen:
-          UIColorName: LaunchBackground
-          UIImageName: LaunchImage
-          UIImageRespectsSafeAreaInsets: false
+        # UILaunchScreen dict can't aspect-fill its UIImageName (always natural size
+        # centered). For a cover splash we use a storyboard with UIImageView +
+        # scaleAspectFill pinned to all four edges.
+        UILaunchStoryboardName: LaunchScreen
         UIApplicationSceneManifest:
           UIApplicationSupportsMultipleScenes: false
         UISupportedInterfaceOrientations:
