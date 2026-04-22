@@ -7,13 +7,28 @@ protocol CaseSubmitting: Sendable {
     func createCase(_ r: CreateCaseRequest) async throws -> CreateCaseResponse
 }
 
+/// Protocol seam for menu + question metadata fetch (read-only GET, safe in dry-run).
+protocol MenuProviding: Sendable {
+    func fetchMenus() async throws -> [DenverMenu]
+    func fetchMenuQuestions(menuId: Int) async throws -> [DenverMenuQuestion]
+}
+
 extension DenverAPIClient: CaseSubmitting {}
+extension DenverAPIClient: MenuProviding {}
 
 struct DenverAPIClient: Sendable {
-    let session: URLSession
+    /// Async callback that yields a fresh id_token when one is available, or nil
+    /// for anonymous requests. Called before every request that needs auth; the
+    /// AuthService implementation handles refresh + silent SSO internally.
+    typealias TokenProvider = @Sendable () async throws -> String?
 
-    init(session: URLSession = .shared) {
+    let session: URLSession
+    let tokenProvider: TokenProvider?
+
+    init(session: URLSession = .shared,
+         tokenProvider: TokenProvider? = nil) {
         self.session = session
+        self.tokenProvider = tokenProvider
     }
 
     private var decoder: JSONDecoder {
@@ -36,7 +51,7 @@ struct DenverAPIClient: Sendable {
 
     func searchAddress(_ query: String) async throws -> [DenverAddress.SearchResult] {
         var req = URLRequest(url: DenverEndpoints.addressSearch(query))
-        addDefaultHeaders(&req)
+        await addDefaultHeaders(&req)
         let (data, response) = try await session.data(for: req)
         let status = (response as? HTTPURLResponse)?.statusCode ?? -1
         if status == 204 { return [] }
@@ -52,7 +67,7 @@ struct DenverAPIClient: Sendable {
         req.httpMethod = "POST"
         let boundary = Multipart.newBoundary()
         req.setValue(Multipart.contentType(boundary: boundary), forHTTPHeaderField: "Content-Type")
-        addDefaultHeaders(&req)
+        await addDefaultHeaders(&req)
         // Multipart.contentType prepends "----" to the header boundary; Multipart.body expects
         // that already-prefixed value so its "--" delimiter matches RFC 2046. Pass "----" + boundary.
         req.httpBody = Multipart.body(boundary: "----" + boundary, fileField: "file",
@@ -67,7 +82,7 @@ struct DenverAPIClient: Sendable {
         var req = URLRequest(url: DenverEndpoints.cases)
         req.httpMethod = "POST"
         req.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        addDefaultHeaders(&req)
+        await addDefaultHeaders(&req)
         req.httpBody = try JSONEncoder().encode(request)
         let (data, response) = try await session.data(for: req)
         return try decodeOrThrow(data, response)
@@ -75,16 +90,19 @@ struct DenverAPIClient: Sendable {
 
     // MARK: Helpers
 
-    private func addDefaultHeaders(_ req: inout URLRequest) {
+    private func addDefaultHeaders(_ req: inout URLRequest) async {
         req.setValue("application/json, text/plain, */*", forHTTPHeaderField: "Accept")
         // Echo the SPA Origin so Denver's anti-abuse checks don't flag us.
         req.setValue("https://www.denvergov.org", forHTTPHeaderField: "Origin")
         req.setValue("https://www.denvergov.org/", forHTTPHeaderField: "Referer")
+        if let provider = tokenProvider, let token = try? await provider(), !token.isEmpty {
+            req.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        }
     }
 
     private func getJSON<T: Decodable>(_ url: URL) async throws -> T {
         var req = URLRequest(url: url)
-        addDefaultHeaders(&req)
+        await addDefaultHeaders(&req)
         let (data, response) = try await session.data(for: req)
         return try decodeOrThrow(data, response)
     }

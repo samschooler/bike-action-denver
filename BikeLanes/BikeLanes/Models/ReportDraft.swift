@@ -6,6 +6,12 @@ struct ReportDraft: Equatable {
     // Input
     var photoURL: URL?
     var detectedCarBBox: CGRect?
+    var detectedPlateBBox: CGRect?   // Vision-normalized, within the source image
+    /// Tmp-file path for a padded plate crop suitable for inline display.
+    var plateCropImageURL: URL?
+    var plateDetectorConfidence: Double?
+    /// Debug string for the UI showing how the plate-detection stage went.
+    var plateDetectorStatus: String?
 
     // Location
     var coordinates: CLLocationCoordinate2D?

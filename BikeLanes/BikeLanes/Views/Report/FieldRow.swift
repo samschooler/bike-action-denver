@@ -6,6 +6,7 @@ struct FieldRow<Leading: View>: View {
     let value: String?
     let caption: String?
     let missing: Bool
+    let leadingWidth: CGFloat
     let onEdit: () -> Void
     let leading: () -> Leading
 
@@ -13,12 +14,14 @@ struct FieldRow<Leading: View>: View {
          value: String?,
          caption: String?,
          missing: Bool = false,
+         leadingWidth: CGFloat = 44,
          onEdit: @escaping () -> Void,
          @ViewBuilder leading: @escaping () -> Leading) {
         self.label = label
         self.value = value
         self.caption = caption
         self.missing = missing
+        self.leadingWidth = leadingWidth
         self.onEdit = onEdit
         self.leading = leading
     }
@@ -26,7 +29,7 @@ struct FieldRow<Leading: View>: View {
     var body: some View {
         HStack(spacing: 14) {
             leading()
-                .frame(width: 44, height: 44)
+                .frame(width: leadingWidth, height: 44)
                 .background(Color(red: 239/255, green: 244/255, blue: 236/255))
                 .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
 

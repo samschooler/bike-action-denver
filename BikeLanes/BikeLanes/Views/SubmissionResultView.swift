@@ -2,7 +2,7 @@
 import SwiftUI
 
 struct SubmissionResultView: View {
-    let storedCase: StoredCase
+    let receipt: CaseReceipt
     let onDone: () -> Void
 
     var body: some View {
@@ -14,8 +14,13 @@ struct SubmissionResultView: View {
             VStack(spacing: 8) {
                 Text("Submitted")
                     .font(.custom("Fraunces", size: 28).weight(.medium))
-                Text("Denver case #\(storedCase.denverInputRecordId)")
-                    .font(.system(size: 14)).foregroundStyle(.secondary)
+                if let n = receipt.caseNumber {
+                    Text("Denver case \(n)")
+                        .font(.system(size: 14)).foregroundStyle(.secondary)
+                } else {
+                    Text("Denver case #\(receipt.id)")
+                        .font(.system(size: 14)).foregroundStyle(.secondary)
+                }
             }
             Spacer()
             Button("Done", action: onDone)

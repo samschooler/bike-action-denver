@@ -18,10 +18,10 @@ final class ReportViewModelTests: XCTestCase {
             exif: ExifService(),
             geocode: fakeGeocode,
             detector: try VehicleDetector(),
+            plateDetector: nil,
             plateOCR: PlateOCRService(),
             color: ColorService(),
-            api: FakeSubmitAPI(),
-            repository: InMemoryCaseRepo())
+            api: FakeSubmitAPI())
 
         try await vm.load(photoURL: url)
 
@@ -57,19 +57,4 @@ final class FakeSubmitAPI: CaseSubmitting, @unchecked Sendable {
              "id":42}
             """.data(using: .utf8)!)
     }
-}
-
-final class InMemoryCaseRepo: CasePersisting, @unchecked Sendable {
-    var saved: [StoredCase] = []
-    func save(denverInputRecordId: Int, denverCaseId: String?, denverCaseNumber: String?,
-              internalStatus: String, thumbnailFilename: String,
-              snapshot: ReportDraftSnapshot) throws -> StoredCase {
-        let s = StoredCase(denverInputRecordId: denverInputRecordId,
-                           denverCaseId: denverCaseId, denverCaseNumber: denverCaseNumber,
-                           thumbnailFilename: thumbnailFilename,
-                           snapshotJSON: "", internalStatus: internalStatus)
-        saved.append(s); return s
-    }
-    func fetchAll() throws -> [StoredCase] { saved }
-    func deleteAll() throws { saved.removeAll() }
 }

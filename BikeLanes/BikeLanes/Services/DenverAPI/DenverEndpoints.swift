@@ -28,4 +28,31 @@ enum DenverEndpoints {
     }
 
     static let cases: URL = base.appending(path: "api/cases")
+
+    /// One case's full record. Shape matches a single list-response element.
+    static func caseDetail(id: Int) -> URL {
+        base.appending(path: "api/cases/\(id)")
+    }
+
+    /// Lightweight per-case status check — returns a bare JSON-encoded string
+    /// like `"Closed - Answer Provided"`. Useful for polling without pulling
+    /// the whole record.
+    static func caseStatusOnly(id: Int) -> URL {
+        base.appending(path: "api/cases/casestatus/\(id)")
+    }
+
+    /// Signed-in user's case list. The server reads the caller's b2cId out of
+    /// the Bearer token and scopes the response to that user — no id is in the
+    /// URL. Uses OData query params for page size + sort, matching the SPA.
+    static var userCases: URL {
+        var c = URLComponents(url: base.appending(path: "api/cases"),
+                              resolvingAgainstBaseURL: false)!
+        c.queryItems = [
+            URLQueryItem(name: "$top", value: "100"),
+            URLQueryItem(name: "$orderby", value: "Created desc"),
+        ]
+        return c.url!
+    }
+
+    static let profiles: URL = base.appending(path: "api/profiles")
 }

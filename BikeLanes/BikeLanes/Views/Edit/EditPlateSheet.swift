@@ -8,6 +8,19 @@ struct EditPlateSheet: View {
     var body: some View {
         NavigationStack {
             Form {
+                if let url = draft.plateCropImageURL,
+                   let ui = UIImage(contentsOfFile: url.path) {
+                    Section {
+                        Image(uiImage: ui)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(maxWidth: .infinity)
+                            .frame(minHeight: 140)
+                            .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+                            .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+                            .listRowBackground(Color.clear)
+                    }
+                }
                 Section("Plate") {
                     TextField("ABC123", text: Binding(
                         get: { draft.plate ?? "" },

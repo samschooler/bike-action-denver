@@ -4,7 +4,17 @@ import SwiftUI
 struct SubmitButton: View {
     let enabled: Bool
     let isLoading: Bool
+    /// When non-nil, the caption text switches from the anonymous copy to a
+    /// "filed under \(name)" version. Pass the profile's display label.
+    let signedInAs: String?
     let action: () -> Void
+
+    init(enabled: Bool, isLoading: Bool, signedInAs: String? = nil, action: @escaping () -> Void) {
+        self.enabled = enabled
+        self.isLoading = isLoading
+        self.signedInAs = signedInAs
+        self.action = action
+    }
 
     var body: some View {
         VStack(spacing: 12) {
@@ -31,10 +41,15 @@ struct SubmitButton: View {
             }
             .disabled(!enabled || isLoading)
 
-            Text("Files an anonymous case with Denver 311.\nNo account required.")
+            Text(captionText)
                 .multilineTextAlignment(.center)
                 .font(.system(size: 12))
                 .foregroundStyle(.secondary)
         }
+    }
+
+    private var captionText: String {
+        let name = signedInAs ?? "your account"
+        return "Files a case with Denver 311 under \(name).\nYou'll get status updates in your PocketGov account."
     }
 }

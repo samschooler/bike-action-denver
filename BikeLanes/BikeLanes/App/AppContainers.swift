@@ -1,16 +1,10 @@
 // BikeLanes/App/AppContainers.swift
 import Foundation
-import SwiftData
 
+/// Shared app-wide references. Used to be the SwiftData `ModelContainer`; now
+/// that history is server-driven the container is effectively a placeholder
+/// kept for future shared-state needs.
 final class AppContainers: Sendable {
     static let shared = AppContainers()
-    let container: ModelContainer
-
-    private init() {
-        do {
-            container = try ModelContainer(for: StoredCase.self)
-        } catch {
-            fatalError("Could not create ModelContainer: \(error)")
-        }
-    }
+    private init() {}
 }

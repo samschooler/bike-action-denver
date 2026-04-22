@@ -3,10 +3,6 @@
 // Snapshot-capture tests for ReportView: render the SwiftUI hierarchy into a
 // UIHostingController, snap a UIImage, and attach it to the test result so a
 // human can inspect the visual state in Xcode's Report navigator.
-//
-// Placed in the unit-test target (not UITests) because UITests cannot
-// `@testable import BikeLanes`, which is required to construct ReportViewModel
-// from internal types. See Task 30 DONE_WITH_CONCERNS notes.
 
 import XCTest
 import SwiftUI
@@ -44,10 +40,10 @@ extension ReportViewModel {
             exif: ExifService(),
             geocode: NullGeocode(),
             detector: try! VehicleDetector(),
+            plateDetector: nil,
             plateOCR: PlateOCRService(),
             color: ColorService(),
-            api: NullSubmit(),
-            repository: InMemoryRepo())
+            api: NullSubmit())
         switch state {
         case .happy:
             vm.draft.resolvedAddress = DenverAddress(
@@ -85,16 +81,4 @@ private struct NullSubmit: CaseSubmitting {
     func createCase(_ r: CreateCaseRequest) async throws -> CreateCaseResponse {
         fatalError("unused in snapshot")
     }
-}
-
-private final class InMemoryRepo: CasePersisting, @unchecked Sendable {
-    func save(denverInputRecordId: Int, denverCaseId: String?, denverCaseNumber: String?,
-              internalStatus: String, thumbnailFilename: String,
-              snapshot: ReportDraftSnapshot) throws -> StoredCase {
-        StoredCase(denverInputRecordId: denverInputRecordId,
-                   thumbnailFilename: thumbnailFilename,
-                   snapshotJSON: "", internalStatus: internalStatus)
-    }
-    func fetchAll() throws -> [StoredCase] { [] }
-    func deleteAll() throws {}
 }

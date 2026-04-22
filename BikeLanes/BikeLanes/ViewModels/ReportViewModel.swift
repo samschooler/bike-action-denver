@@ -4,6 +4,14 @@ import Observation
 import UIKit
 import CoreLocation
 
+/// Lightweight record handed to `SubmissionResultView` after a successful submit.
+/// Replaces the old local-DB `StoredCase` — history is now server-driven.
+struct CaseReceipt: Equatable, Hashable, Sendable {
+    let id: Int                   // Denver primary key
+    let caseNumber: String?       // Salesforce number, usually nil at submit time
+    let internalCaseStatus: String
+}
+
 @MainActor
 @Observable
 final class ReportViewModel {
@@ -11,15 +19,16 @@ final class ReportViewModel {
     var isLoading = false
     var isSubmitting = false
     var lastError: String?
-    var lastSavedCase: StoredCase?
+    var lastSavedCase: CaseReceipt?
 
     private let exif: ExifService
     private let geocode: GeocodeResolving
     private let detector: VehicleDetector
+    private let plateDetector: PlateDetector?
     private let plateOCR: PlateOCRService
     private let color: ColorService
     private let api: CaseSubmitting
-    private let repository: CasePersisting
+    private let auth: AuthService?
 
     /// Cached Denver menu/question metadata, fetched lazily once per session.
     private var menu: DenverMenu?
@@ -28,19 +37,24 @@ final class ReportViewModel {
     init(exif: ExifService,
          geocode: GeocodeResolving,
          detector: VehicleDetector,
+         plateDetector: PlateDetector?,
          plateOCR: PlateOCRService,
          color: ColorService,
          api: CaseSubmitting,
-         repository: CasePersisting) {
+         auth: AuthService? = nil) {
         self.exif = exif; self.geocode = geocode
-        self.detector = detector; self.plateOCR = plateOCR; self.color = color
-        self.api = api; self.repository = repository
+        self.detector = detector; self.plateDetector = plateDetector
+        self.plateOCR = plateOCR; self.color = color
+        self.api = api; self.auth = auth
     }
 
-    /// Kicks off all the pipelines for a newly-selected photo.
+    /// Kicks off all the pipelines for a newly-selected photo. Resets the draft —
+    /// picking a new photo discards everything the user had for the previous one.
     func load(photoURL url: URL) async throws {
         isLoading = true; defer { isLoading = false }
-        var d = draft
+        lastError = nil
+        lastSavedCase = nil
+        var d = ReportDraft()
         d.photoURL = url
 
         // EXIF is synchronous; do it first.
@@ -77,38 +91,79 @@ final class ReportViewModel {
     private func runMLChain(url: URL) async {
         guard let data = try? Data(contentsOf: url) else { return }
         do {
-            guard let bbox = try await detector.detect(imageData: data),
-                  let cropData = ImageCropper.cropJPEG(data: data, normalizedBBox: bbox) else {
+            guard let carBBox = try await detector.detect(imageData: data),
+                  let carCrop = ImageCropper.cropCGImage(data: data, normalizedBBox: carBBox) else {
                 return
             }
-            draft.detectedCarBBox = bbox
+            draft.detectedCarBBox = carBBox
 
-            async let plate = plateOCR.read(croppedImageData: cropData)
-            if let image = UIImage(data: cropData) {
-                draft.vehicleColor = color.dominantName(image: image)
+            draft.vehicleColor = color.dominantName(image: UIImage(cgImage: carCrop))
+
+            guard let plateDetector else {
+                draft.plateDetectorStatus = "detector disabled"
+                return
             }
-            if let reading = try await plate {
-                draft.plate = reading.text
-                draft.plateConfidence = reading.confidence
+            guard let fullCGImage = ImageCropper.fullCGImage(data: data) else {
+                draft.plateDetectorStatus = "failed to decode image"
+                return
+            }
+            let detection = try await plateDetector.detect(in: fullCGImage)
+            draft.plateDetectorConfidence = detection.bestConfidence
+            draft.plateDetectorStatus = detection.statusMessage
+            if let plateBBox = detection.box {
+                draft.detectedPlateBBox = plateBBox
+                if let thumb = Self.cropCGImage(fullCGImage, normalizedBBox: plateBBox, pad: 0.25),
+                   let thumbData = UIImage(cgImage: thumb).jpegData(compressionQuality: 0.92) {
+                    let thumbURL = FileManager.default.temporaryDirectory
+                        .appendingPathComponent("plate-\(UUID().uuidString).jpg")
+                    try? thumbData.write(to: thumbURL)
+                    draft.plateCropImageURL = thumbURL
+                }
+                if let plateCrop = Self.cropCGImage(fullCGImage, normalizedBBox: plateBBox, pad: 0.10),
+                   let reading = try await plateOCR.read(cgImage: plateCrop) {
+                    draft.plate = reading.text
+                    draft.plateConfidence = reading.confidence
+                }
             }
         } catch {
             lastError = "ML pipeline failed: \(error.localizedDescription)"
         }
     }
 
-    /// Serializes the draft into Denver's JSON and submits it.
+    private static func cropCGImage(_ image: CGImage, normalizedBBox bbox: CGRect, pad: CGFloat) -> CGImage? {
+        let padded = CGRect(
+            x: max(0, bbox.minX - bbox.width * pad),
+            y: max(0, bbox.minY - bbox.height * pad),
+            width: min(1 - bbox.minX + bbox.width * pad, bbox.width * (1 + 2 * pad)),
+            height: min(1 - bbox.minY + bbox.height * pad, bbox.height * (1 + 2 * pad)))
+        let w = CGFloat(image.width), h = CGFloat(image.height)
+        let rect = CGRect(
+            x: padded.minX * w,
+            y: (1 - padded.maxY) * h,
+            width: padded.width * w,
+            height: padded.height * h)
+        return image.cropping(to: rect)
+    }
+
+    /// Serializes the draft into Denver's JSON and submits it. Does not persist
+    /// anything locally — history is driven exclusively by the server list.
     func submit() async throws {
         guard draft.isSubmittable else { return }
+        guard auth?.profile != nil else {
+            lastError = "Sign in to submit reports."
+            throw NSError(domain: "BikeLanes", code: 2,
+                          userInfo: [NSLocalizedDescriptionKey: "Sign in required"])
+        }
         isSubmitting = true; defer { isSubmitting = false }
 
         if menu == nil {
-            guard let api = api as? DenverAPIClient else {
+            guard let menuAPI = api as? MenuProviding else {
                 throw NSError(domain: "BikeLanes", code: 1,
-                              userInfo: [NSLocalizedDescriptionKey: "no DenverAPIClient for menu fetch"])
+                              userInfo: [NSLocalizedDescriptionKey: "no MenuProviding for menu fetch"])
             }
-            let menus = try await api.fetchMenus()
+            let menus = try await menuAPI.fetchMenus()
             menu = menus.first { $0.id == 10 }
-            questions = try await api.fetchMenuQuestions(menuId: 10)
+            questions = try await menuAPI.fetchMenuQuestions(menuId: 10)
         }
         guard let menu else { throw APIError.noMenu }
 
@@ -137,7 +192,7 @@ final class ReportViewModel {
                 menuType: menu.menuType, menuId: menu.id, title: menu.title,
                 name: menu.caseType, sfIssueTemplateId: menu.sfIssueTemplateId,
                 caseQuestions: caseQs),
-            contact: .anonymous,
+            contact: auth?.profile.map(CreateCaseRequest.Contact.signedIn) ?? .anonymous,
             location: .init(
                 address: .init(id: addr.addressId, streetAddress: addr.line1,
                                city: addr.city, state: addr.state, zip: addr.zip),
@@ -146,30 +201,22 @@ final class ReportViewModel {
                     longitude: draft.coordinates?.longitude ?? addr.coordinate.longitude),
                 addressFromReverseGeocode: true))
         let resp = try await api.createCase(req)
-
-        let snap = ReportDraftSnapshot(
-            addressLine1: addr.line1, city: addr.city, state: addr.state, zip: addr.zip,
-            latitude: draft.coordinates?.latitude ?? addr.coordinate.latitude,
-            longitude: draft.coordinates?.longitude ?? addr.coordinate.longitude,
-            plate: draft.plate ?? "",
-            plateState: draft.plateState?.code ?? "CO",
-            vehicleColor: draft.vehicleColor ?? "",
-            vehicleType: draft.vehicleType?.wireValue ?? "",
-            locationOfVehicle: draft.locationOfVehicle?.wireValue ?? "",
-            blockingDriveway: draft.blockingDriveway ?? false,
-            observedAt: draft.observedAt ?? .now,
-            notes: draft.notes ?? "")
-        lastSavedCase = try repository.save(
-            denverInputRecordId: resp.id, denverCaseId: resp.caseId,
-            denverCaseNumber: resp.caseNumber, internalStatus: resp.internalCaseStatus,
-            thumbnailFilename: draft.photoURL?.lastPathComponent ?? "",
-            snapshot: snap)
+        lastSavedCase = CaseReceipt(
+            id: resp.id,
+            caseNumber: resp.caseNumber,
+            internalCaseStatus: resp.internalCaseStatus)
     }
 
     private func answer(for questionId: Int) -> String {
         switch questionId {
         case 20: return (draft.blockingDriveway ?? false) ? "Yes" : "No"
-        case 21: return ISO8601DateFormatter().string(from: draft.observedAt ?? .now)
+        case 21:
+            let f = DateFormatter()
+            f.calendar = .init(identifier: .gregorian)
+            f.locale = .init(identifier: "en_US_POSIX")
+            f.timeZone = .current
+            f.dateFormat = "yyyy-MM-dd"
+            return f.string(from: draft.observedAt ?? .now)
         case 22: return draft.plate ?? ""
         case 46: return draft.plateState?.code ?? "CO"
         case 47: return [draft.vehicleColor, draft.vehicleType?.wireValue]

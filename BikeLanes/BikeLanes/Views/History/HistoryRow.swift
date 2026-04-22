@@ -2,26 +2,61 @@
 import SwiftUI
 
 struct HistoryRow: View {
-    let stored: StoredCase
+    let item: RemoteCase
 
     var body: some View {
         HStack(spacing: 12) {
             RoundedRectangle(cornerRadius: 8)
-                .fill(.secondary.opacity(0.2)).frame(width: 48, height: 48)
+                .fill(.secondary.opacity(0.2))
+                .frame(width: 48, height: 48)
             VStack(alignment: .leading, spacing: 2) {
-                Text(snapshotLine1).font(.body)
-                Text(stored.submittedAt, style: .date).font(.caption).foregroundStyle(.secondary)
-                Text("Case #\(stored.denverInputRecordId) · \(stored.internalStatus)")
-                    .font(.caption2).foregroundStyle(.tertiary)
+                Text(item.displayTitle)
+                    .font(.body)
+                    .lineLimit(1)
+                if let created = item.created {
+                    Text(created, style: .date)
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
+                Text(subtitle)
+                    .font(.caption2)
+                    .foregroundStyle(.tertiary)
+                    .lineLimit(1)
             }
+            Spacer()
+            statusPill
         }
     }
 
-    private var snapshotLine1: String {
-        guard let d = stored.snapshotJSON.data(using: .utf8),
-              let snap = try? JSONDecoder().decode(ReportDraftSnapshot.self, from: d) else {
-            return "Report"
+    private var subtitle: String {
+        if let n = item.caseNumber { return "Case \(n)" }
+        return "Denver #\(item.id)"
+    }
+
+    private var statusPill: some View {
+        Text(item.displayStatus)
+            .font(.system(size: 11, weight: .semibold))
+            .foregroundStyle(statusForeground)
+            .padding(.horizontal, 8).padding(.vertical, 4)
+            .background(statusBackground)
+            .clipShape(Capsule())
+    }
+
+    private var statusForeground: Color {
+        let s = item.displayStatus.lowercased()
+        if s.contains("closed") { return .white }
+        if s.contains("new") || s.contains("processed") || s.contains("queued") {
+            return Color(red: 42/255, green: 111/255, blue: 63/255)
         }
-        return snap.addressLine1
+        return .secondary
+    }
+
+    private var statusBackground: Color {
+        let s = item.displayStatus.lowercased()
+        if s.contains("closed") { return Color(red: 42/255, green: 111/255, blue: 63/255) }
+        if s.contains("new") || s.contains("processed") || s.contains("queued") {
+            return Color(red: 231/255, green: 244/255, blue: 232/255)
+        }
+        return Color(red: 239/255, green: 236/255, blue: 226/255)
     }
 }

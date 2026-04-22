@@ -2,32 +2,52 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @State private var showingEraseConfirm = false
-    let repo: CasePersisting
+    @State private var showingLogin = false
+    let auth: AuthService?
 
-    init(repo: CasePersisting) { self.repo = repo }
+    init(auth: AuthService? = nil) {
+        self.auth = auth
+    }
 
     var body: some View {
         Form {
+            Section("Account") {
+                if let auth {
+                    if let profile = auth.profile {
+                        LabeledContent("Signed in as", value: profile.displayLabel)
+                        if let email = profile.email, !email.isEmpty {
+                            LabeledContent("Email", value: email)
+                        }
+                        Button("Sign out", role: .destructive) {
+                            Task { await auth.signOut() }
+                        }
+                    } else if auth.hasCredentials {
+                        LabeledContent("Signed in", value: "loading profile…")
+                        Button("Sign out", role: .destructive) {
+                            Task { await auth.signOut() }
+                        }
+                    } else {
+                        Button("Sign in with Denver PocketGov") { showingLogin = true }
+                        Text("Signing in lets Denver tie reports to your account so you can see status updates. Required to file a report.")
+                            .font(.footnote).foregroundStyle(.secondary)
+                    }
+                } else {
+                    Text("Auth unavailable in this build.")
+                        .font(.footnote).foregroundStyle(.secondary)
+                }
+            }
             Section("About") {
                 LabeledContent("Version", value: Bundle.main.shortVersion ?? "?")
                 Link("Privacy policy", destination: URL(string: "https://sam.ink/bike-lanes/privacy")!)
             }
-            Section("Data") {
-                Button("Delete all local reports", role: .destructive) {
-                    showingEraseConfirm = true
-                }
-            }
             Section("What this does") {
-                Text("Submits anonymous illegal-parking reports to Denver's 311 system. All photo analysis happens on your device; the photo and address are uploaded to Denver.")
+                Text("Submits illegal-parking reports to Denver's 311 system. All photo analysis happens on your device; the photo and address are uploaded to Denver.")
                     .font(.footnote).foregroundStyle(.secondary)
             }
         }
         .navigationTitle("Settings")
-        .confirmationDialog("Delete all local reports?",
-                            isPresented: $showingEraseConfirm,
-                            titleVisibility: .visible) {
-            Button("Delete", role: .destructive) { try? repo.deleteAll() }
+        .sheet(isPresented: $showingLogin) {
+            if let auth { LoginSheet(auth: auth) }
         }
     }
 }

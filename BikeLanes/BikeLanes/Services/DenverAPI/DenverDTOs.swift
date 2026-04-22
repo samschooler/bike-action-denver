@@ -96,6 +96,9 @@ struct CreateCaseRequest: Encodable {
         let lastName: String
         let email: String
         let phone: String?
+        /// Azure B2C object id; populated for signed-in submissions so Denver can
+        /// tie the case to the user's PocketGov account.
+        let b2cId: String?
     }
     struct Location: Encodable {
         struct Address: Encodable {
@@ -140,6 +143,19 @@ extension CreateCaseRequest.Contact {
     /// If Denver rejects this shape, update here after the probe identifies the accepted variant.
     static var anonymous: CreateCaseRequest.Contact {
         .init(anonymous: true, languagePreference: "en",
-              firstName: "", lastName: "", email: "", phone: nil)
+              firstName: "", lastName: "", email: "", phone: nil, b2cId: nil)
+    }
+
+    /// Signed-in contact built from a fetched Denver `UserProfile`. Fields fall
+    /// back to empty strings if the profile has them nil, matching the wire
+    /// shape Denver's SPA sends.
+    static func signedIn(profile: UserProfile) -> CreateCaseRequest.Contact {
+        .init(anonymous: false,
+              languagePreference: profile.preferredLanguage ?? "en",
+              firstName: profile.firstName ?? "",
+              lastName:  profile.lastName ?? "",
+              email:     profile.email ?? "",
+              phone:     profile.phone,
+              b2cId:     profile.id)
     }
 }

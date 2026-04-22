@@ -17,6 +17,19 @@ enum DenverVehicleType: String, CaseIterable, Codable {
     }
 
     var display: String { wireValue }
+
+    /// Compact label for pill selectors. `wireValue` is too wordy (e.g. "Sedan (4 Door)").
+    var shortLabel: String {
+        switch self {
+        case .coupe:   return "Coupe"
+        case .sedan:   return "Sedan"
+        case .utility: return "Utility"
+        case .pickup:  return "Pickup"
+        case .suv:     return "SUV"
+        case .van:     return "Van"
+        case .other:   return "Other"
+        }
+    }
 }
 
 enum PropertyType: String, CaseIterable, Codable {
