@@ -77,6 +77,7 @@
 		DC452A7C60883F57A098DA0A /* IMG_3239_car.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CEB0E3A586EC1D061EC5EF0C /* IMG_3239_car.jpg */; };
 		E0139ED4208E497B19CF30C8 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D883F6488FFE070EF84B9D8 /* HistoryViewModel.swift */; };
 		E39C41D80D8C966C5DE59FCA /* PlateDetectorModel.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 4D6358FFAEE60C53DBD94114 /* PlateDetectorModel.mlpackage */; };
+		E6015E4A7C5AE6600CCC46D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1C86D96802572086AA597DB /* LaunchScreen.storyboard */; };
 		E79B073CFC61B181161608F4 /* ReportViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C35775453E2DB7B788519E /* ReportViewModelTests.swift */; };
 		E96781253D06A09C7CFC3B59 /* PhotoSourcePanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E586894A0FB076704D5CFE42 /* PhotoSourcePanel.swift */; };
 		EFECC5FD1FA6102B87CA9B99 /* BikeLanesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C5287D058BEB946D7A3E8A /* BikeLanesUITests.swift */; };
@@ -151,6 +152,7 @@
 		920CC557048BFE0057AE61C5 /* BikeLanesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeLanesApp.swift; sourceTree = "<group>"; };
 		99103EEFD3BD6E7721B94614 /* DenverEndpointsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DenverEndpointsTests.swift; sourceTree = "<group>"; };
 		9C69D46D38EA2E0858C25DC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		A1C86D96802572086AA597DB /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A3D5DB350F54D44D856B5005 /* EnumsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumsTests.swift; sourceTree = "<group>"; };
 		A6E0BE2D53956757A9804BDB /* ImageCropper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCropper.swift; sourceTree = "<group>"; };
 		A763C6F28BCEA83567473783 /* ReportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewModel.swift; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				A931505D9D69FF612727491E /* Assets.xcassets */,
+				A1C86D96802572086AA597DB /* LaunchScreen.storyboard */,
 				C0497B7BFE0C6E567D1C62B6 /* MLModels */,
 			);
 			path = Resources;
@@ -534,6 +537,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				028161EF040C607BDDCC2F24 /* Assets.xcassets in Resources */,
+				E6015E4A7C5AE6600CCC46D7 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
