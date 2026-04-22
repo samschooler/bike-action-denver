@@ -9,7 +9,6 @@ struct ReportView: View {
     @State private var showingLibraryPicker = false
     @State private var showingCamera = false
     @State private var showingLogin = false
-    @State private var showingDemoLogin = false
     @State private var showingSubmitConfirm = false
     @State private var editing: EditTarget?
     @State private var showingSuccess = false
@@ -38,9 +37,7 @@ struct ReportView: View {
                 }
 
                 if !isSignedIn {
-                    SignInPrompt(
-                        onSignIn: { showingLogin = true },
-                        onDemoSignIn: { showingDemoLogin = true })
+                    SignInPrompt(onSignIn: { showingLogin = true })
                         .padding(.top, 12)
                     ExplainerCard()
                         .padding(.top, 4)
@@ -96,9 +93,6 @@ struct ReportView: View {
         }
         .sheet(isPresented: $showingLogin) {
             if let auth { LoginSheet(auth: auth) }
-        }
-        .sheet(isPresented: $showingDemoLogin) {
-            if let auth { DemoLoginSheet(auth: auth) }
         }
     }
 

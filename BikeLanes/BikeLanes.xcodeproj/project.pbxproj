@@ -10,7 +10,6 @@
 		0117799DE835548B99248664 /* EditDateTimeSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35E72F4CEACA026904625C9 /* EditDateTimeSheet.swift */; };
 		028161EF040C607BDDCC2F24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A931505D9D69FF612727491E /* Assets.xcassets */; };
 		02F44A9F65938520083CC58E /* DenverDTOs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC9300C2575B21C33829EEE /* DenverDTOs.swift */; };
-		05FF20CA7152BD7D30C6CB01 /* DemoLoginSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C778F7E9D00EB935FB7583 /* DemoLoginSheet.swift */; };
 		084F45ED75AFE1872FB9924F /* EditNotesSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7440DC6392F1F9F4A17BBB64 /* EditNotesSheet.swift */; };
 		0D69C163E4BD199F892B3A21 /* PlateDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811AAE32024D28D2FC526C1F /* PlateDetector.swift */; };
 		1968757C66AA9F51EC19429C /* DenverAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7165AB387F3447E6C6D25E32 /* DenverAPIClient.swift */; };
@@ -152,7 +151,6 @@
 		916988F530A9478DAE329550 /* CaseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseDetailView.swift; sourceTree = "<group>"; };
 		920CC557048BFE0057AE61C5 /* BikeLanesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeLanesApp.swift; sourceTree = "<group>"; };
 		99103EEFD3BD6E7721B94614 /* DenverEndpointsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DenverEndpointsTests.swift; sourceTree = "<group>"; };
-		99C778F7E9D00EB935FB7583 /* DemoLoginSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoLoginSheet.swift; sourceTree = "<group>"; };
 		9C69D46D38EA2E0858C25DC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A1C86D96802572086AA597DB /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A3D5DB350F54D44D856B5005 /* EnumsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumsTests.swift; sourceTree = "<group>"; };
@@ -261,7 +259,6 @@
 		7164BCAA2804236BB5C274DD /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				99C778F7E9D00EB935FB7583 /* DemoLoginSheet.swift */,
 				20E611DD3CDC60C014553130 /* LoginSheet.swift */,
 				B4A5293017EB8C13C6285C47 /* LoginWebView.swift */,
 			);
@@ -605,7 +602,6 @@
 				B040F346ABEBE49A4D155EAB /* CaseStatusService.swift in Sources */,
 				D236AC6D4501C8B75CB76910 /* ColorService.swift in Sources */,
 				DBBAC70C55CB7E05431AA0B1 /* ColorSwatchRow.swift in Sources */,
-				05FF20CA7152BD7D30C6CB01 /* DemoLoginSheet.swift in Sources */,
 				1968757C66AA9F51EC19429C /* DenverAPIClient.swift in Sources */,
 				52BEF65225C7614EBB679F99 /* DenverAddress.swift in Sources */,
 				02F44A9F65938520083CC58E /* DenverDTOs.swift in Sources */,

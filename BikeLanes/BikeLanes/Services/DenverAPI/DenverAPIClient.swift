@@ -79,6 +79,13 @@ struct DenverAPIClient: Sendable {
     // MARK: Case create
 
     func createCase(_ request: CreateCaseRequest) async throws -> CreateCaseResponse {
+        // Belt-and-suspenders: reject any demo-marked identity at the network
+        // layer so it's impossible for a demo session to land a real 311 case
+        // even if ReportViewModel's demo short-circuit were bypassed.
+        if let b2cId = request.contact.b2cId,
+           b2cId.hasPrefix("demo-") {
+            throw APIError.refusedDemoSubmit
+        }
         var req = URLRequest(url: DenverEndpoints.cases)
         req.httpMethod = "POST"
         req.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -115,11 +122,14 @@ struct DenverAPIClient: Sendable {
 
     enum APIError: Error, CustomStringConvertible {
         case http(status: Int, body: Data)
+        case refusedDemoSubmit
 
         var description: String {
             switch self {
             case .http(let s, let b):
                 return "Denver API HTTP \(s): \(String(data: b, encoding: .utf8) ?? "<non-utf8>")"
+            case .refusedDemoSubmit:
+                return "Refused to submit: the current session is in demo mode."
             }
         }
     }
