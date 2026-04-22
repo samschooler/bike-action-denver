@@ -13,7 +13,14 @@ struct SettingsView: View {
         Form {
             Section("Account") {
                 if let auth {
-                    if let profile = auth.profile {
+                    if auth.isDemoMode {
+                        LabeledContent("Signed in as", value: "Demo Mode")
+                        Text("Submissions and history are simulated. Nothing is sent to Denver 311.")
+                            .font(.footnote).foregroundStyle(.secondary)
+                        Button("Exit demo mode", role: .destructive) {
+                            Task { await auth.signOut() }
+                        }
+                    } else if let profile = auth.profile {
                         LabeledContent("Signed in as", value: profile.displayLabel)
                         if let email = profile.email, !email.isEmpty {
                             LabeledContent("Email", value: email)
@@ -29,6 +36,11 @@ struct SettingsView: View {
                     } else {
                         Button("Sign in with Denver PocketGov") { showingLogin = true }
                         Text("Signing in lets Denver tie reports to your account so you can see status updates. Required to file a report.")
+                            .font(.footnote).foregroundStyle(.secondary)
+                        Button("Try Demo Mode") {
+                            auth.enterDemoMode()
+                        }
+                        Text("Exercises the full flow without a Denver account. Submissions and history are simulated — nothing is sent to Denver 311.")
                             .font(.footnote).foregroundStyle(.secondary)
                     }
                 } else {

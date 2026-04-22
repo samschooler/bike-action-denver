@@ -42,30 +42,22 @@ final class AuthService {
         self.hasCredentials = (store.load()?.refreshTokenIsValid == true)
     }
 
-    /// Hardcoded demo credentials for the App Store review team. Anyone signing
-    /// in with these lands in `isDemoMode` and never contacts the real Denver
-    /// API — see `ReportViewModel.submit()` and `HistoryViewModel.refresh()`.
-    static let demoEmail = "apple@sam.ink"
-    static let demoPassword = "password"
-
-    /// Attempts the App Store reviewer demo flow. Returns true when the creds
-    /// match; populates a synthetic profile + flips `isDemoMode` on.
-    func signInAsDemo(email: String, password: String) -> Bool {
-        guard email.trimmingCharacters(in: .whitespacesAndNewlines).caseInsensitiveCompare(Self.demoEmail) == .orderedSame,
-              password == Self.demoPassword else {
-            return false
-        }
+    /// Enter demo mode — synthesises a signed-in state without contacting any
+    /// real auth backend. Every subsequent submit / history fetch is faked
+    /// (see `ReportViewModel.submit()` and `HistoryViewModel.refresh()`).
+    /// Used by App Store reviewers and anyone who wants to see the flow
+    /// without a Denver PocketGov account.
+    func enterDemoMode() {
         self.profile = UserProfile(
             id: "demo-apple-reviewer",
             firstName: "Apple",
             lastName: "Reviewer",
             displayName: "Apple Reviewer",
-            email: Self.demoEmail,
+            email: "demo@sam.ink",
             phone: nil,
             preferredLanguage: "en")
         self.hasCredentials = true
         self.isDemoMode = true
-        return true
     }
 
     /// Call when an API response indicates the user is no longer authenticated
@@ -96,7 +88,11 @@ final class AuthService {
 
     /// Returns a valid id_token, refreshing or silently re-authorizing as needed.
     /// nil means we have no way to get one (user is signed out, no B2C cookie).
+    /// **Demo mode short-circuits to nil** — even if something somehow called
+    /// an authenticated Denver endpoint while in demo mode, we would never
+    /// attach a Bearer token or trigger a B2C refresh.
     func currentIdToken() async throws -> String? {
+        if isDemoMode { return nil }
         if let tokens = store.load() {
             if tokens.idTokenIsValid { return tokens.idToken }
             if tokens.refreshTokenIsValid { return try await refresh(using: tokens.refreshToken) }
