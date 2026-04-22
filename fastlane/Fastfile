@@ -20,10 +20,10 @@
 
 default_platform(:ios)
 
-# Paths are relative to the `fastlane/` directory (fastlane's default cwd).
-XCODE_PROJECT = "../BikeLanes/BikeLanes.xcodeproj"
+# Paths are relative to the repo root (fastlane's invocation cwd).
+XCODE_PROJECT = "BikeLanes/BikeLanes.xcodeproj"
 XCODE_SCHEME  = "BikeLanes"
-BUILD_DIR     = "../build/fastlane"
+BUILD_DIR     = "build/fastlane"
 
 # Monotonic build number driven by timestamp. Survives `xcodegen generate`
 # (which would otherwise reset CURRENT_PROJECT_VERSION back to 1 from project.yml).
