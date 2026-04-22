@@ -11,7 +11,7 @@ struct SignInPrompt: View {
             HStack(spacing: 12) {
                 Image(systemName: "person.crop.circle.badge.checkmark")
                     .font(.system(size: 34, weight: .medium))
-                    .foregroundStyle(Color(red: 42/255, green: 111/255, blue: 63/255))
+                    .foregroundStyle(Color.appAccent)
                 VStack(alignment: .leading, spacing: 2) {
                     Text("Sign in to report")
                         .font(.system(size: 18, weight: .semibold))
@@ -35,17 +35,17 @@ struct SignInPrompt: View {
                 }
                 .foregroundStyle(.white)
                 .padding(.horizontal, 16).padding(.vertical, 14)
-                .background(Color(red: 42/255, green: 111/255, blue: 63/255))
+                .background(Color.appAccent)
                 .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
             }
             .buttonStyle(.plain)
         }
         .padding(18)
-        .background(Color.white)
+        .background(Color.appSurface)
         .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
         .overlay(
             RoundedRectangle(cornerRadius: 18)
-                .stroke(Color(red: 233/255, green: 229/255, blue: 218/255), lineWidth: 1))
+                .stroke(Color.appBorder, lineWidth: 1))
         .padding(.horizontal, 20)
     }
 }

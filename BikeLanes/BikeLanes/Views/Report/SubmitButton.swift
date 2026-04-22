@@ -32,11 +32,11 @@ struct SubmitButton: View {
                 }
                 .padding(.vertical, 18)
                 .frame(maxWidth: .infinity)
-                .background(enabled ? Color(red: 42/255, green: 111/255, blue: 63/255)
+                .background(enabled ? Color.appAccent
                                      : Color.secondary.opacity(0.5))
                 .foregroundStyle(.white)
                 .clipShape(RoundedRectangle(cornerRadius: 14))
-                .shadow(color: Color(red: 42/255, green: 111/255, blue: 63/255).opacity(0.25),
+                .shadow(color: Color.appAccent.opacity(0.25),
                         radius: 14, y: 4)
             }
             .disabled(!enabled || isLoading)

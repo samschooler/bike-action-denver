@@ -18,7 +18,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.98039215686274506" green="0.96862745098039216" blue="0.90980392156862744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="LaunchBackground"/>
                         <constraints>
                             <constraint firstItem="IMG-lp-001" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="C-TOP-1"/>
                             <constraint firstItem="IMG-lp-001" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="C-LEAD-1"/>
@@ -34,5 +34,8 @@
     </scenes>
     <resources>
         <image name="LaunchImage" width="1289" height="2310"/>
+        <namedColor name="LaunchBackground">
+            <color red="0.98039215686274506" green="0.96862745098039216" blue="0.90980392156862744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

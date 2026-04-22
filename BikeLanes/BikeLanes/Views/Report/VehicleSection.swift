@@ -64,7 +64,7 @@ struct VehicleSection: View {
                 Button { expanded = false } label: {
                     Text("Done")
                         .font(.system(size: 14, weight: .semibold))
-                        .foregroundStyle(Color(red: 42/255, green: 111/255, blue: 63/255))
+                        .foregroundStyle(Color.appAccent)
                         .frame(maxWidth: .infinity, alignment: .trailing)
                         .padding(.horizontal, 16).padding(.vertical, 14)
                 }
@@ -96,7 +96,7 @@ struct VehicleSection: View {
     }
 
     private var divider: some View {
-        Rectangle().fill(Color(red: 242/255, green: 239/255, blue: 229/255))
+        Rectangle().fill(Color.appDivider)
             .frame(height: 1).padding(.horizontal, 16)
     }
 

@@ -44,14 +44,14 @@ struct ColorSwatchRow: View {
                 Text("COLOR")
                     .font(.system(size: 11, weight: .medium))
                     .kerning(0.88)
-                    .foregroundStyle(Color(red: 138/255, green: 135/255, blue: 118/255))
+                    .foregroundStyle(Color.appLabelMuted)
                 if (selection ?? "").isEmpty {
                     Text("REQUIRED")
                         .font(.system(size: 9, weight: .semibold))
                         .kerning(0.6)
-                        .foregroundStyle(Color(red: 179/255, green: 58/255, blue: 58/255))
+                        .foregroundStyle(Color.appDanger)
                         .padding(.horizontal, 7).padding(.vertical, 3)
-                        .background(Color(red: 253/255, green: 237/255, blue: 233/255))
+                        .background(Color.appDangerMuted)
                         .clipShape(Capsule())
                 }
                 Spacer()
@@ -66,7 +66,7 @@ struct ColorSwatchRow: View {
                 .textInputAutocapitalization(.words)
                 .autocorrectionDisabled()
                 .padding(.horizontal, 12).padding(.vertical, 8)
-                .background(Color(red: 239/255, green: 244/255, blue: 236/255))
+                .background(Color.appAccentInputBg)
                 .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
         }
         .padding(.horizontal, 16)
@@ -86,7 +86,7 @@ struct ColorSwatchRow: View {
                             lineWidth: 1))
                 if isSelected {
                     Circle()
-                        .stroke(Color(red: 42/255, green: 111/255, blue: 63/255), lineWidth: 2.5)
+                        .stroke(Color.appAccent, lineWidth: 2.5)
                         .frame(width: 40, height: 40)
                 }
             }

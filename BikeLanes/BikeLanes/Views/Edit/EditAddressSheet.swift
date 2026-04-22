@@ -14,7 +14,7 @@ struct EditAddressSheet: View {
     var body: some View {
         NavigationStack {
             ZStack(alignment: .top) {
-                Color(red: 250/255, green: 250/255, blue: 247/255).ignoresSafeArea()
+                Color.appBackground.ignoresSafeArea()
                 VStack(alignment: .leading, spacing: 0) {
                     searchField
                         .padding(.horizontal, 20)
@@ -52,11 +52,11 @@ struct EditAddressSheet: View {
             }
         }
         .padding(.horizontal, 14).padding(.vertical, 12)
-        .background(Color.white)
+        .background(Color.appSurface)
         .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
         .overlay(
             RoundedRectangle(cornerRadius: 14)
-                .stroke(Color(red: 233/255, green: 229/255, blue: 218/255), lineWidth: 1))
+                .stroke(Color.appBorder, lineWidth: 1))
     }
 
     @ViewBuilder
@@ -73,12 +73,12 @@ struct EditAddressSheet: View {
                     ForEach(Array(matches.enumerated()), id: \.element.addressId) { idx, addr in
                         resultRow(addr)
                         if idx < matches.count - 1 {
-                            Rectangle().fill(Color(red: 242/255, green: 239/255, blue: 229/255))
+                            Rectangle().fill(Color.appDivider)
                                 .frame(height: 1).padding(.horizontal, 16)
                         }
                     }
                 }
-                .background(Color.white)
+                .background(Color.appSurface)
                 .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
                 .padding(.horizontal, 20)
             }
@@ -100,7 +100,7 @@ struct EditAddressSheet: View {
         } label: {
             HStack(alignment: .top, spacing: 12) {
                 Image(systemName: "mappin.and.ellipse")
-                    .foregroundStyle(Color(red: 179/255, green: 58/255, blue: 58/255))
+                    .foregroundStyle(Color.appDanger)
                     .frame(width: 20, height: 20)
                     .padding(.top, 2)
                 VStack(alignment: .leading, spacing: 2) {

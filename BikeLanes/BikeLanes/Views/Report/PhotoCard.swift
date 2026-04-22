@@ -98,7 +98,7 @@ struct PhotoCard: View {
         Map(initialPosition: .camera(MapCamera(
             centerCoordinate: coord, distance: 400, heading: 0, pitch: 0))) {
             Marker("", coordinate: coord)
-                .tint(Color(red: 179/255, green: 58/255, blue: 58/255))
+                .tint(Color.appDanger)
         }
         .mapStyle(.standard(pointsOfInterest: .excludingAll))
     }
@@ -134,7 +134,7 @@ struct PhotoCard: View {
         Map(initialPosition: .camera(MapCamera(
             centerCoordinate: coord, distance: 300, heading: 0, pitch: 0))) {
             Marker("", coordinate: coord)
-                .tint(Color(red: 179/255, green: 58/255, blue: 58/255))
+                .tint(Color.appDanger)
         }
         .mapStyle(.standard(pointsOfInterest: .excludingAll))
         .allowsHitTesting(false)
@@ -163,7 +163,7 @@ struct PhotoCard: View {
             .foregroundStyle(.white)
             .padding(.horizontal, 10).padding(.vertical, 4)
             .background(filled
-                ? Color(red: 42/255, green: 111/255, blue: 63/255).opacity(0.9)
+                ? Color.appAccent.opacity(0.9)
                 : Color.white.opacity(0.15))
             .clipShape(Capsule())
     }

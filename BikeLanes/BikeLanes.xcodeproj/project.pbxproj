@@ -80,6 +80,7 @@
 		E6015E4A7C5AE6600CCC46D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1C86D96802572086AA597DB /* LaunchScreen.storyboard */; };
 		E79B073CFC61B181161608F4 /* ReportViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C35775453E2DB7B788519E /* ReportViewModelTests.swift */; };
 		E96781253D06A09C7CFC3B59 /* PhotoSourcePanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E586894A0FB076704D5CFE42 /* PhotoSourcePanel.swift */; };
+		EBDE29182A8847BB6A922A4C /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2B9CCF8A423CA4D707A23A /* AppTheme.swift */; };
 		EFECC5FD1FA6102B87CA9B99 /* BikeLanesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C5287D058BEB946D7A3E8A /* BikeLanesUITests.swift */; };
 		F3CE2B76A65121D86CA3ECD5 /* SignInPrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C35CBC518143CAC79C9165 /* SignInPrompt.swift */; };
 		F4726BCAB4B8D2046145E2EF /* CaseRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1798B5B71628F90DA91C795 /* CaseRepositoryTests.swift */; };
@@ -118,6 +119,7 @@
 		210A1C44369FB3B0097C3740 /* QuickPickRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickPickRow.swift; sourceTree = "<group>"; };
 		213F814BEF6163A43D0EEE20 /* SubmissionResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmissionResultView.swift; sourceTree = "<group>"; };
 		221927E0F3698AF42FD56436 /* BikeLanesUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = BikeLanesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D2B9CCF8A423CA4D707A23A /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 		2F93AAA295AACCA0D7D70904 /* BikeLanes.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = BikeLanes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FAA3B9B2EB83E1274C5DEE5 /* HistoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRow.swift; sourceTree = "<group>"; };
 		31D4D6F8F257E82DCF01506E /* RemoteCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteCase.swift; sourceTree = "<group>"; };
@@ -200,6 +202,14 @@
 				58C5287D058BEB946D7A3E8A /* BikeLanesUITests.swift */,
 			);
 			path = BikeLanesUITests;
+			sourceTree = "<group>";
+		};
+		1732764A472CABD7A115D50A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2D2B9CCF8A423CA4D707A23A /* AppTheme.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		1A61B580F74C3F09563C7D13 /* App */ = {
@@ -340,6 +350,7 @@
 			isa = PBXGroup;
 			children = (
 				1A61B580F74C3F09563C7D13 /* App */,
+				1732764A472CABD7A115D50A /* Extensions */,
 				C014F7EF30463CA1D5B98138 /* Models */,
 				6B873526F8F5CF7DBE4794D6 /* Resources */,
 				D93AAAF7A1F0E06B5BAE4A15 /* Services */,
@@ -592,6 +603,7 @@
 			files = (
 				1F27D3117D6A36D5E2F7E374 /* AddressNormalizer.swift in Sources */,
 				B26A4D40469F15C4B27B1A1B /* AppContainers.swift in Sources */,
+				EBDE29182A8847BB6A922A4C /* AppTheme.swift in Sources */,
 				703761B137F63208F5A94725 /* AuthConstants.swift in Sources */,
 				1A36CF05440E8063597F678A /* AuthService.swift in Sources */,
 				220F378F5481EB2F346F493E /* AuthedImage.swift in Sources */,
@@ -774,7 +786,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				MARKETING_VERSION = 0.1.1;
+				MARKETING_VERSION = 0.1.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -842,7 +854,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				MARKETING_VERSION = 0.1.1;
+				MARKETING_VERSION = 0.1.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;

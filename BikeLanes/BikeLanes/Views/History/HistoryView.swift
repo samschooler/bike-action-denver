@@ -64,7 +64,7 @@ struct HistoryView: View {
         HStack {
             if let err = vm.lastError {
                 Image(systemName: "exclamationmark.triangle.fill")
-                    .foregroundStyle(Color(red: 179/255, green: 58/255, blue: 58/255))
+                    .foregroundStyle(Color.appDanger)
                 Text(err).lineLimit(2)
             } else if let last = vm.lastRefreshed {
                 Text("Updated \(relative(last))")

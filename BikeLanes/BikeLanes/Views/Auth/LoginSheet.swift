@@ -35,7 +35,7 @@ struct LoginSheet: View {
                             .foregroundStyle(.white)
                             .padding(12)
                             .frame(maxWidth: .infinity, alignment: .leading)
-                            .background(Color(red: 179/255, green: 58/255, blue: 58/255))
+                            .background(Color.appDanger)
                     }
                 }
                 if auth.isAuthenticating {

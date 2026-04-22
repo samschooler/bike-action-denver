@@ -29,7 +29,7 @@ struct AuthedImage: View {
 
     private func placeholder(text: String) -> some View {
         ZStack {
-            Rectangle().fill(Color(red: 239/255, green: 236/255, blue: 226/255))
+            Rectangle().fill(Color.appImagePlaceholder)
             if !text.isEmpty {
                 Text(text).font(.system(size: 12)).foregroundStyle(.secondary)
             }

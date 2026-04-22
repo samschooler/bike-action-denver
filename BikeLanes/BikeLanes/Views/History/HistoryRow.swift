@@ -46,17 +46,17 @@ struct HistoryRow: View {
         let s = item.displayStatus.lowercased()
         if s.contains("closed") { return .white }
         if s.contains("new") || s.contains("processed") || s.contains("queued") {
-            return Color(red: 42/255, green: 111/255, blue: 63/255)
+            return Color.appAccent
         }
         return .secondary
     }
 
     private var statusBackground: Color {
         let s = item.displayStatus.lowercased()
-        if s.contains("closed") { return Color(red: 42/255, green: 111/255, blue: 63/255) }
+        if s.contains("closed") { return Color.appAccent }
         if s.contains("new") || s.contains("processed") || s.contains("queued") {
-            return Color(red: 231/255, green: 244/255, blue: 232/255)
+            return Color.appAccentMuted
         }
-        return Color(red: 239/255, green: 236/255, blue: 226/255)
+        return Color.appImagePlaceholder
     }
 }

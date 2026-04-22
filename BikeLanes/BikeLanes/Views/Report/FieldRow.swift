@@ -30,14 +30,14 @@ struct FieldRow<Leading: View>: View {
         HStack(spacing: 14) {
             leading()
                 .frame(width: leadingWidth, height: 44)
-                .background(Color(red: 239/255, green: 244/255, blue: 236/255))
+                .background(Color.appAccentInputBg)
                 .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
 
             VStack(alignment: .leading, spacing: 2) {
                 Text(label.uppercased())
                     .font(.system(size: 11, weight: .medium))
                     .kerning(0.88)
-                    .foregroundStyle(Color(red: 138/255, green: 135/255, blue: 118/255))
+                    .foregroundStyle(Color.appLabelMuted)
 
                 valueText
 
@@ -51,7 +51,7 @@ struct FieldRow<Leading: View>: View {
             Spacer()
             Button("Edit", action: onEdit)
                 .font(.system(size: 13, weight: .medium))
-                .foregroundStyle(Color(red: 42/255, green: 111/255, blue: 63/255))
+                .foregroundStyle(Color.appAccent)
                 .buttonStyle(.plain)
         }
         .padding(.horizontal, 16)
@@ -65,7 +65,7 @@ struct FieldRow<Leading: View>: View {
         if missing {
             Text(value ?? "Tap to add")
                 .font(.system(size: 15, weight: .medium).italic())
-                .foregroundStyle(Color(red: 179/255, green: 58/255, blue: 58/255))
+                .foregroundStyle(Color.appDanger)
         } else {
             Text(value ?? "Tap to add")
                 .font(.system(size: 15, weight: .medium))
