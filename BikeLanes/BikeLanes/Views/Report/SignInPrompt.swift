@@ -5,6 +5,7 @@ import SwiftUI
 /// on a Denver PocketGov account; tapping the button launches the login sheet.
 struct SignInPrompt: View {
     let onSignIn: () -> Void
+    let onDemoSignIn: () -> Void
 
     var body: some View {
         VStack(alignment: .leading, spacing: 14) {
@@ -39,6 +40,28 @@ struct SignInPrompt: View {
                 .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
             }
             .buttonStyle(.plain)
+
+            Button(action: onDemoSignIn) {
+                HStack {
+                    Text("Sign in with Bike Action Denver")
+                        .font(.system(size: 14, weight: .semibold))
+                    Spacer()
+                    Image(systemName: "lock.shield")
+                        .font(.system(size: 12, weight: .semibold))
+                }
+                .foregroundStyle(Color(red: 42/255, green: 111/255, blue: 63/255))
+                .padding(.horizontal, 16).padding(.vertical, 12)
+                .background(Color.white)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 14, style: .continuous)
+                        .stroke(Color(red: 42/255, green: 111/255, blue: 63/255), lineWidth: 1))
+                .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
+            }
+            .buttonStyle(.plain)
+
+            Text("Use the Bike Action Denver demo account for a simulated walkthrough. Submissions won't file real reports.")
+                .font(.system(size: 11))
+                .foregroundStyle(.secondary)
         }
         .padding(18)
         .background(Color.white)

@@ -1,0 +1,24 @@
+{
+  "source": "/Users/samschooler/repo/bike-lanes/BikeLanes/BikeLanes/Views/Report/SubmitButton.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Submit to Denver",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 23
+        }
+      },
+      {
+        "comment": "",
+        "key": "→",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 30
+        }
+      }
+    ]
+  },
+  "version": 1
+}

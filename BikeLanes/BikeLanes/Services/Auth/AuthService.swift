@@ -17,6 +17,12 @@ final class AuthService {
     /// Keychain, even before the profile fetch completes. Flips to `false` when
     /// we sign out or an API call surfaces that the account was invalidated.
     var hasCredentials: Bool
+
+    /// True when signed in via the hardcoded demo account used by the App Store
+    /// review team. In this mode we never touch the real Denver API — submits
+    /// are synthetic, history is a canned fixture — so reviewers can exercise
+    /// the full flow without filing real 311 cases.
+    var isDemoMode: Bool = false
     /// True when either profile is loaded OR we have tokens and will soon load one.
     var isSignedIn: Bool { profile != nil || hasCredentials }
     /// Surfaced for UI ("Signing in…" states).
@@ -34,6 +40,32 @@ final class AuthService {
         // Peek the Keychain synchronously so the UI can skip the sign-in prompt
         // immediately on launch if tokens exist. Profile loads async afterwards.
         self.hasCredentials = (store.load()?.refreshTokenIsValid == true)
+    }
+
+    /// Hardcoded demo credentials for the App Store review team. Anyone signing
+    /// in with these lands in `isDemoMode` and never contacts the real Denver
+    /// API — see `ReportViewModel.submit()` and `HistoryViewModel.refresh()`.
+    static let demoEmail = "apple@sam.ink"
+    static let demoPassword = "password"
+
+    /// Attempts the App Store reviewer demo flow. Returns true when the creds
+    /// match; populates a synthetic profile + flips `isDemoMode` on.
+    func signInAsDemo(email: String, password: String) -> Bool {
+        guard email.trimmingCharacters(in: .whitespacesAndNewlines).caseInsensitiveCompare(Self.demoEmail) == .orderedSame,
+              password == Self.demoPassword else {
+            return false
+        }
+        self.profile = UserProfile(
+            id: "demo-apple-reviewer",
+            firstName: "Apple",
+            lastName: "Reviewer",
+            displayName: "Apple Reviewer",
+            email: Self.demoEmail,
+            phone: nil,
+            preferredLanguage: "en")
+        self.hasCredentials = true
+        self.isDemoMode = true
+        return true
     }
 
     /// Call when an API response indicates the user is no longer authenticated
@@ -89,6 +121,7 @@ final class AuthService {
         store.delete()
         profile = nil
         hasCredentials = false
+        isDemoMode = false
         let allTypes = WKWebsiteDataStore.allWebsiteDataTypes()
         await dataStore.removeData(ofTypes: allTypes, modifiedSince: .distantPast)
     }

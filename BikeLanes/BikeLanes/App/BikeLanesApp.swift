@@ -38,7 +38,7 @@ struct BikeLanesApp: App {
             onInvalidated: { [weak authService] in
                 await MainActor.run { authService?.invalidate() }
             })
-        self.historyVM = HistoryViewModel(status: statusService)
+        self.historyVM = HistoryViewModel(status: statusService, auth: authService)
     }
 
     var body: some Scene {

@@ -1,0 +1,16 @@
+{
+  "source": "/Users/samschooler/repo/bike-lanes/BikeLanes/BikeLanes/Views/Report/VehicleSection.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Done",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 65
+        }
+      }
+    ]
+  },
+  "version": 1
+}

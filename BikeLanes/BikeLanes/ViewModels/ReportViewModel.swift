@@ -156,6 +156,17 @@ final class ReportViewModel {
         }
         isSubmitting = true; defer { isSubmitting = false }
 
+        // Demo mode (App Store review) — simulate a successful submit with no
+        // network calls so the reviewer doesn't file a real 311 case.
+        if auth?.isDemoMode == true {
+            try? await Task.sleep(nanoseconds: 1_500_000_000)
+            lastSavedCase = CaseReceipt(
+                id: Int.random(in: 900_000...999_999),
+                caseNumber: nil,
+                internalCaseStatus: "queuedForCRM")
+            return
+        }
+
         if menu == nil {
             guard let menuAPI = api as? MenuProviding else {
                 throw NSError(domain: "BikeLanes", code: 1,

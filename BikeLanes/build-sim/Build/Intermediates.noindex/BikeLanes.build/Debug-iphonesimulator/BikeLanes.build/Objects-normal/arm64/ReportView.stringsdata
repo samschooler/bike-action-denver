@@ -1,0 +1,96 @@
+{
+  "source": "/Users/samschooler/repo/bike-lanes/BikeLanes/BikeLanes/Views/Report/ReportView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Report",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 58
+        }
+      },
+      {
+        "comment": "",
+        "key": "Reporting as %@",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 33
+        }
+      },
+      {
+        "comment": "",
+        "key": "File this report with Denver?",
+        "location": {
+          "startingColumn": 16,
+          "startingLine": 190
+        }
+      },
+      {
+        "comment": "",
+        "key": "No location in photo",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 120
+        }
+      },
+      {
+        "comment": "",
+        "key": "Tap to add an address",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 121
+        }
+      },
+      {
+        "comment": "",
+        "key": "📍",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 140
+        }
+      },
+      {
+        "comment": "",
+        "key": "🕒",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 168
+        }
+      },
+      {
+        "comment": "",
+        "key": "＋",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 176
+        }
+      },
+      {
+        "comment": "",
+        "key": "Cancel",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 191
+        }
+      },
+      {
+        "comment": "",
+        "key": "File Report",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 192
+        }
+      },
+      {
+        "comment": "",
+        "key": "This will file a real Denver 311 case under your PocketGov account. Do not file fake or duplicate reports, and only report vehicles that are currently parked in the bike lane.",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 205
+        }
+      }
+    ]
+  },
+  "version": 1
+}
