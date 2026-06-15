@@ -63,6 +63,14 @@ Upload the current build to TestFlight
 
 Submit current build to the App Store (manual review trigger)
 
+### ios submit_for_review
+
+```sh
+[bundle exec] fastlane ios submit_for_review
+```
+
+Promote the latest TestFlight build to App Store review with auto-release
+
 ----
 
 This README.md is auto-generated and will be re-generated every time [_fastlane_](https://fastlane.tools) is run.
