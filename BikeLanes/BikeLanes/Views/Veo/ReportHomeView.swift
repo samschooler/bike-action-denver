@@ -22,14 +22,14 @@ struct ReportHomeView: View {
                         ReportView(vm: reportVM, auth: auth)
                     } label: {
                         chooserCard(icon: "car.fill", title: "Car in a bike lane",
-                                    subtitle: "File a Denver 311 case (PocketGov sign-in required)")
+                                    subtitle: "File a Denver 311 case")
                     }
                     .buttonStyle(.plain)
                     NavigationLink {
                         VeoReportView(vm: veoVM)
                     } label: {
-                        chooserCard(icon: "scooter", title: "Scooter or bike",
-                                    subtitle: "Report to Veo — no account needed")
+                        chooserCard(icon: "scooter", title: "Improperly parked scooter or bike",
+                                    subtitle: "Report to Veo a scooter or bike blocking a bike lane, blocking a sidewalk, or otherwise improperly parked")
                     }
                     .buttonStyle(.plain)
                 }

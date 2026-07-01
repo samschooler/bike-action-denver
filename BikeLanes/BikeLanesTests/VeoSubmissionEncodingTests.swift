@@ -43,6 +43,18 @@ final class VeoSubmissionEncodingTests: XCTestCase {
         XCTAssertTrue(body.contains("request%5Battachments%5D%5B%5D="))
     }
 
+    func testNotesAreHTMLEscaped() {
+        var draft = VeoReportDraft()
+        draft.photoURL = URL(fileURLWithPath: "/tmp/x.jpg"); draft.addressText = "A"
+        draft.vehicleType = .scooter
+        draft.notes = "Tucker & <b>Sam</b>"
+        let body = VeoSubmission(draft: draft, profile: VeoProfile(),
+                                 attachmentJSON: "{}", csrfToken: "T").formURLEncodedBody()
+        // <p>Tucker &amp; &lt;b&gt;Sam&lt;/b&gt;</p>, then form-encoded
+        let expected = veoFormEncode("<p>Tucker &amp; &lt;b&gt;Sam&lt;/b&gt;</p>")
+        XCTAssertTrue(body.contains("request%5Bdescription%5D=" + expected))
+    }
+
     func testYesTags() {
         var draft = VeoReportDraft()
         draft.photoURL = URL(fileURLWithPath: "/tmp/x.jpg"); draft.addressText = "A"

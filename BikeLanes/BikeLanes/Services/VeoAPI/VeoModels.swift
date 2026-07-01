@@ -10,6 +10,15 @@ func veoFormEncode(_ s: String) -> String {
     return s.addingPercentEncoding(withAllowedCharacters: allowed) ?? s
 }
 
+/// Escapes HTML metacharacters. The Veo submit sends `description_mimetype:
+/// text/html` (confirmed in the HAR), so raw user notes must be escaped or `&`,
+/// `<`, `>` would render broken or inject markup into the Zendesk ticket.
+func veoHTMLEscape(_ s: String) -> String {
+    s.replacingOccurrences(of: "&", with: "&amp;")   // must be first
+     .replacingOccurrences(of: "<", with: "&lt;")
+     .replacingOccurrences(of: ">", with: "&gt;")
+}
+
 struct VeoAttachment: Decodable, Sendable {
     let id: String
     let fileName: String
@@ -39,7 +48,7 @@ struct VeoSubmission: Sendable {
         let vehicleNumber = draft.vehicleNumber.trimmingCharacters(in: .whitespacesAndNewlines)
         let privateTag = (draft.onPrivateOrBlocking ?? false) ? "illegal_parking_yes" : "illegal_parking_no"
         let rampTag    = (draft.blockingRamp ?? false) ? "block_ramp_yes" : "block_ramp_no"
-        let descriptionHTML = "<p>\(draft.notes)</p>"
+        let descriptionHTML = "<p>\(veoHTMLEscape(draft.notes))</p>"
 
         func cf(_ id: String) -> String { "request[custom_fields][\(id)]" }
 
