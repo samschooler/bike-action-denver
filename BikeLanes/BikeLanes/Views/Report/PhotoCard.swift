@@ -66,7 +66,13 @@ struct PhotoCard: View {
             }
             VStack {
                 HStack(spacing: 6) {
-                    chip(text: image == nil ? "WAITING" : "CAR DETECTED", filled: image != nil)
+                    // Only claim a detection when there's an actual car bbox. In the
+                    // Veo (scooter) flow bbox is always nil, so no chip shows at all.
+                    if bbox != nil {
+                        chip(text: "CAR DETECTED", filled: true)
+                    } else if image == nil {
+                        chip(text: "WAITING", filled: false)
+                    }
                     if let heading { chip(text: "heading \(compass(heading))", filled: false) }
                     if let plateStatus { chip(text: plateStatus, filled: false) }
                 }

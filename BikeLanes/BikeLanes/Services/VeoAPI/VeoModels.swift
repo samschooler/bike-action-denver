@@ -34,8 +34,9 @@ struct VeoSubmission: Sendable {
 
     /// Builds the exact `request[...]` form body per docs/veo-report-api.md.
     func formURLEncodedBody() -> String {
+        // Send exactly what the user typed/scanned; leave the field empty if they
+        // didn't. "(Didn't find it)" is only a UI placeholder, never submitted.
         let vehicleNumber = draft.vehicleNumber.trimmingCharacters(in: .whitespacesAndNewlines)
-            .isEmpty ? VeoReportDraft.vehicleNumberFallback : draft.vehicleNumber
         let privateTag = (draft.onPrivateOrBlocking ?? false) ? "illegal_parking_yes" : "illegal_parking_no"
         let rampTag    = (draft.blockingRamp ?? false) ? "block_ramp_yes" : "block_ramp_no"
         let descriptionHTML = "<p>\(draft.notes)</p>"

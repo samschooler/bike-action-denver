@@ -32,8 +32,9 @@ final class VeoSubmissionEncodingTests: XCTestCase {
         XCTAssertTrue(body.contains("request%5Bdescription%5D=%3Cp%3EBike%20parked%20on%20the%20sidewalk.%3C%2Fp%3E"))
         XCTAssertTrue(body.contains("request%5Bdescription_mimetype%5D=text%2Fhtml"))
         XCTAssertTrue(body.contains("request%5Bcustom_fields%5D%5B360037999772%5D=9526883507")) // phone digits
-        XCTAssertTrue(body.contains("request%5Bcustom_fields%5D%5B360038000552%5D=" +
-            veoFormEncode("(Didn't find it)")))                                                   // vehicle number fallback
+        // Blank vehicle number is submitted empty, NOT as a "(Didn't find it)" fallback.
+        XCTAssertFalse(body.contains(veoFormEncode("(Didn't find it)")))
+        XCTAssertTrue(body.contains("request%5Bcustom_fields%5D%5B360038000552%5D=&"))            // empty vehicle number
         XCTAssertTrue(body.contains("request%5Bcustom_fields%5D%5B360029446151%5D=e-bike"))       // vehicle type
         XCTAssertTrue(body.contains("request%5Bcustom_fields%5D%5B360029389292%5D=den_denver_-_co"))
         XCTAssertTrue(body.contains("request%5Bcustom_fields%5D%5B24862782037652%5D=illegal_parking_no"))
