@@ -4,9 +4,11 @@ import SwiftUI
 struct SettingsView: View {
     @State private var showingLogin = false
     let auth: AuthService?
+    let veoProfile: VeoProfileStore?
 
-    init(auth: AuthService? = nil) {
+    init(auth: AuthService? = nil, veoProfile: VeoProfileStore? = nil) {
         self.auth = auth
+        self.veoProfile = veoProfile
     }
 
     var body: some View {
@@ -48,6 +50,9 @@ struct SettingsView: View {
                         .font(.footnote).foregroundStyle(.secondary)
                 }
             }
+            if let veoProfile {
+                VeoReporterSection(store: veoProfile)
+            }
             Section("About") {
                 LabeledContent("Version", value: Bundle.main.shortVersion ?? "?")
                 Link(destination: URL(string: "https://github.com/samschooler/bike-action-denver")!) {
@@ -71,6 +76,26 @@ struct SettingsView: View {
         .navigationTitle("Settings")
         .sheet(isPresented: $showingLogin) {
             if let auth { LoginSheet(auth: auth) }
+        }
+    }
+}
+
+/// Editable Veo reporter profile. Independent of PocketGov auth — a scooter
+/// report to Veo never requires a Denver account.
+private struct VeoReporterSection: View {
+    @Bindable var store: VeoProfileStore
+
+    var body: some View {
+        Section("Veo reporter") {
+            TextField("Full name", text: $store.profile.name)
+                .textContentType(.name)
+            TextField("Email", text: $store.profile.email)
+                .textContentType(.emailAddress).keyboardType(.emailAddress)
+                .autocorrectionDisabled().textInputAutocapitalization(.never)
+            TextField("Phone (optional)", text: $store.profile.phone)
+                .textContentType(.telephoneNumber).keyboardType(.phonePad)
+            Text("Used only when you report a scooter/bike to Veo. Veo needs a name and email to follow up. No Denver account required.")
+                .font(.footnote).foregroundStyle(.secondary)
         }
     }
 }

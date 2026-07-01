@@ -7,12 +7,18 @@ struct SubmitButton: View {
     /// When non-nil, the caption text switches from the anonymous copy to a
     /// "filed under \(name)" version. Pass the profile's display label.
     let signedInAs: String?
+    let title: String
+    let captionOverride: String?
     let action: () -> Void
 
-    init(enabled: Bool, isLoading: Bool, signedInAs: String? = nil, action: @escaping () -> Void) {
+    init(enabled: Bool, isLoading: Bool, signedInAs: String? = nil,
+         title: String = "Submit to Denver", captionOverride: String? = nil,
+         action: @escaping () -> Void) {
         self.enabled = enabled
         self.isLoading = isLoading
         self.signedInAs = signedInAs
+        self.title = title
+        self.captionOverride = captionOverride
         self.action = action
     }
 
@@ -20,7 +26,7 @@ struct SubmitButton: View {
         VStack(spacing: 12) {
             Button(action: action) {
                 HStack {
-                    Text("Submit to Denver")
+                    Text(title)
                         .font(.system(size: 16, weight: .semibold))
                     if isLoading {
                         ProgressView()
@@ -32,11 +38,11 @@ struct SubmitButton: View {
                 }
                 .padding(.vertical, 18)
                 .frame(maxWidth: .infinity)
-                .background(enabled ? Color(red: 42/255, green: 111/255, blue: 63/255)
+                .background(enabled ? Color.brandGreen
                                      : Color.secondary.opacity(0.5))
                 .foregroundStyle(.white)
                 .clipShape(RoundedRectangle(cornerRadius: 14))
-                .shadow(color: Color(red: 42/255, green: 111/255, blue: 63/255).opacity(0.25),
+                .shadow(color: Color.brandGreen.opacity(0.25),
                         radius: 14, y: 4)
             }
             .disabled(!enabled || isLoading)
@@ -49,6 +55,7 @@ struct SubmitButton: View {
     }
 
     private var captionText: String {
+        if let captionOverride { return captionOverride }
         let name = signedInAs ?? "your account"
         return "Files a case with Denver 311 under \(name).\nYou'll get status updates in your PocketGov account."
     }

@@ -27,7 +27,7 @@
 	<key>NSCameraUsageDescription</key>
 	<string>Take a photo of the illegally parked vehicle to attach to your report.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Used only when reverse-geocoding a photo's GPS to a street address.</string>
+	<string>Tags photos you take in the app with where you are, so the report's address fills in automatically.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Pick a photo of the illegally parked vehicle from your library.</string>
 	<key>UIApplicationSceneManifest</key>
