@@ -24,12 +24,14 @@ struct ReportHomeView: View {
                         chooserCard(icon: "car.fill", title: "Car in a bike lane",
                                     subtitle: "File a Denver 311 case (PocketGov sign-in required)")
                     }
+                    .buttonStyle(.plain)
                     NavigationLink {
                         VeoReportView(vm: veoVM)
                     } label: {
                         chooserCard(icon: "scooter", title: "Scooter or bike",
                                     subtitle: "Report to Veo — no account needed")
                     }
+                    .buttonStyle(.plain)
                 }
                 .padding(.vertical, 16)
             }
