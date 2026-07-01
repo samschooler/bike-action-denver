@@ -69,3 +69,6 @@ AuthKey_*.json
 .env.local
 .appstoreconnect/
 /BikeLanes/build-sim/
+
+# SDD orchestration scratch
+/.superpowers/
