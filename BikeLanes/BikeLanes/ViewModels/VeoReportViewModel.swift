@@ -39,7 +39,7 @@ final class VeoReportViewModel {
     func submit() async {
         lastError = nil
         guard profileStore.profile.isComplete else {
-            lastError = "Add your name and email in Settings → Veo reporter first."
+            lastError = "Add your name and email in the reporter section above first."
             return
         }
         guard let url = draft.photoURL, let data = try? Data(contentsOf: url) else {

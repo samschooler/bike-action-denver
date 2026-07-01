@@ -72,6 +72,8 @@ struct VeoReportView: View {
 
         card { labeledField("Notes", text: $vm.draft.notes, placeholder: "Describe what you saw") }
 
+        card { VeoReporterCard(store: vm.profileStore) }
+
         if let err = vm.lastError {
             Text(err).font(.system(size: 13)).foregroundStyle(Color.dangerRed)
                 .padding(.horizontal, 20)
