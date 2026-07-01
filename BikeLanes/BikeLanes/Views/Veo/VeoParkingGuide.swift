@@ -23,7 +23,8 @@ struct VeoParkingGuide: View {
 
     private let redFlags: [String] = [
         "Tipped over or not standing upright",
-        "Blocking the sidewalk, a wheelchair ramp, or a curb cut",
+        "Not enough room for a wheelchair or stroller to get past",
+        "Blocking a wheelchair ramp or curb cut",
         "Blocking a crosswalk, driveway, bus stop, or parking space",
         "Left in the street / a travel lane, or blocking transit",
         "Dumped on private property or outside the service area",
@@ -31,6 +32,8 @@ struct VeoParkingGuide: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
+            sidewalkCallout
+
             header("What proper parking looks like")
 
             ForEach(styles) { style in
@@ -84,6 +87,28 @@ struct VeoParkingGuide: View {
                 .foregroundStyle(.tertiary)
         }
         .padding(.horizontal, 20)
+    }
+
+    private var sidewalkCallout: some View {
+        HStack(alignment: .top, spacing: 12) {
+            Image(systemName: "figure.roll")
+                .font(.system(size: 20))
+                .foregroundStyle(Color.brandGreen)
+                .padding(.top, 1)
+            VStack(alignment: .leading, spacing: 4) {
+                Text("Sidewalk parking is allowed")
+                    .font(.system(size: 15, weight: .semibold))
+                    .foregroundStyle(.primary)
+                Text("A scooter on the sidewalk isn't a violation on its own. It's only improper if it doesn't leave enough room for a wheelchair or stroller to get past, blocks a ramp, or isn't upright. If someone could easily get around it, don't report it.")
+                    .font(.system(size: 13))
+                    .foregroundStyle(.secondary)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+        }
+        .padding(14)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Color.greenTint)
+        .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
     }
 
     private func header(_ text: String) -> some View {
