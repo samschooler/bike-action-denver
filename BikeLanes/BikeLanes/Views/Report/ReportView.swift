@@ -12,7 +12,7 @@ struct ReportView: View {
     @State private var showingSubmitConfirm = false
     @State private var editing: EditTarget?
     @State private var showingSuccess = false
-    private let backgroundColor = Color(red: 250/255, green: 250/255, blue: 247/255)
+    private let backgroundColor = Color.appBackground
 
     init(vm: ReportViewModel, auth: AuthService? = nil) {
         self.vm = vm
@@ -113,7 +113,7 @@ struct ReportView: View {
             Button(action: { editing = .address }) {
                 HStack(spacing: 10) {
                     Image(systemName: "exclamationmark.triangle.fill")
-                        .foregroundStyle(Color(red: 179/255, green: 58/255, blue: 58/255))
+                        .foregroundStyle(Color.dangerRed)
                     VStack(alignment: .leading, spacing: 2) {
                         Text("No location in photo").font(.system(size: 13, weight: .semibold))
                         Text("Tap to add an address")
@@ -122,7 +122,7 @@ struct ReportView: View {
                     Spacer()
                 }
                 .padding(.horizontal, 14).padding(.vertical, 12)
-                .background(Color(red: 253/255, green: 237/255, blue: 233/255))
+                .background(Color.dangerTint)
                 .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
             }
             .buttonStyle(.plain)
@@ -174,7 +174,7 @@ struct ReportView: View {
                 Text("＋").font(.system(size: 18)).foregroundStyle(.secondary)
             }
         }
-        .background(Color.white)
+        .background(Color.cardBackground)
         .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
         .padding(.horizontal, 20)
 
@@ -205,7 +205,7 @@ struct ReportView: View {
     }
 
     private var divider: some View {
-        Rectangle().fill(Color(red: 242/255, green: 239/255, blue: 229/255))
+        Rectangle().fill(Color.cardBackgroundAlt)
             .frame(height: 1).padding(.horizontal, 16)
     }
 

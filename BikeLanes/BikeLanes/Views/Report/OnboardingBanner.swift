@@ -20,7 +20,7 @@ struct OnboardingBanner: View {
             HStack(spacing: 10) {
                 Image(systemName: "hand.wave.fill")
                     .font(.system(size: 20))
-                    .foregroundStyle(Color(red: 42/255, green: 111/255, blue: 63/255))
+                    .foregroundStyle(Color.brandGreen)
                 Text("Welcome to Bike Action Denver")
                     .font(.system(size: 17, weight: .semibold))
                 Spacer()
@@ -40,18 +40,18 @@ struct OnboardingBanner: View {
                         .font(.system(size: 14, weight: .semibold))
                         .foregroundStyle(.white)
                         .padding(.horizontal, 18).padding(.vertical, 10)
-                        .background(Color(red: 42/255, green: 111/255, blue: 63/255))
+                        .background(Color.brandGreen)
                         .clipShape(Capsule())
                 }
                 .buttonStyle(.plain)
             }
         }
         .padding(16)
-        .background(Color.white)
+        .background(Color.cardBackground)
         .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
         .overlay(
             RoundedRectangle(cornerRadius: 18)
-                .stroke(Color(red: 233/255, green: 229/255, blue: 218/255), lineWidth: 1))
+                .stroke(Color.cardStroke, lineWidth: 1))
         .shadow(color: Color.black.opacity(0.04), radius: 8, y: 3)
     }
 }

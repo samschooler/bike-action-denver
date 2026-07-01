@@ -64,7 +64,7 @@ struct VehicleSection: View {
                 Button { expanded = false } label: {
                     Text("Done")
                         .font(.system(size: 14, weight: .semibold))
-                        .foregroundStyle(Color(red: 42/255, green: 111/255, blue: 63/255))
+                        .foregroundStyle(Color.brandGreen)
                         .frame(maxWidth: .infinity, alignment: .trailing)
                         .padding(.horizontal, 16).padding(.vertical, 14)
                 }
@@ -96,16 +96,16 @@ struct VehicleSection: View {
     }
 
     private var divider: some View {
-        Rectangle().fill(Color(red: 242/255, green: 239/255, blue: 229/255))
+        Rectangle().fill(Color.cardBackgroundAlt)
             .frame(height: 1).padding(.horizontal, 16)
     }
 
     private func colorCategory(_ name: String?) -> Color {
         switch name?.lowercased() {
         case "blue":             return Color(red: 58/255, green: 90/255, blue: 154/255)
-        case "red":              return Color(red: 200/255, green: 50/255, blue: 50/255)
+        case "red":              return Color.dangerRed
         case "black":            return Color(red: 30/255, green: 30/255, blue: 30/255)
-        case "white":            return Color(red: 240/255, green: 240/255, blue: 240/255)
+        case "white":            return Color.cardBackground
         case "gray", "silver":   return Color(red: 140/255, green: 140/255, blue: 140/255)
         case "green":            return Color(red: 50/255, green: 140/255, blue: 80/255)
         case "yellow", "gold":   return Color(red: 220/255, green: 190/255, blue: 60/255)

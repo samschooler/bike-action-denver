@@ -17,6 +17,7 @@
 		1968757C66AA9F51EC19429C /* DenverAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7165AB387F3447E6C6D25E32 /* DenverAPIClient.swift */; };
 		1A36CF05440E8063597F678A /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B220E484455D775406323040 /* AuthService.swift */; };
 		1A9F106C6069359B45FC5A75 /* ExplainerCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07281FBA63AE7C1579A2D684 /* ExplainerCard.swift */; };
+		1CD18B8821AB3FDADF12D334 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807F7FE84AA7B942B33D6974 /* Theme.swift */; };
 		1D6C2E2CFC738A1962BDF7CE /* ExifService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D0E5C442C5F7FB0A27799A /* ExifService.swift */; };
 		1F24DE8901B6077A74614048 /* VeoReportViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD524F7BCF92347F570CCF6 /* VeoReportViewModelTests.swift */; };
 		1F27D3117D6A36D5E2F7E374 /* AddressNormalizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4D17644029DF1E2491E29A /* AddressNormalizer.swift */; };
@@ -171,6 +172,7 @@
 		7D3CC9E8CF0768BD75B7B5CC /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		7EDB8EF9E782F0B105105A63 /* PhotoCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCard.swift; sourceTree = "<group>"; };
 		7F39E95765BEA00C8FE46E9F /* VeoSubmissionEncodingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VeoSubmissionEncodingTests.swift; sourceTree = "<group>"; };
+		807F7FE84AA7B942B33D6974 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		811AAE32024D28D2FC526C1F /* PlateDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateDetector.swift; sourceTree = "<group>"; };
 		829CEA62FED53C9191F08150 /* GeocodeServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodeServiceTests.swift; sourceTree = "<group>"; };
 		84242133DE066CB9019BF4C1 /* VeoProfileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VeoProfileTests.swift; sourceTree = "<group>"; };
@@ -419,6 +421,7 @@
 				916988F530A9478DAE329550 /* CaseDetailView.swift */,
 				7D3CC9E8CF0768BD75B7B5CC /* SettingsView.swift */,
 				213F814BEF6163A43D0EEE20 /* SubmissionResultView.swift */,
+				807F7FE84AA7B942B33D6974 /* Theme.swift */,
 				7164BCAA2804236BB5C274DD /* Auth */,
 				9F6943E5C16E538EC4177ABB /* Edit */,
 				3038C33F46F8C88D4B50CB1B /* History */,
@@ -723,6 +726,7 @@
 				DB0B6EE12995493FD3A89D2C /* SilentAuthRunner.swift in Sources */,
 				42D08F9872F4023D44A687FC /* SubmissionResultView.swift in Sources */,
 				80ECF7E6BCF16A007EF40B59 /* SubmitButton.swift in Sources */,
+				1CD18B8821AB3FDADF12D334 /* Theme.swift in Sources */,
 				4A1BD1383F2EA9401ECBB011 /* TokenStore.swift in Sources */,
 				37C48EF135204864D91A7818 /* UserProfile.swift in Sources */,
 				685D5A6047B7906079BBE3BA /* VehicleDetector.swift in Sources */,

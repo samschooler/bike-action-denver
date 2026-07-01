@@ -26,17 +26,17 @@ struct ExplainerCard: View {
             ForEach(Self.items) { item in
                 FAQRow(item: item)
                 if item.id != Self.items.last?.id {
-                    Rectangle().fill(Color(red: 242/255, green: 239/255, blue: 229/255))
+                    Rectangle().fill(Color.cardBackgroundAlt)
                         .frame(height: 1)
                         .padding(.leading, 16)
                 }
             }
         }
-        .background(Color.white)
+        .background(Color.cardBackground)
         .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
         .overlay(
             RoundedRectangle(cornerRadius: 18)
-                .stroke(Color(red: 233/255, green: 229/255, blue: 218/255), lineWidth: 1))
+                .stroke(Color.cardStroke, lineWidth: 1))
         .padding(.horizontal, 20)
     }
 }

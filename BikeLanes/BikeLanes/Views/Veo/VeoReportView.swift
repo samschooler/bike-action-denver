@@ -10,7 +10,7 @@ struct VeoReportView: View {
     @State private var showingScanner = false
     @State private var scanPickerItem: PhotosPickerItem?
     @State private var showingScanFromPhoto = false
-    private let bg = Color(red: 250/255, green: 250/255, blue: 247/255)
+    private let bg = Color.appBackground
 
     init(vm: VeoReportViewModel) { self.vm = vm }
 
@@ -71,7 +71,7 @@ struct VeoReportView: View {
         card { labeledField("Notes", text: $vm.draft.notes, placeholder: "Describe what you saw") }
 
         if let err = vm.lastError {
-            Text(err).font(.system(size: 13)).foregroundStyle(Color(red: 179/255, green: 58/255, blue: 58/255))
+            Text(err).font(.system(size: 13)).foregroundStyle(Color.dangerRed)
                 .padding(.horizontal, 20)
         }
 
@@ -87,7 +87,7 @@ struct VeoReportView: View {
     private var vehicleNumberRow: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text("VEHICLE NUMBER").font(.system(size: 11, weight: .medium)).kerning(0.88)
-                .foregroundStyle(Color(red: 138/255, green: 135/255, blue: 118/255))
+                .foregroundStyle(Color.mutedLabel)
             HStack {
                 TextField(VeoReportDraft.vehicleNumberFallback, text: $vm.draft.vehicleNumber)
                     .textFieldStyle(.roundedBorder)
@@ -96,7 +96,7 @@ struct VeoReportView: View {
                     Button { showingScanFromPhoto = true } label: { Label("Scan from photo", systemImage: "photo") }
                 } label: {
                     Image(systemName: "qrcode.viewfinder").font(.system(size: 20))
-                        .foregroundStyle(Color(red: 42/255, green: 111/255, blue: 63/255))
+                        .foregroundStyle(Color.brandGreen)
                 }
             }
             Text("Located under the QR code in the center of the handlebars, if available.")
@@ -107,7 +107,7 @@ struct VeoReportView: View {
     private func labeledField(_ label: String, text: Binding<String>, placeholder: String) -> some View {
         VStack(alignment: .leading, spacing: 8) {
             Text(label.uppercased()).font(.system(size: 11, weight: .medium)).kerning(0.88)
-                .foregroundStyle(Color(red: 138/255, green: 135/255, blue: 118/255))
+                .foregroundStyle(Color.mutedLabel)
             TextField(placeholder, text: text, axis: .vertical).textFieldStyle(.roundedBorder)
         }
     }
@@ -115,7 +115,7 @@ struct VeoReportView: View {
     private func yesNoPicker(_ label: String, selection: Binding<Bool?>) -> some View {
         VStack(alignment: .leading, spacing: 8) {
             Text(label.uppercased()).font(.system(size: 11, weight: .medium)).kerning(0.88)
-                .foregroundStyle(Color(red: 138/255, green: 135/255, blue: 118/255))
+                .foregroundStyle(Color.mutedLabel)
             Picker(label, selection: Binding(
                 get: { selection.wrappedValue },
                 set: { selection.wrappedValue = $0 })) {
@@ -130,7 +130,7 @@ struct VeoReportView: View {
     private func card<Content: View>(@ViewBuilder _ content: () -> Content) -> some View {
         content()
             .padding(16)
-            .background(Color.white)
+            .background(Color.cardBackground)
             .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
             .padding(.horizontal, 20)
     }
@@ -157,14 +157,14 @@ struct VeoSuccessView: View {
     var body: some View {
         VStack(spacing: 20) {
             Image(systemName: "checkmark.seal.fill").font(.system(size: 64))
-                .foregroundStyle(Color(red: 42/255, green: 111/255, blue: 63/255))
+                .foregroundStyle(Color.brandGreen)
             Text("Reported to Veo").font(.system(size: 22, weight: .semibold))
             Text("Your report was filed with Veo support. Thanks for keeping the sidewalks clear.")
                 .multilineTextAlignment(.center).foregroundStyle(.secondary).padding(.horizontal, 40)
             Button(action: onDone) {
                 Text("Done").font(.system(size: 16, weight: .semibold)).foregroundStyle(.white)
                     .padding(.vertical, 16).frame(maxWidth: .infinity)
-                    .background(Color(red: 42/255, green: 111/255, blue: 63/255))
+                    .background(Color.brandGreen)
                     .clipShape(RoundedRectangle(cornerRadius: 14))
             }
             .padding(.horizontal, 40)

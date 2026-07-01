@@ -10,7 +10,7 @@ struct SubmissionResultView: View {
             Spacer()
             Image(systemName: "checkmark.circle.fill")
                 .resizable().frame(width: 72, height: 72)
-                .foregroundStyle(Color(red: 42/255, green: 111/255, blue: 63/255))
+                .foregroundStyle(Color.brandGreen)
             VStack(spacing: 8) {
                 Text("Submitted")
                     .font(.custom("Fraunces", size: 28).weight(.medium))
