@@ -28,8 +28,8 @@ struct ReportHomeView: View {
                     NavigationLink {
                         VeoReportView(vm: veoVM)
                     } label: {
-                        chooserCard(icon: "scooter", title: "Improperly parked scooter or bike",
-                                    subtitle: "Report to Veo a scooter or bike blocking a bike lane, blocking a sidewalk, or otherwise improperly parked")
+                        chooserCard(icon: "scooter", title: "Improperly parked Veo",
+                                    subtitle: "A vehicle blocking a sidewalk, bike lane, or otherwise")
                     }
                     .buttonStyle(.plain)
                 }
