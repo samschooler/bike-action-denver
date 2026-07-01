@@ -41,13 +41,13 @@ struct ExplainerCard: View {
     }
 }
 
-private struct FAQ: Identifiable, Equatable {
+struct FAQ: Identifiable, Equatable {
     let id = UUID()
     let question: String
     let answer: String
 }
 
-private struct FAQRow: View {
+struct FAQRow: View {
     let item: FAQ
     @State private var expanded = false
 

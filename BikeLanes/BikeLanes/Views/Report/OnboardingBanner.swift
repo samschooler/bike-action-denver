@@ -25,7 +25,7 @@ struct OnboardingBanner: View {
                     .font(.system(size: 17, weight: .semibold))
                 Spacer()
             }
-            Text("Photograph a car parked in a Denver bike lane and this app auto-reads the plate, car, and address — then files a real Denver 311 case under your PocketGov account.")
+            Text("Spot a car in a bike lane or an improperly parked Veo scooter, snap a photo, and file it in under a minute. Car reports go to Denver 311, Veo reports go to Veo — directly, with no server or tracking in between.")
                 .font(.system(size: 14))
                 .foregroundStyle(.secondary)
                 .fixedSize(horizontal: false, vertical: true)

@@ -32,6 +32,9 @@ struct ReportHomeView: View {
                                     subtitle: "A vehicle blocking a sidewalk, bike lane, or otherwise")
                     }
                     .buttonStyle(.plain)
+
+                    HomeFAQCard()
+                        .padding(.top, 8)
                 }
                 .padding(.vertical, 16)
             }

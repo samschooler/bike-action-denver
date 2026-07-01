@@ -99,6 +99,7 @@
 		E0139ED4208E497B19CF30C8 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D883F6488FFE070EF84B9D8 /* HistoryViewModel.swift */; };
 		E0CF78EB8E646740483ED313 /* VeoProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EA86A954183D67E5DC0BA5 /* VeoProfile.swift */; };
 		E39C41D80D8C966C5DE59FCA /* PlateDetectorModel.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 4D6358FFAEE60C53DBD94114 /* PlateDetectorModel.mlpackage */; };
+		E5F0265C7AB41782C5E4C305 /* HomeFAQCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AB26EA30E562949417B437 /* HomeFAQCard.swift */; };
 		E6015E4A7C5AE6600CCC46D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1C86D96802572086AA597DB /* LaunchScreen.storyboard */; };
 		E6E8D3B733D4C537E58551C1 /* VeoEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C7DA7DBCE634E11372BF26 /* VeoEndpoints.swift */; };
 		E79B073CFC61B181161608F4 /* ReportViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C35775453E2DB7B788519E /* ReportViewModelTests.swift */; };
@@ -184,6 +185,7 @@
 		8FD3061701997AADD1D8E38C /* EditVehicleSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditVehicleSheet.swift; sourceTree = "<group>"; };
 		916988F530A9478DAE329550 /* CaseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseDetailView.swift; sourceTree = "<group>"; };
 		920CC557048BFE0057AE61C5 /* BikeLanesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeLanesApp.swift; sourceTree = "<group>"; };
+		97AB26EA30E562949417B437 /* HomeFAQCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFAQCard.swift; sourceTree = "<group>"; };
 		99103EEFD3BD6E7721B94614 /* DenverEndpointsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DenverEndpointsTests.swift; sourceTree = "<group>"; };
 		9C69D46D38EA2E0858C25DC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9D73DBB41DD2DFF89B9B36E9 /* VeoReportClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VeoReportClientTests.swift; sourceTree = "<group>"; };
@@ -501,6 +503,7 @@
 		F029AC90CD080C029DC16EA1 /* Veo */ = {
 			isa = PBXGroup;
 			children = (
+				97AB26EA30E562949417B437 /* HomeFAQCard.swift */,
 				49C6CE1256DBB727AA722833 /* ReportHomeView.swift */,
 				9F27134AA6B48F8F522ECFAA /* VeoParkingGuide.swift */,
 				89597A05B981044F512409BC /* VeoReporterCard.swift */,
@@ -709,6 +712,7 @@
 				6D5B4376A30A9C90A14A6A2A /* HistoryRow.swift in Sources */,
 				C8891254ECDE9C206117333A /* HistoryView.swift in Sources */,
 				E0139ED4208E497B19CF30C8 /* HistoryViewModel.swift in Sources */,
+				E5F0265C7AB41782C5E4C305 /* HomeFAQCard.swift in Sources */,
 				87D432893FC685AE2551E113 /* ImageCropper.swift in Sources */,
 				D53DBDB73B875252CCB78E12 /* LoginSheet.swift in Sources */,
 				A38D3BDDE33F14AF25893559 /* LoginWebView.swift in Sources */,
