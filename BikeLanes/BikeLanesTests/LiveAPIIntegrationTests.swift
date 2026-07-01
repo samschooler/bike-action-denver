@@ -61,14 +61,14 @@ final class LiveAPIIntegrationTests: XCTestCase {
 
         let emptyStrings = CreateCaseRequest.Contact(
             anonymous: true, languagePreference: "en",
-            firstName: "", lastName: "", email: "", phone: nil)
+            firstName: "", lastName: "", email: "", phone: nil, b2cId: nil)
         let r1 = await tryVariant(emptyStrings)
         print("VARIANT empty-strings → \(r1)")
 
         // Dashes variant
         let dashes = CreateCaseRequest.Contact(
             anonymous: true, languagePreference: "en",
-            firstName: "-", lastName: "-", email: "anonymous@denvergov.org", phone: nil)
+            firstName: "-", lastName: "-", email: "anonymous@denvergov.org", phone: nil, b2cId: nil)
         let r2 = await tryVariant(dashes)
         print("VARIANT dashes → \(r2)")
 
