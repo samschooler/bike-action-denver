@@ -43,7 +43,7 @@ struct VeoReportView: View {
             CameraPicker(onCaptured: { url in Task { await vm.load(photoURL: url) } }).ignoresSafeArea()
         }
         .fullScreenCover(isPresented: $showingScanner) {
-            VeoScannerView(onScanned: { vm.draft.vehicleNumber = $0 }).ignoresSafeArea()
+            VeoScannerScreen(onScanned: { vm.draft.vehicleNumber = $0 })
         }
         .fullScreenCover(isPresented: Binding(get: { vm.didSubmit }, set: { if !$0 { vm.didSubmit = false } })) {
             VeoSuccessView(onDone: { vm.didSubmit = false; vm.draft = .init() })
