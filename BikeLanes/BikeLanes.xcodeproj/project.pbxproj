@@ -27,6 +27,7 @@
 		2B254B7AE01EDBDA2BFA88C7 /* BikeLanesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920CC557048BFE0057AE61C5 /* BikeLanesApp.swift */; };
 		30F980417AA533BDE5EF7522 /* VeoReportClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D73DBB41DD2DFF89B9B36E9 /* VeoReportClientTests.swift */; };
 		31F0F3ABACB69015ECD7D134 /* VeoCodeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A633264A7C2A86F0A59D4D8 /* VeoCodeParser.swift */; };
+		335F378E8213476DB11A1CFE /* VeoParkingGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F27134AA6B48F8F522ECFAA /* VeoParkingGuide.swift */; };
 		37C48EF135204864D91A7818 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEAE72A35D0C1767190792B /* UserProfile.swift */; };
 		3C1E268538256A547A2A07CC /* BikeLanesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9FEAAF1023FF6ED074F712 /* BikeLanesTests.swift */; };
 		3D841E42099DCB310EAAFB63 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EEBB039EB64EF8537C9187 /* Enums.swift */; };
@@ -184,6 +185,7 @@
 		99103EEFD3BD6E7721B94614 /* DenverEndpointsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DenverEndpointsTests.swift; sourceTree = "<group>"; };
 		9C69D46D38EA2E0858C25DC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9D73DBB41DD2DFF89B9B36E9 /* VeoReportClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VeoReportClientTests.swift; sourceTree = "<group>"; };
+		9F27134AA6B48F8F522ECFAA /* VeoParkingGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VeoParkingGuide.swift; sourceTree = "<group>"; };
 		9FD524F7BCF92347F570CCF6 /* VeoReportViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VeoReportViewModelTests.swift; sourceTree = "<group>"; };
 		A1C86D96802572086AA597DB /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A3D5DB350F54D44D856B5005 /* EnumsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumsTests.swift; sourceTree = "<group>"; };
@@ -498,6 +500,7 @@
 			isa = PBXGroup;
 			children = (
 				49C6CE1256DBB727AA722833 /* ReportHomeView.swift */,
+				9F27134AA6B48F8F522ECFAA /* VeoParkingGuide.swift */,
 				493068C041E294383CE94AF0 /* VeoReportView.swift */,
 				0AA585877B4679416ECD280B /* VeoScannerView.swift */,
 			);
@@ -735,6 +738,7 @@
 				31F0F3ABACB69015ECD7D134 /* VeoCodeParser.swift in Sources */,
 				E6E8D3B733D4C537E58551C1 /* VeoEndpoints.swift in Sources */,
 				98074209F5F63A61F416676C /* VeoModels.swift in Sources */,
+				335F378E8213476DB11A1CFE /* VeoParkingGuide.swift in Sources */,
 				E0CF78EB8E646740483ED313 /* VeoProfile.swift in Sources */,
 				67C1B2C6918CC84C7FDD6468 /* VeoReportClient.swift in Sources */,
 				AFC41DBE4792927955AACA72 /* VeoReportDraft.swift in Sources */,

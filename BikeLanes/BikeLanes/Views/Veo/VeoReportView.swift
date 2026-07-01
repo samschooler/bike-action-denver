@@ -24,6 +24,8 @@ struct VeoReportView: View {
                     PhotoSourcePanel(onTakePhoto: { showingCamera = true },
                                      onChoosePhoto: { showingLibraryPicker = true })
                         .padding(.top, 12)
+                    VeoParkingGuide()
+                        .padding(.top, 8)
                 } else {
                     form
                 }
