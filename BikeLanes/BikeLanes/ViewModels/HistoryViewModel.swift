@@ -12,6 +12,9 @@ final class HistoryViewModel {
     var isLoading: Bool = false
     var lastRefreshed: Date?
     var lastError: String?
+    /// True when there's no PocketGov session, so the tab shows a sign-in prompt
+    /// instead of trying (and hanging on) an authed fetch.
+    var needsSignIn: Bool = false
 
     private let status: CaseStatusService?
     private let auth: AuthService?
@@ -25,11 +28,21 @@ final class HistoryViewModel {
     func refresh() async {
         // Demo mode (App Store review) — serve canned cases, skip the network.
         if auth?.isDemoMode == true {
+            needsSignIn = false
             items = Self.demoCases
             lastRefreshed = .now
             lastError = nil
             return
         }
+        // Signed out — don't attempt an authed fetch (it can hang on silent auth).
+        guard auth?.isSignedIn == true else {
+            needsSignIn = true
+            isLoading = false
+            items = []
+            lastError = nil
+            return
+        }
+        needsSignIn = false
         guard let status else { return }
         isLoading = true; defer { isLoading = false }
         do {
