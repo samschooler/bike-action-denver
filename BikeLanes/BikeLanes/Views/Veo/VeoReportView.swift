@@ -76,7 +76,9 @@ struct VeoReportView: View {
         }
 
         SubmitButton(enabled: vm.draft.isSubmittable && !vm.isSubmitting,
-                     isLoading: vm.isSubmitting) {
+                     isLoading: vm.isSubmitting,
+                     title: "Submit to Veo",
+                     captionOverride: "Files a support request with Veo. No Denver account needed.") {
             Task { await vm.submit() }
         }
         .padding(.horizontal, 20).padding(.top, 4)

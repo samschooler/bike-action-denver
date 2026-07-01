@@ -30,6 +30,7 @@
 		3C1E268538256A547A2A07CC /* BikeLanesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9FEAAF1023FF6ED074F712 /* BikeLanesTests.swift */; };
 		3D841E42099DCB310EAAFB63 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EEBB039EB64EF8537C9187 /* Enums.swift */; };
 		42D08F9872F4023D44A687FC /* SubmissionResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213F814BEF6163A43D0EEE20 /* SubmissionResultView.swift */; };
+		42F0429582A1935A20286001 /* ReportHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C6CE1256DBB727AA722833 /* ReportHomeView.swift */; };
 		47162AF3E1A4BD573A6F9B21 /* GeocodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFE76492BB1B86867E7B95D /* GeocodeService.swift */; };
 		4A1BD1383F2EA9401ECBB011 /* TokenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F11049294B728C0C160335 /* TokenStore.swift */; };
 		4D883DCC87AB7388635D9E37 /* AddressNormalizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E39AB08C337CFB023B23A6 /* AddressNormalizerTests.swift */; };
@@ -151,6 +152,7 @@
 		42D970997DCC2E57329DBE23 /* DenverAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DenverAddress.swift; sourceTree = "<group>"; };
 		43F11049294B728C0C160335 /* TokenStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenStore.swift; sourceTree = "<group>"; };
 		493068C041E294383CE94AF0 /* VeoReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VeoReportView.swift; sourceTree = "<group>"; };
+		49C6CE1256DBB727AA722833 /* ReportHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportHomeView.swift; sourceTree = "<group>"; };
 		4D6358FFAEE60C53DBD94114 /* PlateDetectorModel.mlpackage */ = {isa = PBXFileReference; path = PlateDetectorModel.mlpackage; sourceTree = "<group>"; };
 		4E4D17644029DF1E2491E29A /* AddressNormalizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressNormalizer.swift; sourceTree = "<group>"; };
 		528479C328B70CA11ADE38C4 /* PlateOCRServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateOCRServiceTests.swift; sourceTree = "<group>"; };
@@ -492,6 +494,7 @@
 		F029AC90CD080C029DC16EA1 /* Veo */ = {
 			isa = PBXGroup;
 			children = (
+				49C6CE1256DBB727AA722833 /* ReportHomeView.swift */,
 				493068C041E294383CE94AF0 /* VeoReportView.swift */,
 				0AA585877B4679416ECD280B /* VeoScannerView.swift */,
 			);
@@ -712,6 +715,7 @@
 				D2D911D1ED06AB000FB6D38A /* QuickPickRow.swift in Sources */,
 				B88002CE930200C819AC4A9A /* RemoteCase.swift in Sources */,
 				CE2F6130D24052B69479A2D8 /* ReportDraft.swift in Sources */,
+				42F0429582A1935A20286001 /* ReportHomeView.swift in Sources */,
 				583FC39961198C510105101C /* ReportView.swift in Sources */,
 				B34DE05E7BD6926B5720D6C7 /* ReportViewModel.swift in Sources */,
 				22011AFB60C7C3668FD5CEAF /* SettingsView.swift in Sources */,

@@ -27,8 +27,6 @@ struct ReportView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
-                OnboardingBanner()
-
                 if let name = auth?.profile?.displayLabel {
                     Text("Reporting as \(name)")
                         .font(.system(size: 12))

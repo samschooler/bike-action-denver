@@ -7,6 +7,8 @@ struct BikeLanesApp: App {
     let reportVM: ReportViewModel
     let historyVM: HistoryViewModel
     let auth: AuthService
+    let veoVM: VeoReportViewModel
+    let veoProfile: VeoProfileStore
 
     init() {
         let isDryRun = ProcessInfo.processInfo.environment["BIKE_LANES_DRY_RUN"] == "1"
@@ -39,12 +41,21 @@ struct BikeLanesApp: App {
                 await MainActor.run { authService?.invalidate() }
             })
         self.historyVM = HistoryViewModel(status: statusService, auth: authService)
+
+        // Veo scooter-reporting flow — fully independent of PocketGov auth.
+        let veoStore = VeoProfileStore()
+        self.veoProfile = veoStore
+        self.veoVM = VeoReportViewModel(
+            exif: ExifService(),
+            resolver: VeoAddressResolver(),
+            client: VeoReportClient(),
+            profileStore: veoStore)
     }
 
     var body: some Scene {
         WindowGroup {
             TabView {
-                NavigationStack { ReportView(vm: reportVM, auth: auth) }
+                ReportHomeView(reportVM: reportVM, veoVM: veoVM, auth: auth, veoProfile: veoProfile)
                     .tabItem { Label("Report", systemImage: "camera.viewfinder") }
                 NavigationStack { HistoryView(vm: historyVM, auth: auth) }
                     .tabItem { Label("History", systemImage: "list.bullet") }
