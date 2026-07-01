@@ -73,3 +73,5 @@ AuthKey_*.json
 # SDD orchestration scratch
 /.superpowers/
 /BikeLanes/build-device/
+/BikeLanes/build-archive/
+/BikeLanes/build-ipa/
