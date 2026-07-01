@@ -58,6 +58,7 @@
 		80D331F83758E3F62A6DFCA7 /* ExifServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372AC6D55D6D2F10D7256A1C /* ExifServiceTests.swift */; };
 		80ECF7E6BCF16A007EF40B59 /* SubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD648D161B7FFB9C377EA3BE /* SubmitButton.swift */; };
 		813A75B7BBE7799A8975C2A4 /* CameraPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3817799FD408674E9BD29B /* CameraPicker.swift */; };
+		84B38A74DAF7556703F13F13 /* VeoReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493068C041E294383CE94AF0 /* VeoReportView.swift */; };
 		8500E37C130F50E806C65961 /* VeoVehicleTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72E63B2660DAAE49BAD3BCB /* VeoVehicleTypeTests.swift */; };
 		87D432893FC685AE2551E113 /* ImageCropper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E0BE2D53956757A9804BDB /* ImageCropper.swift */; };
 		88EE994D0F703B2CF8C36F72 /* VeoReportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEFA2139A5783C7889482DB /* VeoReportViewModel.swift */; };
@@ -75,6 +76,7 @@
 		B26A4D40469F15C4B27B1A1B /* AppContainers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4232091B444C209D0513499D /* AppContainers.swift */; };
 		B2F407FAC002CEDA955F6FEE /* VeoCodeParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82F9C339C5AD1EA87F9CC3D /* VeoCodeParserTests.swift */; };
 		B34DE05E7BD6926B5720D6C7 /* ReportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A763C6F28BCEA83567473783 /* ReportViewModel.swift */; };
+		B56BD998D54BDEFD9D53744A /* VeoScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA585877B4679416ECD280B /* VeoScannerView.swift */; };
 		B5D60BE663106F917F140215 /* DenverEndpointsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99103EEFD3BD6E7721B94614 /* DenverEndpointsTests.swift */; };
 		B5DFE55A117B6B2211B93AED /* VehicleSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9548CE8505F1878B32FAFEB /* VehicleSection.swift */; };
 		B88002CE930200C819AC4A9A /* RemoteCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D4D6F8F257E82DCF01506E /* RemoteCase.swift */; };
@@ -127,6 +129,7 @@
 		06C35CBC518143CAC79C9165 /* SignInPrompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPrompt.swift; sourceTree = "<group>"; };
 		07281FBA63AE7C1579A2D684 /* ExplainerCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainerCard.swift; sourceTree = "<group>"; };
 		0A6B7C29AB89ECA9970C6E2A /* SilentAuthRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SilentAuthRunner.swift; sourceTree = "<group>"; };
+		0AA585877B4679416ECD280B /* VeoScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VeoScannerView.swift; sourceTree = "<group>"; };
 		0CFE76492BB1B86867E7B95D /* GeocodeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodeService.swift; sourceTree = "<group>"; };
 		109AB37CDE82C1C94F6E4704 /* PKCE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKCE.swift; sourceTree = "<group>"; };
 		1A633264A7C2A86F0A59D4D8 /* VeoCodeParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VeoCodeParser.swift; sourceTree = "<group>"; };
@@ -147,6 +150,7 @@
 		4232091B444C209D0513499D /* AppContainers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainers.swift; sourceTree = "<group>"; };
 		42D970997DCC2E57329DBE23 /* DenverAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DenverAddress.swift; sourceTree = "<group>"; };
 		43F11049294B728C0C160335 /* TokenStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenStore.swift; sourceTree = "<group>"; };
+		493068C041E294383CE94AF0 /* VeoReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VeoReportView.swift; sourceTree = "<group>"; };
 		4D6358FFAEE60C53DBD94114 /* PlateDetectorModel.mlpackage */ = {isa = PBXFileReference; path = PlateDetectorModel.mlpackage; sourceTree = "<group>"; };
 		4E4D17644029DF1E2491E29A /* AddressNormalizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressNormalizer.swift; sourceTree = "<group>"; };
 		528479C328B70CA11ADE38C4 /* PlateOCRServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateOCRServiceTests.swift; sourceTree = "<group>"; };
@@ -417,6 +421,7 @@
 				9F6943E5C16E538EC4177ABB /* Edit */,
 				3038C33F46F8C88D4B50CB1B /* History */,
 				A73C7435E2CC8DA4F06A9205 /* Report */,
+				F029AC90CD080C029DC16EA1 /* Veo */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -482,6 +487,15 @@
 				E35FEAFC973ECCDCC38025A5 /* Multipart.swift */,
 			);
 			path = DenverAPI;
+			sourceTree = "<group>";
+		};
+		F029AC90CD080C029DC16EA1 /* Veo */ = {
+			isa = PBXGroup;
+			children = (
+				493068C041E294383CE94AF0 /* VeoReportView.swift */,
+				0AA585877B4679416ECD280B /* VeoScannerView.swift */,
+			);
+			path = Veo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -716,7 +730,9 @@
 				E0CF78EB8E646740483ED313 /* VeoProfile.swift in Sources */,
 				67C1B2C6918CC84C7FDD6468 /* VeoReportClient.swift in Sources */,
 				AFC41DBE4792927955AACA72 /* VeoReportDraft.swift in Sources */,
+				84B38A74DAF7556703F13F13 /* VeoReportView.swift in Sources */,
 				88EE994D0F703B2CF8C36F72 /* VeoReportViewModel.swift in Sources */,
+				B56BD998D54BDEFD9D53744A /* VeoScannerView.swift in Sources */,
 				013A7B3A6965BD3D43E77AE8 /* VeoVehicleType.swift in Sources */,
 				FBEB25E71D9950B2963D41EA /* YOLOv11nCar.mlpackage in Sources */,
 			);
